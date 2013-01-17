@@ -1,0 +1,92 @@
+############ options ####################
+
+#generate_null_rule : yes
+#comma_as_dead_span : yes
+#use_mmap : yes
+#remove_alignments: yes
+# separate lm for lexical/normal fragment
+#double_lm : yes
+
+############ Rule Extraction ############
+
+# source side with parsed dependency tree
+# support format : stanford parser ( tag,base dependency )
+file_source_tree : /poisson2/home2/raphael/ntcir10/data.full/data.en.tree
+file_source_dep : /poisson2/home2/raphael/ntcir10/data.full/data.en.dep
+# taget side with plain text
+file_target : /poisson2/home2/raphael/ntcir10/data.full/data.ja
+# aligment file
+file_alignment : /poisson2/home2/raphael/ntcir10/data.full/aligned.grow-diag-final-and
+
+# lexical probability table
+file_lex_e2f : /poisson2/home2/raphael/ntcir10/data.full/lex.e2f
+file_lex_f2e : /poisson2/home2/raphael/ntcir10/data.full/lex.f2e
+
+# output file of rules extracted
+rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
+
+# language model setting
+
+#file_lm : /poisson2/home2/raphael/ntcir10/lm/ja.full.lm
+file_lm : /home/raphael/ntcir10/lm/ja.full.binary
+max_gram : 5
+
+x_as_tag : no
+
+max_merge_nodes : 3
+max_tokens : 6
+min_deep_extract_terminals : 3
+max_transaction_rate : 3
+
+############ Probability Estimate ############
+
+# input file of rules_extracted
+
+dispersion_tables : 10
+max_rules_for_each_source: 2000
+
+############ Decoder ############
+
+debug : no
+
+#input file of rule table is same as file_rules_final
+
+#input translation data
+file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.test.full/data.en.tree
+file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.test.full/data.en.dep
+# output translation data
+file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.full/gentile.full.ja
+
+# the number of nbest in the mode of nbest output , make sure it bigger than 0;
+nbest : 50
+
+size_cube_pruning : 1000
+
+size_beam : 1000
+
+# max non-terminals in tree reconstruction
+reconstruction_max_nt : 2
+
+# weight settings
+weights :
+########################################
+# - 0.00596950305498102
+# - 0.0702448396785429
+# - 0.0544369594255997
+# - 0.135654037244263
+# - 0.157281527993101
+# - -0.0436228192716449
+# - -0.144734369757711
+# - 0
+# - 0.363714728555679
+#######################################
+- 0.0102299512702323
+- 0
+- 0.232412170448443
+- 0.010181269022082
+- 0.0506012315648682
+- 0.0584817391662245
+- 0.00373875079373352
+- 0.390961289470316
+- 0.296317461196018
+

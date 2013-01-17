@@ -1,0 +1,36 @@
+mert plan:
+
+Costs ...
+
+brinner.py:
+
+be called in format of
+brinner.py path_abraham.py template.yaml SOURCE_FILE WORK_DIR/run.i 'lambda1 lambda2 ... lambdaN'
+
+replace parameter to [PARAM_INPUT] [PARAM_OUTPUT] [PARAM_WEIGHT_1] ....
+
+then call path_abraham.py --mert tmp.yaml 
+
+output format 
+
+number ||| translation ||| lambda1 lambda2 
+
+
+COMMAND:
+
+python brinner.py path_abraham.py template.yaml
+
+
+mert.rb
+
+tunning.sh:
+mert.rb --source /depot10/norimatsu/demotic_corpus/final_dat/ej_dev.en --reference /depot10/norimatsu/demotic_corpus/final_dat/ej_dev.ja --workdir myhierotune --command "$command" --min "0.0001 -1 -1 0.0001 0.0001 0
+.0001 0.0001 -1" --max "1 1 1 1 1 1 1 1" --ini "0.1 -0.3 -0.2 0.1 0.1 0.1 0.1 0.1"
+
+
+
+final process:
+
+tunning.sh -> COMMAND SOURCE_FILE WORK_DIR/run.i 'lambda1 lambda2 ... lambdaN'
+
+-> 

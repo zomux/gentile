@@ -1,0 +1,92 @@
+############ options ####################
+
+#generate_null_rule : yes
+#comma_as_dead_span : yes
+#use_mmap : yes
+#remove_alignments: yes
+# separate lm for lexical/normal fragment
+#double_lm : yes
+
+############ Rule Extraction ############
+
+# source side with parsed dependency tree
+# support format : stanford parser ( tag,base dependency )
+file_source_tree : /poisson2/home2/raphael/ntcir10/data.500k/data.en.tree
+file_source_dep : /poisson2/home2/raphael/ntcir10/data.500k/data.en.dep
+# taget side with plain text
+file_target : /poisson2/home2/raphael/ntcir10/data.500k/data.ja
+# aligment file
+file_alignment : /poisson2/home2/raphael/ntcir10/data.500k/aligned.grow-diag-final-and
+
+# lexical probability table
+file_lex_e2f : /poisson2/home2/raphael/ntcir10/data.500k/lex.e2f
+file_lex_f2e : /poisson2/home2/raphael/ntcir10/data.500k/lex.f2e
+
+# output file of rules extracted
+rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.500k.model
+
+# language model setting
+
+file_lm : /poisson2/home2/raphael/ntcir10/lm/ja.full.lm
+max_gram : 5
+
+x_as_tag : yes
+
+max_merge_nodes : 3
+max_tokens : 6
+min_deep_extract_terminals : 3
+max_transaction_rate : 3
+
+############ Probability Estimate ############
+
+# input file of rules_extracted
+
+dispersion_tables : 10
+max_rules_for_each_source: 2000
+
+############ Decoder ############
+
+debug : no
+
+#input file of rule table is same as file_rules_final
+
+#input translation data
+file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.test.100/data.en.tree
+file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.test.100/data.en.dep
+# output translation data
+file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.100/gentile.500k.ja
+
+# the number of nbest in the mode of nbest output , make sure it bigger than 0;
+nbest : 50
+
+size_cube_pruning : 1000
+
+size_beam : 1000
+
+# max non-terminals in tree reconstruction
+reconstruction_max_nt : 2
+
+# weight settings
+weights :
+- 0.00504458302615129
+- 0.162896643596612
+- 0.0364258778007254
+- 0.134336627483515
+- 0.100918404310669
+- -0.0338177273228751
+- -0.252108407937042
+- 0.074201366359231
+- 0.200250362163178
+# #Statistical Features (in ruletable):
+# # Balance CountFE Pf2e Pe2f Frequency frag_penalty strength
+# - 0.188971952669076
+# - 0.188971952669076
+# - 0.188971952669076
+# - 0.181349660986841
+# - 0.13934387193861
+# - 0.0172401560409634
+# - -0.0314811258340791
+# #CONTEXTMATCHED
+# - 0.328480456831666
+# # languagemodel
+# - 0.313132775698764

@@ -1,0 +1,81 @@
+############ options ####################
+
+#generate_null_rule : yes
+#comma_as_dead_span : yes
+#use_mmap : yes
+#remove_alignments: yes
+# separate lm for lexical/normal fragment
+#double_lm : yes
+
+############ Rule Extraction ############
+
+# source side with parsed dependency tree
+# support format : stanford parser ( tag,base dependency )
+file_source_tree : testdata/data.en.tree
+file_source_dep : testdata/data.en.dep
+# taget side with plain text
+file_target : testdata/data.ja
+# aligment file
+file_alignment : testdata/aligned.grow-diag-final-and
+
+# lexical probability table
+file_lex_e2f : testdata/lex.e2f
+file_lex_f2e : testdata/lex.f2e
+
+# output file of rules extracted
+rule_table_path : testdata/ruletables
+
+# language model setting
+
+file_lm : testdata/small.ja.lm
+max_gram : 5
+
+x_as_tag : no
+
+max_merge_levels : 4
+max_tokens : 6
+min_deep_extract_terminals : 3
+
+############ Probability Estimate ############
+
+# input file of rules_extracted
+
+dispersion_tables : 5
+max_rules_for_each_source: 1000
+
+############ Decoder ############
+
+debug : no
+
+#input file of rule table is same as file_rules_final
+
+#input translation data
+file_translation_input_tree : testdata/data.en.tree
+file_translation_input_dep : testdata/data.en.dep
+# output translation data
+file_translation_output : testdata/out.ja
+
+# the number of nbest in the mode of nbest output , make sure it bigger than 0;
+nbest : 50
+
+size_cube_pruning : 100
+
+size_beam : 100
+
+# max non-terminals in tree reconstruction
+reconstruction_max_nt : 2
+
+# weight settings
+weights :
+#Statistical Features (in ruletable):
+#Pf2e Pe2f Frequency frag_penalty strength
+- 1.0
+- 1.0
+- 1.0
+- 1.0
+- 1.0
+#CONTEXTMATCHED
+- 1.0
+# languagemodel
+- 1.0
+###########

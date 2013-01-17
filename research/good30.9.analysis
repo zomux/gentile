@@ -1,0 +1,1909 @@
+--[5 0.506980]--
+VP . -> [X0] は [X1] て いる 。
+|--the pressure belt 53 -> 加 圧 ベルト ５３
+|--brought into contact with NP -> [X0] に 当 接し
+   |--the fixing roller 51 -> 定着 ローラ ５１
+---
+[E] the pressure belt 53 is brought into contact with the fixing roller 51 .
+[J] この 加 圧 ベルト ５３ は 、 定着 ローラ ５１ に 当 接さ れる 。
+[T] 加 圧 ベルト ５３ は 定着 ローラ ５１ に 当 接し て いる 。
+
+--[19 0.532442]--
+VP . -> [X0] は [X1] て いる 。
+|--the conductor pattern 14a -> 導体 パターン １４ａ
+|--led out up to NP -> <<43>> まで 引き出さ れ
+   |--the first side NP -> 第 １ の 側面 の [X0]
+      |--face 20b of NP to VP -> <<33>> <<27>> の 面 ２０ｂ に
+         |--be VP -> [X0] に 電気 的 に 接続 さ れる
+            |--the other terminal electrode 5 -> 他方 の 端子 電極 ５
+         |--element 1 -> 素子 １
+---
+[E] the conductor pattern 14a is led out up to the first side face 20b of element 1 to be electrically connected to the other terminal electrode 5 .
+[J] 導体 パターン １４ ａ は 、 素子 １ の 第 １ の 側面 ２０ ｂ まで 引き出さ れ て おり 、 他方 の 端子 電極 ５ に 電気 的 に 接続 さ れる 。
+[T] 導体 パターン １４ａ は 第 １ の 側面 の 他方 の 端子 電極 ５ に 電気 的 に 接続 さ れる 素子 １ の 面 ２０ｂ に まで 引き出さ れ て いる 。
+
+--[24 0.525398]--
+S . -> [X0] さ れ て いる 。
+|--NP , VP -> [X0] と 、 [X1]
+   |--NP becomes VP -> [X0] が [X1]
+      |--this current i -> この 電流 Ｉ
+      |--0 a -> ０
+   |--NP brings NP to NP -> <<18>> により <<32>> <<43>> に
+      |--the output signal of NP -> [X0] の 出力 信号
+         |--comparator 5 -> 比較 器 ５
+      |--induced voltage viv of NP -> <<24>> の 誘起 電圧 viv
+         |--the v phase coil -> Ｖ 相 コイル
+      |--DT & CD ; level -> <<44>> <<55>> レベル
+         |--the & CD ; h -> は <<48>> Ｈ
+            |--# x201c -> 「
+         |--# x201d -> 」
+---
+[E] when this current i becomes 0 a , induced voltage viv of the v phase coil brings the output signal of comparator 5 to the & # x201c ; h & # x201d ; level .
+[J] この 電流 Ｉ が ０ Ａ に なる と 、 Ｖ 相 コイル の 誘導 電圧 ＶＩＶ に より 、 コンパレータ ５ の 出力 信号 は 「 Ｈ 」 レベル に なる 。
+[T] この 電流 Ｉ が ０ と 、 Ｖ 相 コイル の 誘起 電圧 viv により 比較 器 ５ の 出力 信号 は 「 Ｈ 」 レベル に さ れ て いる 。
+
+--[26 0.503892]--
+S . -> [X0] で ある 。
+|--comparison VP -> 比較 [X0]
+   |--NP includes NP 4 to 6 -> <<4>> は 、 <<9>> ４ 〜 ６
+      |--three comparators -> ３ 個 の コンパレータ
+      |--circuit 3 -> 回路 ３
+---
+[E] comparison circuit 3 includes three comparators 4 to 6 .
+[J] 比較 回路 ３ は 、 ３つ の コンパレータ ４ 〜 ６ を 含む 。
+[T] 比較 回路 ３ は 、 ３ 個 の コンパレータ ４ 〜 ６ で ある 。
+
+--[35 0.584661]--
+S . -> [X0] 。
+|--IN , NP -> [X0] よう に 、 [X1]
+   |--easily figured out from NP -> <<13>> から 容易 に figured さ れる
+      |--the plot -> プロット
+   |--there VP -> [X0] が ある
+      |--positive correlation between NP -> <<27>> と の 間 に 正 の 相関
+         |--NP and NP -> [X0] と [X1]
+            |--the output signal value -> 出力 信号 値
+            |--the surface roughness after machining -> 加工 後 の 表面 粗 さ
+---
+[E] as easily figured out from the plot , there is positive correlation between the output signal value and the surface roughness after machining .
+[J] まず 、 プロット の 様子 から 容易 に 理解 できる よう に 、 出力 信号 値 と 加工 後 の 表面 粗 さ と の 間 に は 正 の 相関 関係 が ある 。
+[T] プロット から 容易 に figured さ れる よう に 、 出力 信号 値 と 加工 後 の 表面 粗 さ と の 間 に 正 の 相関 が ある 。
+
+--[43 0.520883]--
+VP . -> [X0] は [X1] を 示し て いる 。
+|--the flowchart VP -> [X0] に 示す フローチャート
+   |--FIGDOT 11 -> 図 １１
+|--a processing procedure VP -> <<20>> 処理 手順
+   |--conducted NP -> [X0] に 行わ れる
+      |--when VP -> [X0] 場合
+         |--NP is VP -> [X1] に [X0] が 検出 さ れ た
+            |--an abnormal state -> 異常
+            |--the magnetic tape library apparatus 100 -> 磁気 テープ ライブラリ 装置 １００
+---
+[E] the flowchart shown in FIGDOT 11 represents a processing procedure conducted when an abnormal state is detected in the magnetic tape library apparatus 100 .
+[J] ここ で 、 この 図 １１ に 示す フローチャート は 、 磁気 テープ ライブラリ 装置 １００ において 、 何らかの 異常 状態 が 検出 さ れ た 場合 の 処理 手順 を 示し て いる 。
+[T] 図 １１ に 示す フローチャート は 磁気 テープ ライブラリ 装置 １００ に 異常 が 検出 さ れ た 場合 に 行わ れる 処理 手順 を 示し て いる 。
+
+--[50 0.736757]--
+NP . -> [X0] [X1] 。
+|--a configuration of NP -> [X0] の 構成 を
+   |--the magnetic tape library NP -> 磁気 テープ ライブラリ <<13>>
+      |--apparatus 100 -> 装置 １００
+|--be VP -> [X0] こと が できる
+   |--explained below in detail -> 詳細 に 説明 する
+---
+[E] a configuration of the magnetic tape library apparatus 100 will be explained below in detail .
+[J] 以下 、 磁気 テープ ライブラリ 装置 １００ の 構成 を 詳細 に 説明 する 。
+[T] 磁気 テープ ライブラリ 装置 １００ の 構成 を 詳細 に 説明 する こと が できる 。
+
+--[56 0.625538]--
+VP . -> [X0] は [X1] 。
+|--FIGDOT 3 -> 図 ３
+|--a block diagram VP -> [X0] 示す ブロック 図 で ある
+   |--an application example of NP -> [X0] の 応用 例 を
+      |--the semiconductor integrated circuit device VP -> [X0] 半導体 集積 回路 装置
+         |--according to NP -> [X0] に 係る
+            |--the first embodiment of NP -> 本 発明 の 第 １ の 実施 の 形態
+---
+[E] FIGDOT 3 is a block diagram showing an application example of the semiconductor integrated circuit device according to the first embodiment of this invention .
+[J] 図 ３ は 、 この 発明 の 第 １ 実施 形態 に 係る 半導体 集積 回路 装置 の 適用 例 を 示す ブロック 図 で ある 。
+[T] 図 ３ は 本 発明 の 第 １ の 実施 の 形態 に 係る 半導体 集積 回路 装置 の 応用 例 を 示す ブロック 図 で ある 。
+
+--[62 0.504582]--
+S . -> [X0] 。
+|--IN , NP -> [X0] 、 [X1] [X2] こと が できる
+   |--a form of NP -> [X0] の 形態
+      |--the video signal -> 映像 信号
+   |--an ntsc NP form -> ＮＴＳＣ <<18>> を
+      |---LRB- NP -RRB- -> （ Ｎａｔｉｏｎａｌ Ｔｅｌｅｖｉｓｉｏｎ Ｓｙｓｔｅｍ Ｃｏｍｍｉｔｔｅｅ ）
+   |--be provided -> 提供 する
+---
+[E] as a form of the video signal , an ntsc -LRB- national television system committee -RRB- form can be provided .
+[J] ビデオ 信号 の 方式 として は 、 例えば 、 ＮＴＳＣ （ Ｎａｔｉｏｎａｌ Ｔｅｌｅｖｉｓｉｏｎ Ｓｙｓｔｅｍ Ｃｏｍｍｉｔｔｅｅ ） を 挙げる こと が できる 。
+[T] 映像 信号 の 形態 、 ＮＴＳＣ （ Ｎａｔｉｏｎａｌ Ｔｅｌｅｖｉｓｉｏｎ Ｓｙｓｔｅｍ Ｃｏｍｍｉｔｔｅｅ ） を 提供 する こと が できる 。
+
+--[66 0.509881]--
+VP . -> [X0] は [X1] で ある 。
+|--one example of NP -> [X0] の 一 例
+   |--the non coincidence determination circuit -> この 不一致 判定 回路
+|--an exclusive or circuit like NP -> <<24>> と 同様 の 排他 的 論理 和 回路
+   |--the first embodiment -> 第 １ 実施 例
+---
+[E] one example of the non coincidence determination circuit is an exclusive or circuit like the first embodiment .
+[J] 不一致 判定 回路 の 例 は 、 第 １ 実施 形態 と 同様 に 排他 的 論理 和 回路 で ある 。
+[T] この 不一致 判定 回路 の 一 例 は 第 １ 実施 例 と 同様 の 排他 的 論理 和 回路 で ある 。
+
+--[68 0.796358]--
+VP . -> [X0] は [X1] で ある 。
+|--the memory cell of NP -> [X0] の メモリ セル
+   |--the sram -> ＳＲＡＭ
+|--a latch circuit -> ラッチ 回路
+---
+[E] the memory cell of the sram is a latch circuit .
+[J] ＳＲＡ Ｍ の メモリ セル は ラッチ 回路 で ある 。
+[T] ＳＲＡＭ の メモリ セル は ラッチ 回路 で ある 。
+
+--[69 0.597115]--
+VP . -> [X0] は [X1] 。
+|--FIGDOT 2 -> 図 ２
+|--a circuit diagram VP -> [X0] 示す 回路 図 で ある
+   |--a circuit example of NP -> [X0] の 具体 的 な 回路 例 を
+      |--the semiconductor integrated circuit device VP -> [X0] 半導体 集積 回路 装置
+         |--according to NP -> [X0] に 係る
+            |--the first embodiment of NP -> 本 発明 の 第 １ の 実施 の 形態
+---
+[E] FIGDOT 2 is a circuit diagram showing a circuit example of the semiconductor integrated circuit device according to the first embodiment of this invention .
+[J] 図 ２ は 、 この 発明 の 第 １ 実施 形態 に 係る 半導体 集積 回路 装置 の 回路 例 を 示す 回路 図 で ある 。
+[T] 図 ２ は 本 発明 の 第 １ の 実施 の 形態 に 係る 半導体 集積 回路 装置 の 具体 的 な 回路 例 を 示す 回路 図 で ある 。
+
+--[75 0.641165]--
+S . -> [X0] 。
+|--NP , NP -> [X0] 、 [X1]
+   |--IN , NP -> [X0] 、 [X1] を [X2] こと が できる
+      |--a result -> その 結果
+      |--the air fuel ratio after NP -> <<17>> 後 の 空 燃比
+         |--the fuel cutoff -> 燃料 カット
+      |--be JJ -> [X0] に 制御 する
+         |--be NP -> [X0]
+            |--an appropriate value -> 適切 な 値
+   |--and NP -> [X0] を [X1] こと が できる
+      |--deterioration of NP -> [X0] の 劣化
+         |--emissions or JJ after NP -> <<54>> 後 の エミッション <<49>>
+            |--the like -> 等
+            |--the fuel cutoff -> 燃料 カット
+      |--be suppressed -> 抑制 する
+---
+[E] as a result , the air fuel ratio after the fuel cutoff can be controlled to be an appropriate value , and deterioration of emissions or the like after the fuel cutoff can be suppressed .
+[J] その 結果 、 燃料 カット 後 の 空 燃 比 を 適切 な 値 に 制御 する こと が でき 、 燃料 カット 後 における エミッション の 悪化 等 を 抑制 する こと が できる 。
+[T] その 結果 、 燃料 カット 後 の 空 燃比 を 適切 な 値 に 制御 する こと が できる 、 燃料 カット 後 の エミッション 等 の 劣化 を 抑制 する こと が できる 。
+
+--[81 0.520256]--
+VP . -> [X0] 。
+|--NP is VP -> [X0] に は [X1] が 設け られ て いる
+   |--an exhaust pipe 2 of NP -> <<10>> の 排気 管 ２
+      |--the engine 1 -> エンジン １
+   |--a catalytic converter 3 for VP -> <<29>> する ため の 触媒 コンバータ ３
+      |--cleaning NP from NP -> <<38>> から の <<31>> 洗浄
+         |--the engine 1 -> エンジン １
+         |--an exhaust gas emitted -> 排気 ガス 放出
+---
+[E] an exhaust pipe 2 of the engine 1 is provided with a catalytic converter 3 for cleaning an exhaust gas emitted from the engine 1 .
+[J] エンジン １ の 排気 管 ２ に は エンジン １ から 排出 さ れる 排気 ガス を 浄化 する 触媒 コンバータ ３ が 設け られる 。
+[T] エンジン １ の 排気 管 ２ に は エンジン １ から の 排気 ガス 放出 洗浄 する ため の 触媒 コンバータ ３ が 設け られ て いる 。
+
+--[99 1.000000]--
+VP . -> [X0] は 、 [X1] に関する もの で ある 。
+|--the present invention -> 本 発明
+|--a connector -> コネクタ
+---
+[E] the present invention relates to a connector .
+[J] 本 発明 は 、 コネクタ に関する もの で ある 。
+[T] 本 発明 は 、 コネクタ に関する もの で ある 。
+
+--[113 0.641387]--
+VP . -> [X0] は [X1] 示す 図 で ある 。
+|--FIGDOT 1 -> 図 １
+|--a schematic configuration of NP -> [X0] の 概略 構成 を
+   |--the image forming apparatus -> 画像 形成 装置
+---
+[E] FIGDOT 1 shows a schematic configuration of the image forming apparatus .
+[J] 図 １ は 画像 形成 装置 の 概略 構成 を 示し て いる 。
+[T] 図 １ は 画像 形成 装置 の 概略 構成 を 示す 図 で ある 。
+
+--[134 0.530935]--
+VP . -> [X0] 。
+|--NP is VP -> [X0] [X1] に 送ら れる
+   |--the sheet of NP -> シート [X0] の
+      |--paper 3 VP -> <<22>> 用紙 ３
+         |--onto which NP has VP -> に <<18>> が <<24>>
+            |--been transferred -> 転写 さ れ た
+            |--the toner image -> トナー 像
+   |--the fixing portion 21 -> 固定 部 ２１
+---
+[E] the sheet of paper 3 onto which the toner image has been transferred is conveyed to the fixing portion 21 .
+[J] トナー 像 が 転写 さ れ た 用紙 ３ は 、 定着 部 ２１ に 搬送 さ れる 。
+[T] シート に トナー 像 が 転写 さ れ た 用紙 ３ の 固定 部 ２１ に 送ら れる 。
+
+--[143 0.601675]--
+S . -> [X0] 、 [X1] 。
+|--as VP -> [X0] に 示す よう に
+   |--FIGDOT 1 -> 図 １
+|--NP is then VP -> その後 [X0] を [X1]
+   |--the toner image VP -> [X0] た トナー 像
+      |--carried on NP -> [X0] 上 に 載せ
+         |--the surface of NP NP -> 感光 [X0] の 表面
+            |--drum 29 -> ドラム ２９
+   |--transferred onto NP by NP -> 転写 ローラ ３２ は 感光 ドラム ２９ と 転写 ローラ ３２ と の 間 の 転写 位置 を 介し て 通っ て レジスト ローラ １４ により 搬送 さ れ て くる <<43>> と に 印加 さ れる 転写 バイアス によって <<43>> に 転写 さ れる
+      |--the sheet of NP -> 用紙 ３
+      |--the transfer bias VP -> <<58>> 転写 バイアス
+         |--applied to NP -> [X0] に 印加 さ れる
+            |--the transfer roller 32 NP -> 転写 ローラ ３２ <<68>>
+               |--when VP -> [X0] と
+                  |--NP conveyed by NP through NP -> <<94>> を 介し て <<85>> により 搬送 さ れ て くる <<73>>
+                     |--the sheet of NP -> 用紙 ３
+                     |--the registration rollers 14 passes -> 通っ て レジスト ローラ １４
+                     |--the transfer position between NP -> <<100>> と の 間 の 転写 位置
+                        |--the photosensitive drum 29 and NP -> は 感光 ドラム ２９ と <<106>>
+                           |--the transfer roller 32 -> 転写 ローラ ３２
+---
+[E] as shown in FIGDOT 1 , the toner image carried on the surface of the photosensitive drum 29 is then transferred onto the sheet of paper 3 by the transfer bias applied to the transfer roller 32 when the sheet of paper 3 conveyed by the registration rollers 14 passes through the transfer position between the photosensitive drum 29 and the transfer roller 32 .
+[J] その後 、 感光 ドラム ２９ の 表面 上 に 担 持 さ れ た トナー 像 は 、 図 １ に 示す よう に 、 レジスト ローラ １４ によって 搬送 さ れ て くる 用紙 ３ が 、 感光 ドラム ２９ と 転写 ローラ ３２ と の 間 の 転写 位置 を 通る 間 に 、 転写 ローラ ３２ に 印加 さ れる 転写 バイアス によって 、 用紙 ３ に 転写 さ れる 。
+[T] 図 １ に 示す よう に 、 その後 感光 ドラム ２９ の 表面 上 に 載せ た トナー 像 を 転写 ローラ ３２ は 感光 ドラム ２９ と 転写 ローラ ３２ と の 間 の 転写 位置 を 介し て 通っ て レジスト ローラ １４ により 搬送 さ れ て くる 用紙 ３ と に 印加 さ れる 転写 バイアス によって 用紙 ３ に 転写 さ れる 。
+
+--[153 0.508518]--
+S . -> [X0] 。
+|--by contrast , IN , VP -> これ に対して 、 <<80>> 、 <<81>>
+   |--in NP -> [X0]
+      |--a perpendicular magnetic recording apparatus NP -> 垂直 磁気 記録 装置 <<83>>
+         |---LRB- example -RRB- VP -> （ 実施 例 ） <<21>>
+            |--using NP -> を [X0]
+               |--the perpendicular VP -> 垂直 <<45>>
+                  |--NP was NP -> [X0] [X1] で あっ た
+                     |--double layered media VP -> 二 層 媒体 <<40>>
+                        |--NP hex NP -> [X0] Ｈｅｘ [X1]
+                           |--whose antiferromagnetic coupling force -> を 反 強 磁性 結合 力
+                           |--_ afc -> ＿ ＡＦＣ
+                     |--23 oe -> ２３ Ｏｅ
+   |--NP occurred -> [X0] が 発生 し た
+      |--no miserase of NP -> <<57>> の miserase ＮＯ
+         |--information VP -> [X0] に 記録 さ れ た 情報
+            |--the media VP -> <<68>> 媒体
+               |--caused by NP -> [X0] による
+                  |--remanent magnetization in NP -> <<78>> の 残留 磁化
+                     |--the main pole -> 主 磁極
+---
+[E] by contrast , in a perpendicular magnetic recording apparatus -LRB- example -RRB- using the perpendicular double layered media whose antiferromagnetic coupling force hex _ afc was 23 oe , no miserase of information recorded on the media caused by remanent magnetization in the main pole occurred .
+[J] これ に対して 、 反 強 磁性 結合 力 Ｈｅｘ ＿ ａｆｃ が ２３ Ｏｅ で ある 垂直 二 層 媒体 を 用い た 垂直 磁気 記録 装置 （ 実施 例 ） で は 、 主 磁極 の 残留 磁化 による 媒体 の 記録 情報 の 誤 消去 は 発生 し なかっ た 。
+[T] これ に対して 、 垂直 磁気 記録 装置 （ 実施 例 ） を 垂直 二 層 媒体 を 反 強 磁性 結合 力 Ｈｅｘ ＿ ＡＦＣ ２３ Ｏｅ で あっ た 、 主 磁極 の 残留 磁化 による 媒体 に 記録 さ れ た 情報 の miserase ＮＯ が 発生 し た 。
+
+--[169 0.521029]--
+S . -> 次に 、 [X0] 、 [X1] 。
+|--during NP -> [X0] 時
+   |--normal power operation of NP -> <<14>> の 通常 動作
+      |--the motor 2 -> モータ ２
+|--NP perform NP -> [X0] [X1] を 行う
+   |--the diodes -> ダイオード
+   |--full wave rectification of NP -> <<32>> を 全波 整流
+      |--ac electric power VP -> <<36>> 交流 電力
+         |--supplied from NP to VP -> <<50>> て <<40>> から 供給 さ れる
+            |--the three phase ac power source -> 三 相 交流 電源
+            |--convert it into NP -> [X0] に 変換 し
+               |--dc electric power -> 直流 電力
+---
+[E] then , during normal power operation of the motor 2 , the diodes perform full wave rectification of ac electric power supplied from the three phase ac power source to convert it into dc electric power .
+[J] そして 、 モータ ２ の 力行 時 に は ダイオード によって 、 ３ 相 交流 電源 から 供給 さ れる 交流 電力 を 全波 整流 し て 直流 電力 に 変換 する 。
+[T] 次に 、 モータ ２ の 通常 動作 時 、 ダイオード 直流 電力 に 変換 し て 三 相 交流 電源 から 供給 さ れる 交流 電力 を 全波 整流 を 行う 。
+
+--[194 0.511829]--
+VP . -> [X0] 。
+|--NP is VP -> [X0] は [X1] に 実行 さ れる
+   |--the present process -> 本 処理
+   |--intervals of NP -> [X0] 毎
+      |--a predetermined time period NP -> 所定 時間 [X0]
+         |---LRB- NP -RRB- -> （ [X0] ）
+            |--CD msec -> [X0] ミリ 秒
+               |--e.g. 100 -> 例えば １００
+---
+[E] the present process is carried out at intervals of a predetermined time period -LRB- e.g. 100 msec -RRB- .
+[J] 本 処理 は 、 所定 時間 （ 例えば １００ ｍｓｅｃ ） ごと に 実行 さ れる 。
+[T] 本 処理 は 所定 時間 （ 例えば １００ ミリ 秒 ） 毎 に 実行 さ れる 。
+
+--[201 0.553023]--
+S . -> [X0] て いる 。
+|--IN , VP -> [X0] で は 、 [X1]
+   |--this map -> この マップ
+   |--NP is VP -> [X0] は [X1]
+      |--the demanded torque tqecmdf -> 要求 トルク tqecmdf
+      |--set to NP as VP -> <<31>> <<19>> に 設定 さ れ
+         |--a larger value -> 大きな 値
+         |--NP is NP -> [X0] が [X1]
+            |--the engine speed ne -> エンジン 回転 数 ＮＥ
+            |--higher and as NP -> 高い と <<46>>
+               |--NP is larger -> [X0] が 大きい ほど
+                  |--the accelerator pedal opening ap -> アクセル ペダル 開 度 ＡＰ
+---
+[E] in this map , the demanded torque tqecmdf is set to a larger value as the engine speed ne is higher and as the accelerator pedal opening ap is larger .
+[J] この マップ で は 、 要求 トルク ＴＱＥ ＣＭ ＤＦ は 、 エンジン 回転 数 ＮＥ が 大きい ほど 、 および アクセル 開 度 ＡＰ が 大きい ほど 、 より 大きな 値 に 設定 さ れ て いる 。
+[T] この マップ で は 、 要求 トルク tqecmdf は エンジン 回転 数 ＮＥ が 高い と アクセル ペダル 開 度 ＡＰ が 大きい ほど 大きな 値 に 設定 さ れ て いる 。
+
+--[210 0.590245]--
+S . -> [X0] 。
+|--specifically , NP -> すなわち 、 [X0]
+   |--the ff amount VP -> ＦＦ 量 <<9>>
+      |--is NP -> は 、 [X1] [X0]
+         |--calculated at NP -> [X0] で 算出 し た
+            |--every second calculation timing VP -> <<21>> 第 ２ の 演算 タイミング 毎
+               |--based on NP -> [X0] に 基づい て
+                  |--an average value of NP -> [X0] の 平均 値
+                     |--fuel injection amounts -> 燃料 噴射 量
+         |--as NP -> [X0] よう に
+            |--be VP -> 後述 する
+---
+[E] specifically , the ff amount is calculated at every second calculation timing based on an average value of fuel injection amounts , as will be described later .
+[J] 具体 的 に は 、 ＦＦ 量 は 、 後述 する よう に 、 第 ２ の 演算 タイミング ごと に 燃料 噴射 量 の 平均 値 に 基づい て 演算 さ れる 。
+[T] すなわち 、 ＦＦ 量 は 、 後述 する よう に 燃料 噴射 量 の 平均 値 に 基づい て 第 ２ の 演算 タイミング 毎 で 算出 し た 。
+
+--[228 0.560596]--
+VP . -> [X0] は [X1] で ある 。
+|--FIGDOT 18 -> 図 １８
+|--a graph of NP -> [X0] の グラフ
+   |--an intensity distribution of light VP -> <<22>> 光 の 強度 分布
+      |--emitted by NP -> [X0] から 出射 さ れる
+         |--the linear light conductor of NP -> <<34>> の リニア 光 導体
+            |--the proposed lighting apparatus -> 提案 さ れ て いる 照明 装置
+---
+[E] FIGDOT 18 is a graph of an intensity distribution of light emitted by the linear light conductor of the proposed lighting apparatus .
+[J] 図 １８ は 、 提案 さ れ て いる 照明 装置 の 線 状 導 光 体 から 出射 さ れる 光 の 強度 分布 を 示す グラフ で ある 。
+[T] 図 １８ は 提案 さ れ て いる 照明 装置 の リニア 光 導体 から 出射 さ れる 光 の 強度 分布 の グラフ で ある 。
+
+--[230 0.603259]--
+S . -> [X0] 。
+|--IN , NP -> [X0] で は 、 [X1]
+   |--this proposed lighting apparatus -> この 提案 さ れ て いる 照明 装置
+   |--NP can VP -> [X0] [X1] する こと が できる
+      |--the liquid crystal panel -> 液晶 パネル
+      |--illuminated in plane -> 面 に 照射
+---
+[E] in this proposed lighting apparatus , the liquid crystal panel can be illuminated in plane .
+[J] この よう な 提案 さ れ て いる 照明 装置 で は 、 液晶 パネル を 平面 状 に 照明 する こと が できる 。
+[T] この 提案 さ れ て いる 照明 装置 で は 、 液晶 パネル 面 に 照射 する こと が できる 。
+
+--[233 0.731681]--
+S . -> [X0] 。
+|--thus , VP , NP , NP -> この よう に 、 <<5>> 、 <<20>> 、 <<40>>
+   |--and NP -> [X0] を [X1] こと が できる
+      |--good display characteristics -> 良好 な 表示 特性
+      |--be realized -> 実現 する
+   |--NP can VP -> [X0] を [X1] こと が でき
+      |--the light intensity distribution -> 光 強度 分布
+      |--be VP -> [X0] する
+         |--made NP -> [X0] 化
+            |--further uniform -> さらに 均一
+   |--according to NP -> 本 実施 形態 に よれ ば
+---
+[E] thus , according to the present embodiment , the light intensity distribution can be made further uniform , and good display characteristics can be realized .
+[J] 従って 、 本 実施 形態 に よれ ば 、 光 強度 分布 の 更 なる 均一 化 を 図る こと が でき 、 良好 な 表示 特性 を 実現 する こと が できる 。
+[T] この よう に 、 本 実施 形態 に よれ ば 、 光 強度 分布 を さらに 均一 化 する こと が でき 、 良好 な 表示 特性 を 実現 する こと が できる 。
+
+--[249 0.842801]--
+NP . -> [X0] 。
+|--a description NP -> [X0] て 説明 する
+   |--be NP -> [X0]
+      |--VP , VP -> [X0] 、 [X1]
+         |--made for NP on switch -> <<13>> スイッチ について
+            |--such a conventional push -> この よう な 従来 の プッシュ
+         |--using NP -> 図 ７ を 用い
+---
+[E] a description will be made for such a conventional push on switch , using FIGDOT 7 .
+[J] この よう な 従来 の プッシュ オン スイッチ について 、 図 ７ を 用い て 説明 する 。
+[T] この よう な 従来 の プッシュ スイッチ について 、 図 ７ を 用い て 説明 する 。
+
+--[250 0.507196]--
+S . -> ここ で 、 [X0] て いる 。
+|--NP are VP -> [X0] が [X1]
+   |--the respective parts of NP -> [X0] の 各部
+      |--elastic body 14 -> 弾性 体 １４
+   |--integrally formed -> 一体 に 形成 さ れ
+---
+[E] here , the respective parts of elastic body 14 are integrally formed .
+[J] なお 、 弾性 体 １４ の 各 部位 は 一体 形成 さ れ て いる 。
+[T] ここ で 、 弾性 体 １４ の 各部 が 一体 に 形成 さ れ て いる 。
+
+--[299 0.818978]--
+S . -> [X0] 、 [X1] 、 [X2] さ れ て いる 。
+|--NP include NP -> [X0] として は [X1]
+   |--the storage medium for VP -> <<16>> する ため の 記憶 媒体
+      |--supplying NP -> [X0] を 供給
+         |--the program code -> プログラム コード
+   |--NP , NP , NP , NP -> [X0] 、 [X1] 、 [X2] 、 [X3]
+      |--a floppy NP disk -> 例えば フロッピー <<28>> ディスク
+         |---LRB- NP -RRB- -> （ [X0] ）
+            |--registered trademark -> 登録 商標
+      |--a hard disk -> ハードディスク
+      |--a magnetic optical disk -> 光 磁気 ディスク
+      |--a cd rom -> ＣＤ － ＲＯＭ
+|--NP , NP -> [X0] 、 [X1] 、 [X2] 、 [X3]
+   |--NP r -> ＣＤ － Ｒ
+   |--a cd rw -> ＣＤ － ＲＷ
+   |--a dvd rom -> ＤＶＤ － ＲＯＭ
+   |--a dvd ram -> ＤＶＤ － ＲＡＭ
+|--NP , NP , NP , NP , NP -> [X0] 、 [X1] 、 [X2] 、 [X3] 、 [X4]
+   |--a dvd rw -> ＤＶＤ － ＲＷ
+   |--a dvd + rw -> ＤＶＤ ＋ ＲＷ
+   |--a magnetic tape -> 磁気 テープ
+   |--a nonvolatile memory card -> 不揮発 性 の メモリ カード
+   |--and NP -> [X0] と
+      |--a rom -> ＲＯＭ
+---
+[E] examples of the storage medium for supplying the program code include a floppy -LRB- registered trademark -RRB- disk , a hard disk , a magnetic optical disk , a cd rom , a cd r , a cd rw , a dvd rom , a dvd ram , a dvd rw , a dvd + rw , a magnetic tape , a nonvolatile memory card , and a rom .
+[J] また 、 プログラム コード を 供給 する ため の 記憶 媒体 として は 、 例えば 、 フロッピー （ 登録 商標 ） ディスク 、 ハードディスク 、 光 磁気 ディスク 、 ＣＤ － ＲＯＭ 、 ＣＤ － Ｒ 、 ＣＤ － ＲＷ 、 ＤＶＤ － ＲＯＭ 、 ＤＶＤ － ＲＡＭ 、 ＤＶＤ － ＲＷ 、 ＤＶＤ ＋ ＲＷ 、 磁気 テープ 、 不揮発 性 の メモリ カード 、 ＲＯＭ 等 を 用いる こと が できる 。
+[T] プログラム コード を 供給 する ため の 記憶 媒体 として は 例えば フロッピー （ 登録 商標 ） ディスク 、 ハードディスク 、 光 磁気 ディスク 、 ＣＤ － ＲＯＭ 、 ＣＤ － Ｒ 、 ＣＤ － ＲＷ 、 ＤＶＤ － ＲＯＭ 、 ＤＶＤ － ＲＡＭ 、 ＤＶＤ － ＲＷ 、 ＤＶＤ ＋ ＲＷ 、 磁気 テープ 、 不揮発 性 の メモリ カード 、 ＲＯＭ と さ れ て いる 。
+
+--[324 0.768417]--
+S . -> [X0] 。
+|--IN , NP -> [X0] において 、 [X1]
+   |--step s2 -> ステップ Ｓ２
+   |--is VP -> [X0] が 判定 さ れる
+      |--whether VP or not -> [X0] て いる か 否 か
+         |--NP is satisfied -> [X0] が 成立 し
+            |--an engine shutdown condition -> エンジン 停止 条件
+---
+[E] in step s2 , it is determined whether an engine shutdown condition is satisfied or not .
+[J] ステップ Ｓ ２ で は 、 エンジン 停止 条件 が 成立 し て いる か 否 か が 判定 さ れる 。
+[T] ステップ Ｓ２ において 、 エンジン 停止 条件 が 成立 し て いる か 否 か が 判定 さ れる 。
+
+--[326 0.605840]--
+S . -> しかし 、 [X0] 。
+|--NP is JJ -> [X0] は [X1] に 限定 さ れる もの で は ない
+   |--the present invention -> 本 発明
+   |--represented examples -> 代表 例
+---
+[E] however , the present invention is not limited to represented examples .
+[J] ただし 、 本 発明 は 図示 例 の もの に 限定 さ れる もの で は ない 。
+[T] しかし 、 本 発明 は 代表 例 に 限定 さ れる もの で は ない 。
+
+--[334 0.553676]--
+S . -> [X0] 、 [X1] 。
+|--on NP -> 一方
+|--NP is NP -> [X0] は [X1]
+   |--another end of NP -> [X0] の 他端
+      |--the pd 233 -> ＰＤ ２３３
+   |--VP and VP -> [X0] に 接続 さ れ 、 [X1]
+      |--ends of NP -> [X0] の 両端
+         |--adjacent pd 233 VP -> 隣接 する <<36>> ＰＤ ２３３
+            |--arranged in NP -> [X0] に 配置 さ れ て いる
+               |--each line -> 各 ライン
+      |--connected to NP 239 through NP -> <<56>> を 介し て <<48>> ２３９ に 接続 さ れ て いる
+         |--a bias supply -> バイアス 電源
+         |--a common bias line lb -> 共通 の バイアス 線 Ｌｂ
+---
+[E] on the other hand , another end of the pd 233 is connected to ends of adjacent pd 233 arranged in each line and connected to a bias supply 239 through a common bias line lb .
+[J] 一方 、 ＰＤ ２３３ の 他端 は 、 各行 に 配さ れ た 隣接 する ＰＤ ２３３ の 一端 と 接続 さ れ て 共通 の バイアス 線 Ｌｂ を 通じ て バイアス 電源 ２３９ に 接続 さ れ て いる 。
+[T] 一方 、 ＰＤ ２３３ の 他端 は 隣接 する 各 ライン に 配置 さ れ て いる ＰＤ ２３３ の 両端 に 接続 さ れ 、 共通 の バイアス 線 Ｌｂ を 介し て バイアス 電源 ２３９ に 接続 さ れ て いる 。
+
+--[336 0.660633]--
+S . -> [X0] 。
+|--IN , for example , NP -> [X0] は 、 例えば 、 [X1]
+   |--as NP -> [X0] として
+      |--the transistor -> トランジスタ
+   |--NP 234 VP -> [X0] ２３４ [X1]
+      |--a thin film transistor NP -> 薄膜トランジスタ [X0]
+         |---LRB- tft -RRB- -> （ ＴＦＴ ）
+      |--is used -> が 用い られる
+---
+[E] as the transistor , for example , a thin film transistor -LRB- tft -RRB- 234 is used .
+[J] トランジスタ は 、 例えば 薄膜トランジスタ （ ＴＦＴ ） ２３４ が 用い られる 。
+[T] トランジスタ として は 、 例えば 、 薄膜トランジスタ （ ＴＦＴ ） ２３４ が 用い られる 。
+
+--[338 0.645000]--
+S . -> [X0] 。
+|--NP , VP -> [X0] 、 [X1]
+   |--when VP -> [X0] が 押さ れる と
+      |--the module 7 -> モジュール ７
+   |--NP moves -> [X0] が 移動 する
+      |--the cam member 13 -> カム 部材 １３
+---
+[E] when the module 7 is pushed , the cam member 13 moves .
+[J] モジュール ７ を 押 圧する と 、 カム 部材 １３ が 移動 する 。
+[T] モジュール ７ が 押さ れる と 、 カム 部材 １３ が 移動 する 。
+
+--[340 0.660633]--
+S . -> 次に 、 [X0] 。
+|--description NP -> [X0] 説明 する
+   |--be VP -> [X0] を
+      |--a case NP -> [X0] 場合
+         |--NP is VP -> [X0] を [X1] から 取り外す
+            |--the module 7 -> モジュール ７
+            |--the information processing device 1 -> 情報処理 装置 １
+---
+[E] now , description will be given of a case where the module 7 is removed from the information processing device 1 .
+[J] 次に 、 モジュール ７ を 情報処理 装置 １ から 取り出す 場合 について 説明 する 。
+[T] 次に 、 モジュール ７ を 情報処理 装置 １ から 取り外す 場合 を 説明 する 。
+
+--[342 0.619684]--
+S . -> [X0] て いる 。
+|--IN , VP -> [X0] 、 [X1] が [X2]
+   |--as VP -> [X0] から 明らか な よう に
+      |--FIGDOT 4 NP -> [X0] 図 ４
+         |--where VP -> [X0] た
+            |--NP is detached -> <<16>> を 取り外し
+               |--the cover member 12 -> カバー 部材 １２
+   |--a cam member 13 , NP , NP , NP -> カム 部材 １３ 、 <<32>> 、 <<38>> 、 <<65>>
+      |--a latch member 14 -> ラッチ 部材 １４
+      |--and NP -> および [X0]
+         |--a return spring 16 -> リターン スプリング １６
+      |--a rod spring 15 -> ロッド バネ １５
+   |--disposed between NP -> [X0] と [X1] と の 間 に 配置 さ れ
+      |--the base member 11 -> ベース 部材 １１
+      |--the cover member 12 -> カバー 部材 １２
+---
+[E] as seen from FIGDOT 4 where the cover member 12 is detached , a cam member 13 , a latch member 14 , a rod spring 15 , and a return spring 16 are disposed between the base member 11 and the cover member 12 .
+[J] カバー 部材 １２ 外し た 図 ４ から 分かる よう に 、 ベース 部材 １１ と カバー 部材 １２ と の 間 に は 、 カム 部材 １３ 、 ラッチ 部材 １４ 、 ロッド スプリング １５ 、 及び 復帰 スプリング １６ が 配置 さ れ て いる 。
+[T] カバー 部材 １２ を 取り外し た 図 ４ から 明らか な よう に 、 カム 部材 １３ 、 ラッチ 部材 １４ 、 ロッド バネ １５ 、 および リターン スプリング １６ が ベース 部材 １１ と カバー 部材 １２ と の 間 に 配置 さ れ て いる 。
+
+--[343 0.718711]--
+S . -> [X0] て いる 。
+|--specifically , NP , VP -> 具体 的 に は 、 [X0] 、 [X1]
+   |--when VP -> [X0] と
+      |--NP starts moving -> <<9>> が 移動 を 開始 する
+         |--the cam member 13 -> カム 部材 １３
+   |--NP urges NP -> <<21>> urges <<30>>
+      |--the rod NP -> ロッド [X0]
+         |--spring 15 -> バネ １５
+      |--the latch member 14 toward NP -> ラッチ 部材 １４ を <<37>> に 向け
+         |--the second position -> 第 ２ の 位置
+---
+[E] specifically , when the cam member 13 starts moving , the rod spring 15 urges the latch member 14 toward the second position .
+[J] 具体 的 に は 、 カム 部材 １３ が 移動 を 開始 する と 、 ロック スプリング １５ が ラッチ 部材 １４ を 第 ２ の 位置 に 向け て 付 勢 する 。
+[T] 具体 的 に は 、 カム 部材 １３ が 移動 を 開始 する と 、 ロッド バネ １５ urges ラッチ 部材 １４ を 第 ２ の 位置 に 向け て いる 。
+
+--[370 0.645000]--
+S . -> まず 、 [X0] 。
+|--NP is explained -> [X0] を 説明 する
+   |--a NP first method -> <<7>> 第 １ の 方法
+      |--much simpler -> 非常 に 簡単 な
+---
+[E] first , a much simpler first method is explained .
+[J] まず 、 より 簡便 な 第 １ の 方法 を 説明 する 。
+[T] まず 、 非常 に 簡単 な 第 １ の 方法 を 説明 する 。
+
+--[372 0.519552]--
+NP . -> [X0] ３０ と [X1] 。
+|--specific circuitry of NP -> <<9>> の 具体 的 な 回路
+   |--the NP / phase corrector -> <<11>> ・ 位相 補正 回路
+      |--offset / amplitude -> オフセット ／ 振幅
+|--the third harmonic distortion corrector 40 VP -> 第 ３ 高調 波 歪 補正 部 ４０ <<28>>
+   |--are VP -> は [X0]
+      |--described with NP -> [X0] を 参照 し て 説明 する
+         |--FIGDOT 2 -> 図 ２
+---
+[E] specific circuitry of the offset / amplitude / phase corrector 30 and the third harmonic distortion corrector 40 are described with reference to FIGDOT 2 .
+[J] 次に 、 オフセット ・ 振幅 ・ 位相 補正 部 ３０ 及び ３ 次 高調 波 歪 補正 部 ４０ の 具体 的 な 回路 構成 を 、 図 ２ を 参照 し て 説明 する 。
+[T] オフセット ／ 振幅 ・ 位相 補正 回路 の 具体 的 な 回路 ３０ と 第 ３ 高調 波 歪 補正 部 ４０ は 図 ２ を 参照 し て 説明 する 。
+
+--[374 1.000000]--
+-LRB- NP -RRB- -> （ [X0] ）
+|--method 2 -> 方法 ２
+---
+[E] -LRB- method 2 -RRB-
+[J] （ 方法 ２ ）
+[T] （ 方法 ２ ）
+
+--[380 0.802022]--
+VP . -> [X0] は [X1] 。
+|--FIGDOT 1 -> 図 １
+|--a block diagram VP -> [X0] 示す ブロック 図 で ある
+   |--a basic configuration of NP -> [X0] の 基本 的 構成 を
+      |--an encoder output signal correction device 1 VP -> <<29>> エンコーダ 出力 信号 補正 装置 １
+         |--according to NP -> [X0] に 係る
+            |--an embodiment of NP -> 本 発明 の 実施 の 形態
+---
+[E] FIGDOT 1 is a block diagram showing a basic configuration of an encoder output signal correction device 1 according to an embodiment of the present invention .
+[J] 図 １ は 、 この 発明 の 実施 の 形態 に 係る エンコーダ 出力 信号 補正 装置 １ の 基本 構成 を 示す ブロック 図 で ある 。
+[T] 図 １ は 本 発明 の 実施 の 形態 に 係る エンコーダ 出力 信号 補正 装置 １ の 基本 的 構成 を 示す ブロック 図 で ある 。
+
+--[382 0.539138]--
+VP . -> [X0] 。
+|--NP is VP -> [X1] に [X0] が 設け られ て いる
+   |--a fuel injection device 9 -> は 燃料 噴射 装置 ９
+   |--the intake passage 7 -> 吸気 通路 ７
+---
+[E] a fuel injection device 9 is provided in the intake passage 7 .
+[J] また 、 吸気 通路 ７ に は 、 燃料 噴射 装置 ９ が 取り付け られ て いる 。
+[T] 吸気 通路 ７ に は 燃料 噴射 装置 ９ が 設け られ て いる 。
+
+--[386 0.568786]--
+VP . -> [X0] 。
+|--NP is VP -> [X1] 下方 に [X0] が 設け られ て いる
+   |--a crank 4 NP -> <<7>> クランク ４
+      |--that VP -> [X0] を 駆動 する
+         |--the piston 3 -> ピストン ３
+   |--the piston 3 -> ピストン ３ の
+---
+[E] a crank 4 that drives the piston 3 is provided under the piston 3 .
+[J] また 、 ピストン ３ の 下方 に は 、 ピストン ３ を 駆動 する ため の クランク ４ が 設け られ て いる 。
+[T] ピストン ３ の 下方 に ピストン ３ を 駆動 する クランク ４ が 設け られ て いる 。
+
+--[387 0.711448]--
+VP . -> [X0] は [X1] 。
+|--the control valve 24 -> 制御 弁 ２４
+|--supplied with oil from NP through NP -> <<24>> を 介し て <<17>> から 油 が 供給 さ れる
+   |--a high pressure pipe c -> 高圧 配管 Ｃ
+   |--an oil pump 26 -> オイル ポンプ ２６
+---
+[E] the control valve 24 is supplied with oil from an oil pump 26 through a high pressure pipe c .
+[J] また 、 制御 弁 ２４ に は 、 高圧 配管 Ｃ を 介し て オイル ポンプ ２６ から 油 が 供給 さ れる 。
+[T] 制御 弁 ２４ は 高圧 配管 Ｃ を 介し て オイル ポンプ ２６ から 油 が 供給 さ れる 。
+
+--[405 0.641889]--
+NP . -> [X0] 。
+|--NP may VP -> [X0] を [X1] し て も よい
+   |--the reduction sensitizer -> 還元 増 感 剤
+   |--added at NP -> <<15>> で 添加
+      |--any stage in NP from NP to NP -> <<29>> から <<35>> まで の <<20>> の どの 段階
+         |--the preparation step just before coating -> 塗布 直前 の 調製 工程
+         |--the photosensitive emulsion production process -> 感光 乳剤 製造 工程
+         |--crystal growth -> 結晶 成長
+---
+[E] the reduction sensitizer may be added at any stage in the photosensitive emulsion production process from crystal growth to the preparation step just before coating .
+[J] 還元 増 感 剤 の 添加 は 、 結晶 成長 から 塗布 直前 の 調製 工程 まで の 感光 乳剤 製造 工程 の どの 過程 で も 良い 。
+[T] 還元 増 感 剤 を 結晶 成長 から 塗布 直前 の 調製 工程 まで の 感光 乳剤 製造 工程 の どの 段階 で 添加 し て も よい 。
+
+--[410 0.625849]--
+VP . -> [X0] 。
+|--NP are VP -> 以下 [X0] を 示す
+   |--chemical structures of NP -> <<9>> の 化学 構造
+      |--the compounds VP -> <<12>> 化合 物
+         |--used in NP -> [X0] に 用い られる
+            |--examples of NP -> [X0] の 実施 例
+               |--the invention -> 本 発明
+---
+[E] chemical structures of the compounds used in examples of the invention are shown below .
+[J] 以下 に 本 発明 の 実施 例 で 用い た 化合 物 の 化学 構造 を 示す 。
+[T] 以下 本 発明 の 実施 例 に 用い られる 化合 物 の 化学 構造 を 示す 。
+
+--[411 0.740046]--
+NP . -> [X0] で ある 。
+|--TO , NP -> [X0] 、 [X1]
+   |--NP is NP to NP -> [X0] は 、 [X1] 〜 [X2]
+      |--time period for NP -> <<8>> 時間
+         |--the development -> 現像
+      |--NP , more preferably NP -> <<14>> 、 より 好ましく は <<26>>
+         |--3 seconds -> ３ 秒
+         |--preferably NP -> [X0] が 好ましく
+            |--NP seconds -> [X0] 秒
+               |--1 second to 60 -> １ 秒 〜 ６０
+      |--30 seconds -> ３０ 秒
+   |--further NP to NP to NP -> さらに <<37>> 〜 <<44>> 〜 <<59>>
+      |--15 seconds -> １５ 秒
+      |--NP , NP -> [X0] 、 [X1]
+         |--25 seconds -> ２５ 秒
+         |--particularly preferably NP -> 特に 好ましく は <<54>>
+            |--7 seconds -> ７ 秒
+      |--CD seconds -> [X0] 秒
+         |--preferably 5 -> 好ましく は ５
+---
+[E] time period for the development is preferably 1 second to 60 seconds , more preferably 3 seconds to 30 seconds , further preferably 5 seconds to 25 seconds , and particularly preferably 7 seconds to 15 seconds .
+[J] 現像 時間 として は １ 秒 〜 ６０ 秒 が 好ましく 、 より 好ましく は ３ 秒 〜 ３０ 秒 、 さらに 好ましく は ５ 秒 〜 ２５ 秒 、 ７ 秒 〜 １５ 秒 が 特に 好ましい 。
+[T] 現像 時間 は 、 １ 秒 〜 ６０ 秒 が 好ましく 、 より 好ましく は ３ 秒 〜 ３０ 秒 、 さらに 好ましく は ５ 秒 〜 ２５ 秒 、 特に 好ましく は ７ 秒 〜 １５ 秒 で ある 。
+
+--[416 1.000000]--
+NP . -> [X0] [X1] 。
+|--a configuration of NP -> [X0] の 構成 を
+   |--the corrector circuit 4 -> 補正 回路 ４
+|--be VP -> [X0]
+   |--described hereunder -> 説明 する
+---
+[E] a configuration of the corrector circuit 4 will be described hereunder .
+[J] 補正 回路 ４ の 構成 を 説明 する 。
+[T] 補正 回路 ４ の 構成 を 説明 する 。
+
+--[417 0.596051]--
+S . -> これ により 、 [X0] 。
+|--NP can VP -> [X0] を [X1] こと が できる
+   |--a digital analog converter circuit JJ -> <<12>> デジタル ・ アナログ コンバータ 回路
+      |--corresponding to NP -> [X0] に 対応 する
+         |--a NP digital signals -> <<18>> の デジタル 信号
+            |--five bit -> ５ ビット
+   |--be configured -> 構成 する
+---
+[E] thereby , a digital analog converter circuit corresponding to a five bit digital signals can be configured .
+[J] これ に より 、 ５ ビット の デジタル 信号 に 対応 し た デジタル アナログ 変換 回路 を 構成 する こと が できる 。
+[T] これ により 、 ５ ビット の デジタル 信号 に 対応 する デジタル ・ アナログ コンバータ 回路 を 構成 する こと が できる 。
+
+--[423 0.502501]--
+S . -> [X0] 、 [X1] て いる 。
+|--as VP -> [X0] に 示す よう に
+   |--FIGDOT 5 -> 図 ５
+|--NP is VP -> [X0] は [X1]
+   |--an optical / guide CD -> 光 ／ ガイド <<19>>
+      |--block 40 -> ブロック ４０
+   |--formed in NP by VP -> <<37>> により <<28>> に 形成 さ れ
+      |--a JJ shape -> [X0] 字 状
+         |--generally u -> 略 Ｕ
+      |--combining NP -> [X0] の 組み合わせ
+         |--the guide NP -> ガイド [X0]
+            |--blocks 11 and NP -> ブロック １１ と <<47>>
+               |--the optical block CD -> 光学 ブロック [X0]
+                  |--12 of NP -> １２ を [X0]
+                     |--the first embodiment VP -> [X0] 第 １ の 実施 形態
+                        |--described above in NP -> [X0] に 上述 し た
+                           |--one piece -> 一体
+---
+[E] as shown in FIGDOT 5 , an optical / guide block 40 is formed in a generally u shape by combining the guide blocks 11 and the optical block 12 of the first embodiment described above in one piece .
+[J] 図 ５ に 示す よう に 、 光学 ／ ガイド ブロック ４０ は 、 上述 し た 第 １ の 実施 形態 における ガイド ブロック １１ と 光学 ブロック １２ と を 一体 に し 、 略 コ 字形 状 に 形成 し た もの で ある 。
+[T] 図 ５ に 示す よう に 、 光 ／ ガイド ブロック ４０ は ガイド ブロック １１ と 光学 ブロック １２ を 一体 に 上述 し た 第 １ の 実施 形態 の 組み合わせ により 略 Ｕ 字 状 に 形成 さ れ て いる 。
+
+--[431 0.532976]--
+S . -> また 、 [X0] 、 [X1] 。
+|--as VP -> [X0] に 示す よう に
+   |--FIGDOT 3 and NP -> 図 ３ 及び [X0]
+      |--FIGDOT 4 -> 図 ４
+|--NP is VP -> [X0] は [X1]
+   |--the electrical wiring on NP -> 電気 配線 <<27>> に
+      |--the other surface of NP -> [X0] の 他方 の 面
+         |--the substrate 10 -> 基板 １０
+   |--electrically connected to NP 4 -> <<46>> ４ と 電気 的 に 接続 さ れ て いる
+      |--another circuit substrate NP through NP -> <<58>> を 介し て 他 の 回路 基板 <<50>>
+         |---LRB- NP -RRB- -> （ [X0] ）
+            |--mother board -> マザー ボード
+         |--solder balls -> 半田 ボール
+---
+[E] also , as illustrated in FIGDOT 3 and FIGDOT 4 , the electrical wiring on the other surface of the substrate 10 is electrically connected to another circuit substrate -LRB- mother board -RRB- through solder balls 4 .
+[J] また 、 図 ３ 及び 図 ４ に 例示 する よう に 、 基板 １０ の 他 方面 側 の 電気 配線 は 、 ボール ハンダ ４ を 介し て 他 の 回路 基板 （ マザー ボード ） 等 と 電気 的 に 接続 さ れる 。
+[T] また 、 図 ３ 及び 図 ４ に 示す よう に 、 電気 配線 基板 １０ の 他方 の 面 に は 半田 ボール を 介し て 他 の 回路 基板 （ マザー ボード ） ４ と 電気 的 に 接続 さ れ て いる 。
+
+--[453 0.596626]--
+S . -> [X0] 、 [X1] 。
+|--after VP -> [X0] た 後
+   |--NP are detected -> [X0] が 検出 さ れ
+      |--the number of NP -> [X0] の 数
+         |--bits ra -> ビット ＲＡ
+|--NP acquires NP -> [X0] は [X1] を 取得 する
+   |--the extraction circuit 30 -> 抽出 回路 ３０
+   |--the codeword rb of NP -> <<34>> の 符号 語 Ｒｂ
+      |--the suffix portion of NP -> <<41>> の 添え 字 部分
+         |--the codeword sa from NP -> <<78>> から の 符号 語 ＳＡ
+            |--the buffer NP -> バッファ [X0]
+               |--circuit 10 with reference to NP -> <<60>> を 参照 し て 回路 １０
+                  |--the number of NP -> [X0] の 数
+                     |--bits VP -> [X0] ビット
+                        |--ra stored in NP -> Ｒａ <<74>> に 格納 さ れ た
+                           |--the bit number register 34 -> ビット 数 レジスタ ３４
+---
+[E] after the number of bits ra are detected , the extraction circuit 30 acquires the codeword rb of the suffix portion of the codeword sa from the buffer circuit 10 with reference to the number of bits ra stored in the bit number register 34 .
+[J] ビット 数 Ｒａ が 検出 さ れ た 後 、 抽出 回路 ３０ が 、 ビット 数 レジスタ ３４ に 格納 さ れ た ビット 数 Ｒａ を 参照 し て 、 バッファ 回路 １０ から 符号 語 ＳＡ の サフィックス 部 の 符号 語 Ｒｂ を 取得 する 。
+[T] ビット ＲＡ の 数 が 検出 さ れ た 後 、 抽出 回路 ３０ は バッファ Ｒａ ビット 数 レジスタ ３４ に 格納 さ れ た ビット の 数 を 参照 し て 回路 １０ から の 符号 語 ＳＡ の 添え 字 部分 の 符号 語 Ｒｂ を 取得 する 。
+
+--[461 0.547316]--
+S . -> 次に 、 [X0] 。
+|--the extraction VP NP -> 抽出 <<9>> <<14>>
+   |--shifting NP -> シフト [X0]
+      |--circuit 31 -> 回路 ３１
+   |--VP , DT , IN -> 、 <<40>> 、 <<49>> <<48>>
+      |--updates NP by NP -> <<24>> によって <<16>> を 更新 する
+         |--the buffer circuit 10 -> バッファ 回路 １０
+         |--the number of NP -> [X0] の ビット 数
+            |--the acquired bit string -> 取得 し た ビット列
+      |--that is -> すなわち
+      |--by NP -> [X0] で
+         |--eight bits -> ８ ビット
+---
+[E] next , the extraction shifting circuit 31 updates the buffer circuit 10 by the number of bits of the acquired bit string , that is , by eight bits .
+[J] 次いで 、 抽出 シフト 回路 ３１ が 、 取得 し た ビット列 の ビット 数 、 即ち ８ ビット 分 だけ 、 バッファ 回路 １０ を 更新 する 。
+[T] 次に 、 抽出 シフト 回路 ３１ 、 すなわち 、 ８ ビット で 取得 し た ビット列 の ビット 数 によって バッファ 回路 １０ を 更新 する 。
+
+--[464 0.587552]--
+NP . -> [X0] で ある 。
+|--VP , for example -> [X0] は 、 例えば [X1]
+   |--the codeword length table tc -> 符号 語 長 テーブル ＴＣ
+   |--a table for VP -> <<17>> ため の テーブル
+      |--looking up NP as VP -> <<44>> よう に <<22>> を 検索 する
+         |--shown in NP -> 図 ７ に 示す
+         |--the code length of NP -> [X0] の 符号 長
+            |--the codeword VP -> 符号 語 <<32>>
+               |--stored in NP -> [X0] に 格納 さ れ た
+                  |--the buffer circuit 10 -> バッファ 回路 １０
+---
+[E] the codeword length table tc is a table for looking up the code length of the codeword stored in the buffer circuit 10 as shown in FIGDOT 7 , for example .
+[J] 符号 語 長 テーブル Ｔｃ は 、 例えば 図 ７ に 示す よう な 、 バッファ 回路 １０ に 格納 さ れ た 符号 語 の 符号 長 を 調べる テーブル で ある 。
+[T] 符号 語 長 テーブル ＴＣ は 、 例えば 図 ７ に 示す よう に 符号 語 バッファ 回路 １０ に 格納 さ れ た の 符号 長 を 検索 する ため の テーブル で ある 。
+
+--[474 0.556998]--
+S . -> [X0] 、 [X1] て いる 。
+|--NP upon NP -> [X1] 時 [X0]
+   |---LRB- s10 -RRB- -> （ Ｓ１０ ）
+   |--initiating seek -> シーク 開始
+|--NP is VP -> [X1] て [X0] が 形成 さ れ
+   |--a coarse control velocity curve -> 粗 調 速度 カーブ
+   |--according to NP -> [X0] に 応じ
+      |--the distance between NP -> [X0] と [X1] と の 距離
+         |--the current position of NP -> [X0] の 現在 位置
+            |--the magnetic head 26 -> 磁気 ヘッド ２６
+         |--the seek target position -> シーク の 目標 位置
+---
+[E] -LRB- s10 -RRB- upon initiating seek , a coarse control velocity curve is formed according to the distance between the current position of the magnetic head 26 and the seek target position .
+[J] （ Ｓ １０ ） シーク 開始 に あたり 、 磁気 ヘッド ２６ の 現在 位置 と シーク の 目標 位置 と の 距離 に 従い 、 コアース 制御 の 速度 カーブ が 形成 さ れ て いる もの と する 。
+[T] シーク 開始 時 （ Ｓ１０ ） 、 磁気 ヘッド ２６ の 現在 位置 と シーク の 目標 位置 と の 距離 に 応じ て 粗 調 速度 カーブ が 形成 さ れ て いる 。
+
+--[479 0.511829]--
+NP . -> [X0] と [X1] 。
+|--the arm 16 -> アーム １６
+|--ramp 20 VP -> ランプ ２０ <<11>>
+   |--are VP -> が [X0]
+      |--explained VP -> [X0] を 用い て 説明 する
+         |--FIGDOT 2 and NP -> 図 ２ 及び [X0]
+            |--FIGDOT 3 -> 図 ３
+---
+[E] the arm 16 and ramp 20 are explained using FIGDOT 2 and FIGDOT 3 .
+[J] 図 ２ 及び 図 ３ に より 、 アーム １６ と ランプ ２０ を 説明 する 。
+[T] アーム １６ と ランプ ２０ が 図 ２ 及び 図 ３ を 用い て 説明 する 。
+
+--[484 0.673388]--
+S . -> [X0] する 。
+|--IN , VP -> [X0] で あれ ば 、 [X1]
+   |--NP is within NP -> [X0] が [X1] 内
+      |--the position error -> 位置 誤差
+      |--a prescribed range NP -> 所定 の 範囲 <<18>>
+         |---LRB- for example , NP -> （ 例えば 、 [X0] ）
+            |--0.5 tracks -> ０ ． ５ トラック
+   |--NP is VP -> [X0] に 遷移
+      |--fine control NP -> ファイン 制御 [X0]
+         |---LRB- NP -RRB- -> （ [X0] ）
+            |--position control -> 位置 制御
+---
+[E] if the position error is within a prescribed range -LRB- for example , 0.5 tracks -RRB- , a transition is made to fine control -LRB- position control -RRB- .
+[J] 又 、 位置 誤差 が 所定 の 範囲 （ 例えば 、 ０ ． ５ トラック ） で あれ ば 、 ファ イン 制御 （ 位置 制御 ） に 移行 する 。
+[T] 位置 誤差 が 所定 の 範囲 （ 例えば 、 ０ ． ５ トラック ） 内 で あれ ば 、 ファイン 制御 （ 位置 制御 ） に 遷移 する 。
+
+--[486 0.814992]--
+VP . -> [X0] は [X1] 。
+|--the electrodes 10 -> 電極 １０
+|--connected to NP -> [X1] [X0] に 接続 さ れ て いる
+   |--an electric circuit 20 -> 電気 回路 ２０
+   |--which VP -> に は [X0]
+      |--be VP -> 後述 する
+---
+[E] the electrodes 10 are connected to an electric circuit 20 , which is to be described later .
+[J] 各 棒状 電極 １０ は 後述 する 電気 回路 ２０ に 接続 さ れ て いる 。
+[T] 電極 １０ は に は 後述 する 電気 回路 ２０ に 接続 さ れ て いる 。
+
+--[503 0.547481]--
+NP . -> また [X0] は [X1] 。
+|--this invention -> 本 発明
+|--concerned with NP -> [X0] に関する
+   |--a purified organometallic compound VP -> <<19>> 精製 有機 金属 化合 物
+      |--obtained by NP -> [X0] で 得 られ た
+         |--the purification method -> 浄化 方法
+---
+[E] this invention is also concerned with a purified organometallic compound obtained by the purification method .
+[J] また 、 本 発明 は 、 この 精製 方法 によって 得 られ た 精製 有機 金属 化合 物 に関する 。
+[T] また 本 発明 は 浄化 方法 で 得 られ た 精製 有機 金属 化合 物 に関する 。
+
+--[513 0.543865]--
+S . -> [X0] 。
+|--next , VP , NP -> 次に 、 [X0] 、 [X1]
+   |--NP is VP -> [X0] を [X1]
+      |--the delay adjustment signal dad -> 遅延 調整 信号 ＤＡＤ
+      |--set VP -> ０ に セット し
+   |--NP is supplied -> [X0] が 供給 さ れる
+      |--the predetermined clock signal ck0 -> 所定 の クロック 信号 ＣＫ０
+---
+[E] next , the delay adjustment signal dad is set to zero , and the predetermined clock signal ck0 is supplied .
+[J] 次に 、 遅延 調整 信号 ＤＡＤ を ０ に 設定 し て 、 所定 の クロック 信号 ＣＫ ０ を 与える 。
+[T] 次に 、 遅延 調整 信号 ＤＡＤ を ０ に セット し 、 所定 の クロック 信号 ＣＫ０ が 供給 さ れる 。
+
+--[523 0.568399]--
+NP . -> [X0] 。
+|--NP 50 and NP -> [X0] ５０ と [X1]
+   |--an application program -> アプリケーション プログラム
+   |--a virtual management program 51 VP -> 仮想 管理 プログラム ５１ <<16>>
+      |--are NP -> が [X0]
+         |--VP and VP -> [X0] て [X1]
+            |--loaded into -> 装着 さ れ
+            |--executed by NP -> [X0] によって 実行 さ れる
+               |--the host NP -> ホスト コンピュータ １
+---
+[E] an application program 50 and a virtual management program 51 are loaded into and executed by the host computer 1 .
+[J] ホスト コンピュータ １ で は 、 アプリケーション プログラム ５０ と 仮想 管理 プログラム ５１ が ロード さ れ て 実行 さ れる 。
+[T] アプリケーション プログラム ５０ と 仮想 管理 プログラム ５１ が 装着 さ れ て ホスト コンピュータ １ によって 実行 さ れる 。
+
+--[528 0.669048]--
+S . -> 以下 、 [X0] 。
+|--DT will VP -> [X0] について 説明 する
+   |--each of NP -> 各 [X0]
+      |--the optical surfaces -> 光学 面
+---
+[E] hereinafter , each of the optical surfaces will be explained .
+[J] 以下 、 各 光学 作用 面 について 説明 する 。
+[T] 以下 、 各 光学 面 について 説明 する 。
+
+--[530 0.658505]--
+S . -> 次に 、 [X0] 。
+|--NP will VP -> [X0] について 説明 する
+   |--made of NP -> [X0] の
+      |--the relative inclinations of NP -> <<23>> の 相対 的 な 傾き
+         |--each optical surface -> 各 光学 面
+---
+[E] next , an explanation will be made of the relative inclinations of each optical surface .
+[J] 次に 、 各 光学 作用 面 の 相対 的 な 傾き について 説明 する 。
+[T] 次に 、 各 光学 面 の 相対 的 な 傾き の について 説明 する 。
+
+--[531 0.655640]--
+S . -> [X0] 。
+|--NP , NP -> [X0] 、 [X1]
+   |--IN , VP NP -> [X0] において 、 [X1] は [X2]
+      |--structural parameters VP -> <<9>> 構造 パラメータ
+         |--shown in NP -> [X0] に 示す
+            |--the following -> 以下
+      |--the units of length -> 長 さ の 単位
+      |---LRB- mm -RRB- -> （ ｍｍ ）
+   |--NP ; -RRB- -> [X0] と 称す ）
+      |--NP -LRB- & CD -> <<36>> （ <<50>>
+         |--# xb0 -> ＃
+         |--NP are -> [X0] は
+            |--the units of angle -> 角度 の 単位
+---
+[E] in structural parameters shown in the following , the units of length are -LRB- mm -RRB- , and the units of angle are -LRB- & # xb0 ; -RRB- .
+[J] 以下 に 示す 構成 パラメータ において 、 長 さ の 単位 は （ ｍｍ ） 、 角度 の 単位 は （°） で ある 。
+[T] 以下 に 示す 構造 パラメータ において 、 長 さ の 単位 は （ ｍｍ ） 、 角度 の 単位 は （ ＃ と 称す ） 。
+
+--[533 0.500164]--
+S . -> [X0] 。
+|--NP , VP -> [X0] として は 、 [X1]
+   |--the coordinate system -> 座標 系
+   |--NP is employed -> [X0] を 用いる
+      |--the xyz orthogonal coordinate system VP -> <<18>> た ＸＹＺ 直交 座標 系
+         |--already explained -> 既に 説明 し
+---
+[E] as for the coordinate system , the xyz orthogonal coordinate system already explained is employed .
+[J] 座標 系 は 、 すでに 説明 し た ＸＹＺ 直交 座標 系 を 用い て いる 。
+[T] 座標 系 として は 、 既に 説明 し た ＸＹＺ 直交 座標 系 を 用いる 。
+
+--[540 0.500512]--
+S . -> [X0] 、 [X1] 。
+|--as VP -> [X0] に 示す よう に
+   |--FIGDOT 5 -> 図 ５
+|--VP and VP -> [X0] は [X1] [X2]
+   |--a driving force of NP -> [X0] の 駆動 力
+      |--a zoom motor 25 -> ズーム モータ ２５
+   |--transmitted to NP -> [X0] に 伝達 さ れる
+      |--JJ , IN -> 、 [X1] [X0]
+         |--NP 3a -> [X0] ３ａ
+            |--the gear teeth -> ギヤ 歯
+         |--via NP -> [X0] を 介し て
+            |--a gear 22 -> ギア ２２
+   |--gears NP -> ギヤ [X0] ， [X1]
+      |--27 to 31 -> ２７ 〜 ３１
+      |--whereby VP -> [X0] が [X1]
+         |--the moving cam ring 3 -> 移動 カム 環 ３
+         |--rotatively driven -> 回転 駆動 さ れる
+---
+[E] as shown in FIGDOT 5 , a driving force of a zoom motor 25 is transmitted to the gear teeth 3a , via a gear 22 and gears 27 to 31 , whereby the moving cam ring 3 is rotatively driven .
+[J] ギア 歯 ３ ａ に は 、 図 ５ に 示す よう に 、 ズーム モータ ２５ の 駆動 力 が 、 ギア ２２ および ギア ２７ 〜 ３１ を 介し て 伝達 さ れ 、 移動 カム 環 ３ は 回転 駆動 さ れる 。
+[T] 図 ５ に 示す よう に 、 ズーム モータ ２５ の 駆動 力 は 、 ギア ２２ を 介し て ギヤ 歯 ３ａ に 伝達 さ れる ギヤ ２７ 〜 ３１ ， 移動 カム 環 ３ が 回転 駆動 さ れる 。
+
+--[551 0.782542]--
+S . -> これ [X0] 。
+|--is JJ -> は [X0] と 同様 で ある
+   |--the sd card 100 -> ＳＤ カード １００
+---
+[E] this is the same as the sd card 100 .
+[J] これ も ＳＤ カード １００ と 同様 で ある 。
+[T] これ は ＳＤ カード １００ と 同様 で ある 。
+
+--[575 0.554812]--
+VP . -> [X0] は [X1] 。
+|--the fixing arm 34 -> 固定 アーム ３４
+|--held within NP in NP -> <<23>> <<66>> 内 に 保持 さ れ て いる
+   |--the second side NP -> 第 ２ の 側面 の [X0]
+      |--wall 12c -> 壁 １２ｃ
+   |--a state NP -> [X0] た 状態 で
+      |--is VP -> [X0] 内 に 挿入 さ れ
+         |--the fixing hole 122 VP NP -> <<47>> た 固定 孔 １２２ <<57>>
+            |---LRB- VP -RRB- -> （ [X0] 参照 ）
+               |--FIGDOT 5 -> 図 ５
+            |--formed in NP -> [X0] に 形成 さ れ
+               |--the second side wall 12c -> 第 ２ 側壁 １２ｃ
+---
+[E] the fixing arm 34 is held within the second side wall 12c in a state in which it is inserted into the fixing hole 122 formed in the second side wall 12c -LRB- refer to FIGDOT 5 -RRB- .
+[J] 固定 アーム ３４ は 、 第 ２ 側壁 １２ ｃ に 形成 さ れ た 固定 穴 １２２ （ 図 ５ 参照 ） に 挿入 さ れ た 状態 で 、 第 ２ 側壁 １２ ｃ 内部 に 保持 さ れ て いる 。
+[T] 固定 アーム ３４ は 第 ２ 側壁 １２ｃ に 形成 さ れ た 固定 孔 １２２ （ 図 ５ 参照 ） 内 に 挿入 さ れ た 状態 で 第 ２ の 側面 の 壁 １２ｃ 内 に 保持 さ れ て いる 。
+
+--[586 0.645996]--
+S . -> [X0] 。
+|--in NP there NP -> 以下 [X0]
+   |--will VP -> [X0] する
+      |--explained NP -> [X0] について 説明
+         |--a preferred range of NP -> <<23>> の 好ましい 範囲
+            |--the compound VP -> <<26>> 化合 物
+               |--represented by NP -> [X0] で 表さ れる
+                  |--formula NP -> 式 [X0]
+                     |---LRB- a-1 -RRB- -> （ ａ － １ ）
+---
+[E] in the following there will be explained a preferred range of the compound represented by formula -LRB- a-1 -RRB- .
+[J] 次に 、 式 （ Ａ － １ ） で 表さ れる 化合 物 の 好ましい 範囲 について 述べる 。
+[T] 以下 式 （ ａ － １ ） で 表さ れる 化合 物 の 好ましい 範囲 について 説明 する 。
+
+--[587 1.000000]--
+NP . -> [X0] は [X1] で は ない 。
+|--the invention -> 本 発明
+|--restricted to them -> これら に 限定 さ れる もの
+---
+[E] the invention is not restricted to them .
+[J] 本 発明 は これら に 限定 さ れる もの で は ない 。
+[T] 本 発明 は これら に 限定 さ れる もの で は ない 。
+
+--[590 0.749085]--
+VP . -> [X0] は [X1] 示す 図 で ある 。
+|--FIGDOT 2 -> 図 ２
+|--a state of NP -> [X0] の 状態 を
+   |--audio data VP -> [X0] て いる 音声 データ
+      |--recorded in NP -> [X0] に 記録 さ れ
+         |--the memory card 107 -> メモリ カード １０７
+---
+[E] FIGDOT 2 shows a state of audio data recorded in the memory card 107 .
+[J] 図 ２ は メモリ カード １０７ に 記録 さ れ て いる 音声 データ の 様子 を 示し た 図 で ある 。
+[T] 図 ２ は メモリ カード １０７ に 記録 さ れ て いる 音声 データ の 状態 を 示す 図 で ある 。
+
+--[600 0.701688]--
+S . -> [X0] 。
+|--finally , CD -> 最後 に 、 <<17>>
+   |--NP 14 and 15 NP -> <<6>> １４ ， １５ <<13>>
+      |--will VP -> について 説明 する
+      |--the contacts -> コンタクト
+---
+[E] finally , the contacts 14 and 15 will be explained .
+[J] 最後 に 、 コンタクト １４ 、 １５ について 説明 する 。
+[T] 最後 に 、 コンタクト １４ ， １５ について 説明 する 。
+
+--[619 0.517935]--
+VP . -> [X0] 。
+|--NP are VP -> [X0] の ゲート は [X1]
+   |--the mosfets for NP -> <<14>> 用 ＭＯＳＦＥＴ
+      |--address selection -> アドレス 選択
+   |--connected to NP -> [X0] に 接続 さ れ て いる
+      |--the corresponding word lines -> 対応 する ワード 線
+---
+[E] the gates of the mosfets for address selection are connected to the corresponding word lines .
+[J] この アドレス 選択 用 の ＭＯＳＦＥＴ の ゲート は 、 対応 する ワード 線 に 接続 さ れる 。
+[T] アドレス 選択 用 ＭＯＳＦＥＴ の ゲート は 対応 する ワード 線 に 接続 さ れ て いる 。
+
+--[633 0.815355]--
+VP . -> [X0] て いる 。
+|--NP is VP -> [X0] は 、 [X1] から 構成 さ れ
+   |--the semiconductor device 1 -> 半導体 装置 １
+   |--a semiconductor chip NP -> 半導体 チップ [X0]
+      |--10 , and so on -> １０ と
+---
+[E] the semiconductor device 1 is composed of a semiconductor chip 10 , and so on .
+[J] 半導体 装置 １ は 、 半導体 チップ １０ 等 から 構成 さ れ て いる 。
+[T] 半導体 装置 １ は 、 半導体 チップ １０ と から 構成 さ れ て いる 。
+
+--[634 0.500725]--
+S . -> [X0] 。
+|--NP , CD -> [X0] 、 [X1]
+   |--IN , IN -> [X0] 、 [X1]
+      |--the electrode pads 17 , NP -> 電極 パッド １７ 、 <<71>>
+         |--bumps 22 VP -> <<14>> バンプ ２２
+            |--electrically connected to NP -> [X0] と 電気 的 に 接続 さ れ て いる
+               |--the electrode pads CD -> 電極 パッド [X0]
+                  |--17 VP -> １７ [X0]
+                     |--are formed -> が 形成 さ れ て いる
+      |--and on NP -> および [X0] に
+         |--the dummy electrode pads 18 -> ダミー 電極 パッド １８
+   |--NP 23 VP VP -> <<53>> <<48>> ２３ <<63>>
+      |--dummy bumps -> ダミー バンプ
+      |--thermally connected to NP -> [X0] に 熱 的 に 接続 さ れ て いる
+         |--the dummy electrode -> ダミー 電極
+      |--pads CD -> パッド [X0]
+         |--18 VP -> １８ [X0]
+            |--are formed -> が 形成 さ れ て いる
+---
+[E] on the electrode pads 17 , bumps 22 electrically connected to the electrode pads 17 are formed , and on the dummy electrode pads 18 , dummy bumps 23 thermally connected to the dummy electrode pads 18 are formed .
+[J] 電極 パッド １７ 上 に は 電極 パッド １７ と 電気 的 に 接続 さ れ た バンプ ２２ が 形成 さ れ て おり 、 ダミー 電極 パッド １８ 上 に は ダミー 電極 パッド １８ と 熱 的 に 接続 さ れ た ダミー バンプ ２３ が 形成 さ れ て いる 。
+[T] 電極 パッド １７ 、 電極 パッド １７ が 形成 さ れ て いる と 電気 的 に 接続 さ れ て いる バンプ ２２ 、 および ダミー 電極 パッド １８ に 、 ダミー 電極 に 熱 的 に 接続 さ れ て いる ダミー バンプ ２３ パッド １８ が 形成 さ れ て いる 。
+
+--[635 0.575106]--
+S . -> [X0] 。
+|--NP , NP -> [X0] 、 [X1]
+   |--IN , VP -> [X0] 、 [X1] は [X2]
+      |--in NP -> 本 実施 の 形態 で は
+      |--the heat within NP -> <<16>> 内 の 熱
+         |--the semiconductor chip 10 -> 半導体 チップ １０
+      |--released out of NP through NP -> <<36>> を 介し て <<29>> の 導出 さ れ
+         |--the dummy bumps 23 -> ダミー バンプ ２３
+         |--the semiconductor chip 10 -> 半導体 チップ １０
+   |--therefore , NP -> したがって 、 [X0]
+      |--NP can VP -> [X0] の 発生 を [X1] こと が できる
+         |--a corrosion -> 腐食
+         |--be VP -> [X0] する
+            |--restrained at NP -> <<64>> で 抑制
+               |--NP 17 and NP -> [X0] １７ と [X1]
+                  |--the electrode pads -> 電極 パッド
+                  |--the bumps 22 -> バンプ ２２
+---
+[E] in the present embodiment , the heat within the semiconductor chip 10 is released out of the semiconductor chip 10 through the dummy bumps 23 , and therefore , the occurrence of a corrosion can be restrained at the electrode pads 17 and the bumps 22 .
+[J] 本 実施 の 形態 で は 、 半導体 チップ １０ 内 の 熱 を ダミー バンプ ２３ を 介し て 半導体 チップ １０ の 外部 に 放出 さ せ て いる ので 、 電極 パッド １７ 及び バンプ ２２ における コロージョン の 発生 を 抑制 する こと が できる 。
+[T] 本 実施 の 形態 で は 、 半導体 チップ １０ 内 の 熱 は ダミー バンプ ２３ を 介し て 半導体 チップ １０ の 導出 さ れ 、 したがって 、 腐食 の 発生 を 電極 パッド １７ と バンプ ２２ で 抑制 する こと が できる 。
+
+--[638 0.510565]--
+S . -> [X0] 。
+|--IN , JJ -> [X0] 、 [X1] が 配置 さ れ て いる
+   |--in VP -> [X0]
+      |--NP sink NP -> この 放熱 [X0]
+         |--plate 65 -> 板 ６５
+   |--a pipe 67a of NP -> <<21>> の パイプ ６７ａ
+      |--a cooling module 67 -> 冷却 モジュール ６７
+---
+[E] in the heat sink plate 65 , a pipe 67a of a cooling module 67 is disposed .
+[J] 放熱 板 ６５ 内 に は 、 冷却 モジュール ６７ の 配管 ６７ ａ が 配置 さ れ て いる 。
+[T] この 放熱 板 ６５ 、 冷却 モジュール ６７ の パイプ ６７ａ が 配置 さ れ て いる 。
+
+--[640 0.538560]--
+S . -> [X0] て いる 。
+|--both NP -> 両 [X0]
+   |--NP 12 and NP VP -> <<4>> １２ と <<10>> は ダマシン <<4>> 構造 、 層間 絶縁 膜 １４ 〜 １６ に 形成 さ れ
+      |--the dummy wirings 13 -> ダミー 配線 １３
+      |--the wirings -> 配線
+      |--have NP -> は [X0]
+         |--VP , NP -> [X0] 、 [X1]
+            |--damascene NP -> ダマシン [X0]
+               |--wiring structures -> 配線 構造
+            |--are VP -> [X0] に 形成 さ れ
+               |--the interlayer insulation films CD -> 層間 絶縁 膜 <<37>>
+                  |--14 to 16 -> １４ 〜 １６
+---
+[E] both the wirings 12 and the dummy wirings 13 have damascene wiring structures , and are formed in the interlayer insulation films 14 to 16 .
+[J] 配線 １２ 及び ダミー 配線 １３ は 、 ともに ダマシン 配線 構造 を 有し 、 層間 絶縁 膜 １４ 〜 １６ 内 に 形成 さ れ て いる 。
+[T] 両 配線 １２ と ダミー 配線 １３ は ダマシン 配線 構造 、 層間 絶縁 膜 １４ 〜 １６ に 形成 さ れ て いる 。
+
+--[641 0.768511]--
+VP . -> [X0] は [X1] と から 構成 さ れ て いる 。
+|--the semiconductor chip 10 -> 半導体 チップ １０
+|--a semiconductor substrate 11 VP -> [X0] 半導体 基板 １１
+   |--on which NP is formed -> [X0] が 形成 さ れ た
+      |--a semiconductor element NP such as NP -> <<35>> 等 の 半導体 素子 <<26>>
+         |---LRB- VP -RRB- -> （ 図示 せ ず ）
+         |--a transistor -> トランジスタ
+---
+[E] the semiconductor chip 10 includes a semiconductor substrate 11 on which a semiconductor element -LRB- not shown -RRB- such as a transistor is formed .
+[J] 半導体 チップ １０ は トランジスタ 等 の 半導体 素子 （ 図示 せ ず ） が 形成 さ れ た 半導体 基板 １１ を 備え て いる 。
+[T] 半導体 チップ １０ は トランジスタ 等 の 半導体 素子 （ 図示 せ ず ） が 形成 さ れ た 半導体 基板 １１ と から 構成 さ れ て いる 。
+
+--[643 0.603346]--
+S . -> [X0] 。
+|--VP , NP -> [X0] は [X1] 、 [X2]
+   |--the wiring 51 -> 配線 ５１
+   |--composed of NP -> [X0] から なる
+      |--the same metal as NP -> <<20>> と 同様 の 金属
+         |--the wiring 12 -> 配線 １２
+   |--NP is VP -> [X0] は [X1]
+      |--the dummy wiring 53 -> ダミー 配線 ５３
+      |--composed of NP -> [X0] から なる
+         |--the same metal as NP -> <<45>> と 同様 の 金属
+            |--the dummy wiring 13 -> ダミー 配線 １３
+---
+[E] the wiring 51 is composed of the same metal as the wiring 12 , and the dummy wiring 53 is composed of the same metal as the dummy wiring 13 .
+[J] 配線 ５１ は 配線 １２ と 同様 の 金属 から 構成 さ れ て おり 、 ダミー 配線 ５３ は ダミー 配線 １３ と 同様 の 金属 から 構成 さ れ て いる 。
+[T] 配線 ５１ は 配線 １２ と 同様 の 金属 から なる 、 ダミー 配線 ５３ は ダミー 配線 １３ と 同様 の 金属 から なる 。
+
+--[666 0.519111]--
+VP . -> [X0] 。
+|--NP are NP -> 図 ５ および 図 ６ は [X0]
+   |--flowcharts VP -> [X0] を 示す フローチャート で ある
+      |--the execution condition determination process VP -> <<21>> 実行 条件 判定 処理
+         |--executed in NP -> [X0] で 実行 さ れる
+            |--step s1 of NP -> [X0] の ステップ Ｓ１
+               |--FIGDOT 4 -> 図 ４
+---
+[E] FIGSDOT 5 and 6 are flowcharts illustrating the execution condition determination process executed in step s1 of FIGDOT 4 .
+[J] 図 ５ 及び 図 ６ は 、 図 ４ の ステップ Ｓ １ で 実行 さ れる 実行 条件 判定 処理 の フローチャート で ある 。
+[T] 図 ５ および 図 ６ は 図 ４ の ステップ Ｓ１ で 実行 さ れる 実行 条件 判定 処理 を 示す フローチャート で ある 。
+
+--[671 0.610892]--
+VP . -> [X0] は [X1] 。
+|--the first response deterioration determination flag fmcnd61a -> 第 １ の 応答 劣化 判定 フラグ fmcnd61a
+|--VP & CD ; CD ; NP -> <<20>> <<24>> 、 <<32>> <<14>>
+   |--1 & CD -> １ 」
+   |--when VP -> [X0] 場合
+      |--NP is executed -> [X0] が 実行 さ れる
+         |--a response deterioration determination process of NP -> <<45>> の 応答 劣化 判定 処理
+            |--the laf sensor 14 -> ＬＡＦ センサ １４
+   |--# x201c -> 「
+   |--set to -> に 設定 さ れる
+---
+[E] the first response deterioration determination flag fmcnd61a is set to & # x201c ; 1 & # x201d ; when a response deterioration determination process of the laf sensor 14 is executed .
+[J] 第 １ 応答 劣化 判定 フラグ ＦＭ ＣＮＤ ６１ Ａ は 、 ＬＡＦ センサ １４ の 応答 劣化 判定 処理 が 実行 さ れる とき 「 １ 」 に 設定 さ れる 。
+[T] 第 １ の 応答 劣化 判定 フラグ fmcnd61a は 「 １ 」 、 ＬＡＦ センサ １４ の 応答 劣化 判定 処理 が 実行 さ れる 場合 に 設定 さ れる 。
+
+--[679 0.544953]--
+VP . -> [X0] 。
+|--NP is VP -> [X1] に [X0] が 設け られ て いる
+   |--a coiled return NP for VP -> コイル <<13>> ため の リターン <<7>>
+      |--effecting NP -> [X0] さ せる
+         |--a return to NP -> <<22>> に 復帰
+            |--an initial position at NP -> <<29>> に 初期 位置
+               |--the time NP -> 時間 [X0]
+                  |--when VP -> [X0] が [X1] の とき
+                     |--the internal combustion engine -> 内燃 機関
+                     |--an idling rotational speed -> アイドル 回転 数
+      |--spring 10 -> スプリング １０
+   |--an outer periphery of NP on NP -> <<69>> に <<63>> の 外周
+      |--the final spur gear 4 side -> 最終 平 歯車 ４ 側
+      |--the shaft 6 -> シャフト ６
+---
+[E] a coiled return spring 10 for effecting a return to an initial position at the time when the internal combustion engine is at an idling rotational speed is provided on an outer periphery of the shaft 6 on the final spur gear 4 side .
+[J] シャフト ６ の 外周 で 最終 平 歯車 ４ 側 に は 内燃 機関 が アイドル 回転 速度 の 時 の 初期 位置 に 戻す ため の コイル 状 の リターン スプリング １０ が 設け られ て いる 。
+[T] 最終 平 歯車 ４ 側 に シャフト ６ の 外周 に コイル 時間 内燃 機関 が アイドル 回転 数 の とき に 初期 位置 に 復帰 さ せる ため の リターン スプリング １０ が 設け られ て いる 。
+
+--[702 0.504554]--
+VP . -> [X0] 、 [X1] と から 構成 さ れ て いる 。
+|--NP comprises NP 4 -> <<2>> は 、 <<13>> ４
+   |--the signal VP -> 信号 処理 [X0]
+      |--circuit 40a -> 回路 ４０Ａ
+   |--a dq axis target current calculating part -> ｄｑ 軸 目標 電流 演算 部
+|--NP calculating NP -> [X0] 算出 [X1]
+   |--a dq axis actual current -> ｄｑ 軸 の 実 電流
+   |--NP , NP , NP -> [X0] 、 [X1] 、 [X2]
+      |--part 5 -> 部 ５
+      |--an applied voltage VP -> 印加 電圧 <<43>>
+         |--calculating NP -> 算出 [X0]
+            |--part 6 -> 部 ６
+      |--a rotational position VP -> 回転 位置 <<55>>
+         |--calculating part 8 -> 演算 部 ８
+---
+[E] the signal processing circuit 40a comprises a dq axis target current calculating part 4 , a dq axis actual current calculating part 5 , an applied voltage calculating part 6 , and a rotational position calculating part 8 .
+[J] 信号 処理 回路 ４０ ａ は 、 ｄｑ 軸 目標 電流 演算 部 ４ 、 ｄｑ 軸 実 電流 演算 部 ５ 、 印加 電圧 演算 部 ６ 、 および 回転 位置 演算 部 ８ を 備える 。
+[T] 信号 処理 回路 ４０Ａ は 、 ｄｑ 軸 目標 電流 演算 部 ４ 、 ｄｑ 軸 の 実 電流 算出 部 ５ 、 印加 電圧 算出 部 ６ 、 回転 位置 演算 部 ８ と から 構成 さ れ て いる 。
+
+--[742 0.652867]--
+S . -> また 、 [X0] て いる 。
+|--NP is VP -> [X0] は [X1]
+   |--the upper case 13 -> 上 ケース １３
+   |--formed by IN -> [X0] により 形成 さ れ
+      |--, for example , NP -> 、 例えば 、 [X0]
+         |--injection molding VP -> <<27>> て 射出 成形
+            |--using NP -> [X0] を 用い
+               |--a plastic material -> プラスチック 材料
+---
+[E] further , the upper case 13 is formed by , for example , injection molding using a plastic material .
+[J] なお 、 上 ケース １３ は 、 例えば プラスチック 材料 を 用い て 射出 成形 により 形成 さ れる 。
+[T] また 、 上 ケース １３ は 、 例えば 、 プラスチック 材料 を 用い て 射出 成形 により 形成 さ れ て いる 。
+
+--[752 1.000000]--
+S . -> [X0] 。
+|--hereinafter , NP -> 以下 、 [X0] [X1]
+   |--an embodiment of NP -> 本 発明 の 実施 の 形態
+   |--be VP -> [X0]
+      |--described VP -> [X0] 説明 する
+         |--based on NP -> を 図面 に 基づい て
+---
+[E] hereinafter , an embodiment of the invention will be described based on the drawings .
+[J] 以下 、 本 発明 の 実施 の 形態 を 図面 に 基づい て 説明 する 。
+[T] 以下 、 本 発明 の 実施 の 形態 を 図面 に 基づい て 説明 する 。
+
+--[754 0.526900]--
+S . -> [X0] 。
+|--firstly , VP , NP -> まず 、 [X0] 、 [X1]
+   |--using NP to 3 -> <<8>> 〜 図 ３ を 用い
+      |--FIGSDOT 1 -> 図 １
+   |--NP will VP -> [X0] について 説明 する
+      |--an earthing plate of NP -> <<24>> の アース 板
+         |--an embodiment of NP -> 本 発明 の 実施 の 形態
+---
+[E] firstly , using FIGSDOT 1 to 3 , an earthing plate of an embodiment of the invention will be described .
+[J] まず 、 図 １ 〜 図 ３ を 用い て 、 実施 形態 の アース プレート について 説明 する 。
+[T] まず 、 図 １ 〜 図 ３ を 用い 、 本 発明 の 実施 の 形態 の アース 板 について 説明 する 。
+
+--[758 0.567793]--
+VP . -> [X0] は [X1] で ある 。
+|--FIGDOT 4 -> 図 ４
+|--a perspective view NP -> [X0] 斜視 図
+   |--which VP -> [X0] を 示す
+      |--a jig VP -> 治 具 <<22>>
+         |--according to NP -> に [X0]
+            |--the embodiment of NP -> 本 発明 の 一 実施 例
+---
+[E] FIGDOT 4 is a perspective view which shows a jig according to the embodiment of the invention .
+[J] 図 ４ は 、 本 発明 の 一 実施 形態 の 治 具 を 示す 斜視 図 で ある 。
+[T] 図 ４ は 治 具 に 本 発明 の 一 実施 例 を 示す 斜視 図 で ある 。
+
+--[789 0.706016]--
+VP . -> [X0] は 、 [X1] と から 構成 さ れ て いる 。
+|--the electromagnetic actuator 13 -> 電磁 アクチュエータ １３
+|--CD , NP , NP , NP -> [X0] 、 [X1] 、 [X2] 、 [X3]
+   |--NP 15 -> [X0] １５
+      |--a plunger -> プラン ジャ
+   |--a stator 16 -> ステータ １６
+   |--a coil 17 -> コイル １７
+   |--NP and CD -> [X0] 、 [X1]
+      |--a yoke 18 -> ヨーク １８
+      |--a connector 19 -> コネクタ １９
+---
+[E] the electromagnetic actuator 13 includes a plunger 15 , a stator 16 , a coil 17 , a yoke 18 and a connector 19 .
+[J] 電磁 アクチュエータ １３ は 、 プラン ジャ １５ 、 ステータ １６ 、 コイル １７ 、 ヨーク １８ 、 コネクタ １９ を 備える 。
+[T] 電磁 アクチュエータ １３ は 、 プラン ジャ １５ 、 ステータ １６ 、 コイル １７ 、 ヨーク １８ 、 コネクタ １９ と から 構成 さ れ て いる 。
+
+--[807 0.740723]--
+S . -> [X0] 、 [X1] て いる 。
+|--that is -> すなわち
+|--NP is VP -> [X0] が [X1]
+   |--one memory cell -> １つ の メモリ セル
+   |--composed of NP -> [X0] と [X1] と から 構成 さ れ
+      |--NP rsw -> [X0] ＲＳＷ
+         |--one read selector switch NP -> １つ の 読み出し 選択 スイッチ <<23>>
+            |---LRB- transistor -RRB- -> （ トランジスタ ）
+      |--one mtj element mtj -> １つ の ＭＴＪ 素子 ＭＴＪ
+---
+[E] that is , one memory cell is composed of one read selector switch -LRB- transistor -RRB- rsw and one mtj element mtj .
+[J] 即ち 、 １つ の メモリ セル は 、 １つ の 読み出し 選択 スイッチ （ トランジスタ ） ＲＳＷ と １つ の ＭＴＪ 素子 ＭＴＪ と から 構成 さ れる 。
+[T] すなわち 、 １つ の メモリ セル が １つ の 読み出し 選択 スイッチ （ トランジスタ ） ＲＳＷ と １つ の ＭＴＪ 素子 ＭＴＪ と から 構成 さ れ て いる 。
+
+--[810 0.647545]--
+NP . -> [X0] 。
+|--NP will VP -> [X0] 説明 する
+   |--given with NP -> [X0] し て
+      |--respect to NP -> [X0] に
+         |--a case VP -> [X0] 場合
+            |--in which NP is used -> [X0] を 用い た
+               |--the read circuit of NP -> <<35>> の 読み出し 回路
+                  |--FIGDOT 12 -> 図 １２
+---
+[E] a description will be given with respect to a case in which the read circuit of FIGDOT 12 is used .
+[J] 図 １２ の 読み出し 回路 を 用い た 場合 について 説明 する 。
+[T] 図 １２ の 読み出し 回路 を 用い た 場合 に し て 説明 する 。
+
+--[824 1.000000]--
+VP . -> [X0] は [X1] で ある 。
+|--FIGDOT 8 -> 図 ８
+|--a cross sectional perspective view VP -> <<14>> 断面 斜視 図
+   |--showing NP -> [X0] の 構成 を 示す
+      |--the spacer insertion hole 62 -> スペーサ 挿入 孔 ６２
+---
+[E] FIGDOT 8 is a cross sectional perspective view showing the structure of the spacer insertion hole 62 .
+[J] 図 ８ は スペーサ 挿入 孔 ６２ の 構成 を 示す 断面 斜視 図 で ある 。
+[T] 図 ８ は スペーサ 挿入 孔 ６２ の 構成 を 示す 断面 斜視 図 で ある 。
+
+--[844 0.505107]--
+S . -> [X0] 、 [X1] 。
+|--in NP -> この よう に
+|--NP can VP -> [X0] を 抑制 する こと が できる
+   |--variation in NP -> [X0] の 変動
+      |--output torque of NP -> [X0] の 出力 トルク
+         |--the engine JJ -> 機関 [X0]
+            |--attributable to NP -> [X0] に 起因 する
+               |--the unstable combustion -> 燃焼 不安定
+---
+[E] in this manner , variation in output torque of the engine attributable to the unstable combustion can be suppressed .
+[J] この よう に する と 、 燃焼 が 不安定 で ある こと に 起因 する エンジン の 出力 トルク の 変動 を 抑制 する こと が できる 。
+[T] この よう に 、 機関 燃焼 不安定 に 起因 する の 出力 トルク の 変動 を 抑制 する こと が できる 。
+
+--[846 0.548450]--
+S . -> [X0] 。
+|--DT , NP -> すなわち 、 [X0]
+   |--NP ; ne NP -> <<7>> ＮＥ <<23>>
+      |---LRB- 3 -RRB- -> （ ３ ）
+      |--NP & CD -> [X0] [X1]
+         |--ne NP -> ＮＥ [X0]
+            |---LRB- 1 -RRB- -> （ １ ）
+         |--# x3c -> ＃ x3c
+---
+[E] that is , ne -LRB- 1 -RRB- & # x3c ; ne -LRB- 3 -RRB- .
+[J] すなわち 、 ＮＥ （ １ ） ＜ ＮＥ （ ３ ） で ある 。
+[T] すなわち 、 ＮＥ （ １ ） ＃ x3c ＮＥ （ ３ ） 。
+
+--[851 0.518692]--
+VP . -> [X0] 。
+|--NP are NP -> [X0] は [X1] 図 で ある
+   |--FIGSDOT 3 and 4 -> 図 ３ 及び 図 ４
+   |--illustrating NP visor for NP -> <<15>> <<29>> バイザー を 示す
+      |--a vehicle VP -> [X0] 車両
+         |--according to NP -> 本 発明 に 係る
+      |--the second embodiment of NP -> [X0] の 第 ２ の 実施 例 の
+         |--the door -> ドア
+---
+[E] FIGSDOT 3 and 4 are diagrams illustrating the second embodiment of the door visor for a vehicle according to the present invention .
+[J] 図 ３ 及び 図 ４ は 、 本 発明 に 係る 車両 用 ドア バイザー の 第 ２ の 実施 形態 を 説明 する 図 で ある 。
+[T] 図 ３ 及び 図 ４ は ドア の 第 ２ の 実施 例 の 本 発明 に 係る 車両 バイザー を 示す 図 で ある 。
+
+--[857 0.501651]--
+VP . -> [X0] は [X1] で ある 。
+|--the memory card 51 -> メモリ カード ５１
+|--a removable semiconductor memory -> 着脱 可能 な 半導体 メモリ
+---
+[E] the memory card 51 is a removable semiconductor memory .
+[J] メモリ カード ５１ は 、 着脱 可能 な 半導体 メモリ から なる 。
+[T] メモリ カード ５１ は 着脱 可能 な 半導体 メモリ で ある 。
+
+--[883 0.710867]--
+VP . -> [X0] 。
+|--NP is VP -> [X0] を [X1] に 示す
+   |--a specific procedure -> 具体 的 な 手順
+   |--FIGDOT 9 -> 図 ９
+---
+[E] a specific procedure is shown in FIGDOT 9 .
+[J] 具体 的 な 処理 手順 を 図 ９ に 示す 。
+[T] 具体 的 な 手順 を 図 ９ に 示す 。
+
+--[887 0.521570]--
+S . -> [X0] 。
+|--NP , VP -> [X0] 、 [X1]
+   |--NP , NP -> [X0] 、 [X1]
+      |--when VP -> [X0] が [X1]
+         |--a result of NP in NP -> <<18>> の <<13>> 結果
+            |--step 100 -> ステップ １００
+            |--the check -> 判定
+         |--no , i.e. -> ＮＯ 、 すなわち
+      |--it VP -> [X0] 場合 に は
+         |--determined that JJ -> [X0] と 判断 さ れ た
+            |--NP is insufficient -> [X0] が 不足
+               |--the signal amplitude -> 信号 振幅
+   |--NP goes to VP -> [X0] は [X1] に 進む
+      |--the procedure -> 手順
+      |--step CD -> ステップ [X0]
+         |--102 VP -> １０２ [X0]
+            |--in which NP is VP -> [X0] を [X1]
+               |--the position of NP -> [X0] の 位置
+                  |--the detection head 20 -> は 検出 ヘッド ２０
+               |--mechanically adjusted -> 機械 的 調整
+---
+[E] when a result of the check in step 100 is no , i.e. , it is determined that the signal amplitude is insufficient , the procedure goes to step 102 in which the position of the detection head 20 is mechanically adjusted .
+[J] 該 ステップ １００ の 判定 結果 が 否 で 振幅 が 足り ない と 判断 さ れ た 場合 に は 、 ステップ １０２ に 進み 、 検出 ヘッド ２０ の 位置 を 機械 的 に 調整 する 。
+[T] ステップ １００ の 判定 結果 が ＮＯ 、 すなわち 、 信号 振幅 が 不足 と 判断 さ れ た 場合 に は 、 手順 は ステップ １０２ は 検出 ヘッド ２０ の 位置 を 機械 的 調整 に 進む 。
+
+--[894 0.638943]--
+VP . -> [X0] 。
+|--NP are VP -> [X0] を [X1] に 示す
+   |--the calculated results -> 演算 し た 結果
+   |--FIGDOT 8 -> 図 ８
+---
+[E] the calculated results are shown in FIGDOT 8 .
+[J] 算出 結果 を 図 ８ に 示す 。
+[T] 演算 し た 結果 を 図 ８ に 示す 。
+
+--[900 0.538989]--
+VP . -> [X0] で ある 。
+|--NP are NP -> [X0] は [X1] で あり [X2]
+   |--FIGSDOT 20 and 21 -> 図 ２０ 及び 図 ２１
+   |--a perspective view -> 斜視 図
+   |--an exploded perspective view VP -> <<21>> 分解 斜視 図
+      |--illustrating NP -> [X0] 示す
+         |--an example of NP -> [X0] の 一 例 を
+            |--IN , respectively -> 、 [X0]
+               |--NP of NP -> 本 発明 の [X0]
+                  |--the optical coupler module -> 光 カプラ モジュール
+---
+[E] FIGSDOT 20 and 21 are a perspective view and an exploded perspective view illustrating an example of the optical coupler module of the present invention , respectively .
+[J] 図 ２０ 及び 図 ２１ は 、 本 発明 の 光 カプラモジュール の 一 実施 例 を 示す 斜視 図 及び 分解 斜視 図 で ある 。
+[T] 図 ２０ 及び 図 ２１ は 斜視 図 で あり 、 本 発明 の 光 カプラ モジュール の 一 例 を 示す 分解 斜視 図 で ある 。
+
+--[902 0.502433]--
+VP . -> [X0] は [X1] さ れ て いる 。
+|--the parallel NP -> 平行 [X0]
+   |--portion 12 -> 部 １２
+|--positioned continuously from NP -> <<17>> から 連続 し て 配置
+   |--the branch portion 11 -> 分岐 部 １１
+---
+[E] the parallel portion 12 is positioned continuously from the branch portion 11 .
+[J] 分岐 部 １１ から 連続 し て 、 平行 部 １２ が 設け られ て いる 。
+[T] 平行 部 １２ は 分岐 部 １１ から 連続 し て 配置 さ れ て いる 。
+
+--[909 0.549942]--
+VP . -> [X0] は [X1] 。
+|--FIGDOT 12 -> 図 １２
+|--a schematic diagram VP -> [X0] 示す 模 式 図 で ある
+   |--an overall configuration of NP -> [X0] の 全体 構成 を
+      |--display control system of NP VP -> <<28>> の 表示 制御 システム <<32>>
+         |--according to NP -> に [X0]
+            |--the fifth embodiment of NP -> 本 発明 の 第 ５ の 実施 例
+         |--the electronic apparatus -> 電子 機器
+---
+[E] FIGDOT 12 is a schematic diagram showing an overall configuration of display control system of the electronic apparatus according to the fifth embodiment of the invention .
+[J] 図 １２ は 本 発明 の 第 ５ の 実施 形態 に かかる 電子 機器 の 表示 制御 系 の 全体 構成 を 示す 概略 構成 図 で ある 。
+[T] 図 １２ は 電子 機器 の 表示 制御 システム に 本 発明 の 第 ５ の 実施 例 の 全体 構成 を 示す 模 式 図 で ある 。
+
+--[911 0.684264]--
+VP . -> [X0] は [X1] で ある 。
+|--FIGDOT 10 -> 図 １０
+|--a schematic perspective view VP -> <<13>> 概略 斜視 図
+   |--illustrating NP -> [X0] を 示す
+      |--a liquid crystal display device of NP -> [X0] の 液晶 表示 装置
+         |--the second modification VP -> 第 ２ の <<29>> 修正
+            |--according to NP -> 本 発明 に 係る
+---
+[E] FIGDOT 10 is a schematic perspective view illustrating a liquid crystal display device of the second modification according to the invention .
+[J] 図 １０ は 本 発明 に 係る 第 ２ の 変形 例 の 液晶 表示 装置 を 示す 概略 斜視 図 で ある 。
+[T] 図 １０ は 第 ２ の 本 発明 に 係る 修正 の 液晶 表示 装置 を 示す 概略 斜視 図 で ある 。
+
+--[936 0.809878]--
+NP . -> [X0] 。
+|--NP is not VP -> 本 発明 は [X0] は ない
+   |--limited to NP -> [X0] に 限定 さ れる もの で
+      |--the foregoing embodiment -> 上記 実施 形態
+---
+[E] the present invention is not limited to the foregoing embodiment .
+[J] なお 、 この 発明 は 上記 実施 形態 に 限定 さ れる もの で は ない 。
+[T] 本 発明 は 上記 実施 形態 に 限定 さ れる もの で は ない 。
+
+--[939 0.569889]--
+VP . -> [X0] は [X1] て いる 。
+|--a through NP -> 貫通 [X0]
+   |--hole 13 -> 孔 １３
+|--formed in NP along NP -> <<23>> に 沿っ て <<16>> に 形成 さ れ
+   |--the plug boot 12 -> プラグ ブーツ １２
+   |--its central axis -> 、 その 中心 軸
+---
+[E] a through hole 13 is formed in the plug boot 12 along its central axis .
+[J] プラグ ブーツ １２ に は 、 その 中心 軸 線 に 沿っ て 貫通 孔 １３ が 形成 さ れ て いる 。
+[T] 貫通 孔 １３ は 、 その 中心 軸 に 沿っ て プラグ ブーツ １２ に 形成 さ れ て いる 。
+
+--[951 0.514442]--
+VP . -> [X0] さ れ て いる 。
+|--NP is VP in NP at NP -> <<43>> に <<35>> に <<3>> が <<30>>
+   |--a high voltage output terminal 10 NP -> <<10>> 高 電圧 出力 端子 １０
+      |--that VP -> [X0]
+         |--outputs NP to NP -> [X0] を [X1] に 出力 する
+            |--a high voltage -> 高 電圧
+            |--the spark NP -> 点火 [X0]
+               |--plug 9 -> プラグ ９
+   |--a tip of NP -> [X0] の 先端
+      |--the high voltage tower 3b -> 高圧 タワー ３
+   |--a depression portion 11 -> は 窪み 部 １１
+   |--press fitted -> 圧入
+---
+[E] a high voltage output terminal 10 that outputs a high voltage to the spark plug 9 is press fitted in a depression portion 11 at a tip of the high voltage tower 3b .
+[J] 高圧 タワー ３ ｂ の 先端 部 の 凹 部 １１ に は 、 点火 プラグ ９ に 高 電圧 を 出力 する 高圧 出力 端子 １０ が 圧入 さ れ て いる 。
+[T] 高圧 タワー ３ の 先端 に は 窪み 部 １１ に 高 電圧 を 点火 プラグ ９ に 出力 する 高 電圧 出力 端子 １０ が 圧入 さ れ て いる 。
+
+--[978 0.593421]--
+VP . -> [X0] て いる 。
+|--NP is VP -> [X1] に [X0] が 固定 さ れ
+   |--an auxiliary movable NP -> 補助 可動 <<7>>
+      |--contact 22 -> 接触 子 ２２
+   |--the auxiliary holding member 21 -> 補助 保持 部材 ２１
+---
+[E] an auxiliary movable contact 22 is fixed to the auxiliary holding member 21 .
+[J] この 補助 保持 部材 ２１ に は 、 補助 可動 接点 ２２ が 固定 さ れ て いる 。
+[T] 補助 保持 部材 ２１ に 補助 可動 接触 子 ２２ が 固定 さ れ て いる 。
+
+--[979 0.599782]--
+VP . -> [X0] は [X1] 。
+|--FIGDOT 4 -> 図 ４
+|--an electrical circuit diagram of NP -> [X0] を 示す 電気 回路 図 で ある
+   |--the electromagnetic switch VP -> <<20>> 電磁 スイッチ
+      |--shown in NP -> [X0] に 示す
+         |--FIGDOT 1 -> 図 １
+---
+[E] FIGDOT 4 is an electrical circuit diagram of the electromagnetic switch shown in FIGDOT 1 .
+[J] 図 ４ は 図 １ に 示し た 電磁 スイッチ の 電気 回路 図 で ある 。
+[T] 図 ４ は 図 １ に 示す 電磁 スイッチ を 示す 電気 回路 図 で ある 。
+
+--[981 0.510565]--
+NP . -> [X0] 。
+|--NP is also VP -> [X0] は [X1] に も 接続 さ れ て いる
+   |--the battery 30 -> バッテリ ３０
+   |--the second main fixed contact 26b -> 第 ２ の 主 固定 接点 ２６ｂ
+---
+[E] the battery 30 is also connected to the second main fixed contact 26b .
+[J] また 、 バッテリ ３０ は 、 第 ２ の 主 固定 接点 ２６ ｂ と 接続 さ れ て いる 。
+[T] バッテリ ３０ は 第 ２ の 主 固定 接点 ２６ｂ に も 接続 さ れ て いる 。
+
+--[1000 0.504600]--
+S . -> [X0] 。
+|--IN , VP , NP -> [X0] 、 [X1] 、 [X2]
+   |--although VP -> 図示 し ない が
+   |--NP is VP -> [X1] に [X0] が 接続 さ れ て いる
+      |--an external power source -> 外部 電源
+      |--each of NP -> 各 [X0]
+         |--JJ and JJ -> [X0] および [X1]
+            |--the first VP -> 第 １ の 送信 [X0]
+               |--/ VP -> ／ [X0]
+                  |--receiving NP -> 受信 [X0]
+                     |--module 12 -> モジュール １２
+            |--the second VP -> 第 ２ の 送信 [X0]
+               |--/ VP -> ／ [X0]
+                  |--receiving NP -> 受信 [X0]
+                     |--module 14 -> モジュール １４
+   |--NP is VP -> [X1] [X0] が 供給 さ れる
+      |--electric power -> 電力
+      |--thereto from NP -> [X0] から
+         |--the exterior -> 外部
+---
+[E] although not illustrated , an external power source is connected to each of the first transmitting / receiving module 12 and the second transmitting / receiving module 14 , and electric power is supplied thereto from the exterior .
+[J] なお 、 図示 し ない が 、 第 １ 送受信 モジュール １２ および 第 ２ 送受信 モジュール １４ の 各々 に は 、 それぞれ 外部 電源 が 接続 さ れ 、 外部 から 電力 が 供給 さ れる 。
+[T] 図示 し ない が 、 各 第 １ の 送信 ／ 受信 モジュール １２ および 第 ２ の 送信 ／ 受信 モジュール １４ に 外部 電源 が 接続 さ れ て いる 、 外部 から 電力 が 供給 さ れる 。
+
+--[1009 0.536881]--
+VP . -> [X0] は [X1] 。
+|--FIGDOT 5 -> 図 ５
+|--a block diagram VP -> [X0] の 構成 を 示す ブロック 図 で ある
+   |--the electric circuit of NP -> <<22>> の 電気 回路
+      |--the multi beam distance VP -> マルチ ビーム 距離 <<27>>
+         |--measuring NP -> 測定 [X0]
+            |--sensor 10 -> センサ １０
+---
+[E] FIGDOT 5 is a block diagram showing the electric circuit of the multi beam distance measuring sensor 10 .
+[J] 図 ５ は 、 マルチ ビーム 測 距 センサ １０ の 電気 回路 を 示す ブロック 図 で ある 。
+[T] 図 ５ は マルチ ビーム 距離 測定 センサ １０ の 電気 回路 の 構成 を 示す ブロック 図 で ある 。
+
+--[1012 0.518135]--
+VP . -> [X0] 。
+|--NP are VP -> [X0] は [X1]
+   |--NP , NP NP -> [X0] 、 [X1] および [X2] [X3]
+      |--the signal VP -> 信号 処理 [X0]
+         |--circuit 29 -> 回路 ２９
+      |--the psd 4 -> ＰＳＤ ４
+      |--the led driving -> ＬＥＤ 駆動
+      |--circuit 25 -> 回路 ２５
+   |--supplied with power by NP -> <<35>> により 電源 が 供給 さ れる
+      |--NP and NP -> [X0] [X1]
+         |--a constant voltage NP -> 定 電圧 [X0]
+            |--circuit 26 NP -> 回路 ２６ [X0]
+               |--that VP -> は [X0]
+                  |--externally supplied with NP -> 外部 <<56>> を 供給 さ れる
+                     |--power via NP -> <<61>> を 介し て 電力
+                        |--a power supply terminal vcc -> 電源 端子 Ｖｃｃ
+         |--outputs VP -> [X0] を 出力 する
+            |--driving power -> 駆動 電力
+---
+[E] the signal processing circuit 29 , the psd 4 and the led driving circuit 25 are supplied with power by a constant voltage circuit 26 that is externally supplied with power via a power supply terminal vcc and outputs driving power .
+[J] 上記 信号 処理 回路 ２９ 、 ＰＳＤ ４ および ＬＥＤ 駆動 回路 ２５ は 、 電源 端子 Ｖｃｃ を 介し て 外部 から 電源 が 供給 さ れ て 駆動 電力 を 出力 する 定 電圧 回路 ２６ によって 、 電力 が 供給 さ れる よう に なっ て いる 。
+[T] 信号 処理 回路 ２９ 、 ＰＳＤ ４ および ＬＥＤ 駆動 回路 ２５ は 定 電圧 回路 ２６ は 外部 電源 端子 Ｖｃｃ を 介し て 電力 を 供給 さ れる 駆動 電力 を 出力 する により 電源 が 供給 さ れる 。
+
+--[1013 0.682315]--
+NP . -> [X0] 。
+|--NP ; 55 and NP -> <<4>> ５５ 及び <<37>>
+   |--the leds CD -> ＬＥＤ <<7>>
+      |--51 & CD -> ５１ <<11>>
+         |--# x2013 -> ＃ x2013
+   |--the psd 4 VP -> ＰＳＤ ４ <<22>>
+      |--are VP -> は [X0]
+         |--electrically connected to CD -> [X0] に 電気 的 に 接続 さ れ て いる
+            |--an ic NP 31 -> ＩＣ <<33>> ３１
+               |---LRB- NP -RRB- -> （ [X0] ）
+                  |--integrated circuit -> 集積 回路
+---
+[E] the leds 51 & # x2013 ; 55 and the psd 4 are electrically connected to an ic -LRB- integrated circuit -RRB- 31 .
+[J] 上記 ＬＥＤ ５１ 〜 ５５ および ＰＳＤ ４ は 、 ＩＣ （ 集積 回路 ） ３１ に 電気 的 に 接続 さ れ て いる 。
+[T] ＬＥＤ ５１ ＃ x2013 ５５ 及び ＰＳＤ ４ は ＩＣ （ 集積 回路 ） ３１ に 電気 的 に 接続 さ れ て いる 。
+
+--[1020 0.706431]--
+VP . -> [X0] 。
+|--NP is VP -> [X0] た 信号 は [X1]
+   |--processed by NP -> [X0] で 処理 さ れ
+      |--the signal VP -> 信号 処理 [X0]
+         |--circuit 29 -> 回路 ２９
+   |--outputted through NP -> [X0] を 介し て 出力 さ れる
+      |--an output circuit 28 -> 出力 回路 ２８
+---
+[E] the signal processed by the signal processing circuit 29 is outputted through an output circuit 28 .
+[J] 上記 信号 処理 回路 ２９ で 処理 さ れ た 信号 は 、 出力 回路 ２８ を 経 て 出力 さ れる 。
+[T] 信号 処理 回路 ２９ で 処理 さ れ た 信号 は 出力 回路 ２８ を 介し て 出力 さ れる 。
+
+--[1034 0.728836]--
+S . -> [X0] 、 [X1] 。
+|--on NP -> 一方
+|--NP is VP -> [X0] に [X1] が 設け られ て いる
+   |--the socket housing 70 of NP -> <<17>> の ソケット ハウジング ７０
+      |--the socket connector 7 -> コネクタ ７
+   |--the socket contacts 9 -> は ソケット コンタクト ９
+---
+[E] on the other hand , the socket housing 70 of the socket connector 7 is provided with the socket contacts 9 .
+[J] 一方 、 ソケットコネクタ ７ の ソケット ハウジング ７０ に は 、 ソケット コンタクト ９ が 設け られ て いる 。
+[T] 一方 、 コネクタ ７ の ソケット ハウジング ７０ に は ソケット コンタクト ９ が 設け られ て いる 。
+
+--[1051 0.507593]--
+S . -> [X0] 。
+|--therefore , NP -> したがって 、 [X0]
+   |--NP can VP -> [X0] [X1] する こと が できる
+      |--occurrence of NP -> [X0] の 発生 を
+         |--the VP punchthrough leak and field inversion -> <<12>> パンチ スルー リーク および フィールド 反転
+            |--so called -> いわゆる
+      |--prevented by NP -> <<29>> により 防止
+         |--the same action as VP -> <<36>> と 同様 の 作用
+            |--described above -> 上述 し た
+---
+[E] therefore , occurrence of the so called punchthrough leak and field inversion can be prevented by the same action as described above .
+[J] その ため 、 上記 と 同様 の 作用 によって 、 いわゆる パンチ スルー リーク および フィールド 反転 が 発生 する こと を 防止 する こと が できる 。
+[T] したがって 、 いわゆる パンチ スルー リーク および フィールド 反転 の 発生 を 上述 し た と 同様 の 作用 により 防止 する こと が できる 。
+
+--[1052 0.567753]--
+S . -> [X0] 。
+|--IN , NP -> [X0] に よれ ば 、 [X1]
+   |--the above configuration -> 以上 の 構成
+   |--NP can VP -> [X0] を 得る こと が できる
+      |--the same effect as DT -> [X0] と 同様 の 効果
+         |--that of NP -> 第 １ の 実施 形態
+---
+[E] with the above configuration , the same effect as that of the first embodiment can be attained .
+[J] 上記 の よう な 構成 に よれ ば 、 上記 第 １ の 実施 形態 と 同様 の 効果 を 得 られる 。
+[T] 以上 の 構成 に よれ ば 、 第 １ の 実施 形態 と 同様 の 効果 を 得る こと が できる 。
+
+--[1053 0.860485]--
+S . -> また 、 [X0] 。
+|--NP are JJ NP -> <<5>> は <<13>> <<24>>
+   |---LRB- VP -RRB- -> （ 図示 せ ず ）
+   |--the control electrode layers 45 -> 制御 電極 層 ４５
+   |--electrically connected to NP -> [X0] に 電気 的 に 接続 さ れ て いる
+      |--the transfer gate lines tg -> トランスファ ゲート 線 ＴＧ
+---
+[E] further , the control electrode layers 45 are electrically connected to the transfer gate lines tg -LRB- not shown -RRB- .
+[J] また 、 制御 電極 層 ４５ は 、 転送 ゲート 線 ＴＧ に 電気 的 に 接続 さ れ て いる （ 図示 せ ず ） 。
+[T] また 、 制御 電極 層 ４５ は トランスファ ゲート 線 ＴＧ に 電気 的 に 接続 さ れ て いる （ 図示 せ ず ） 。
+
+--[1054 0.874739]--
+VP . -> [X0] は [X1] て いる 。
+|--the source line NP -> ソース 線 [X0]
+   |--driver 15 -> ドライバ １５
+|--configured to VP -> [X0] よう に 構成 さ れ
+   |--apply voltage to NP -> <<22>> に 電圧 を 印加 する
+      |--the source line sl -> ソース 線 ＳＬ
+---
+[E] the source line driver 15 is configured to apply voltage to the source line sl .
+[J] ソース 線 ドライバ １５ は 、 ソース 線 ＳＬ に 電圧 を 印加 する よう に 構成 さ れ て いる 。
+[T] ソース 線 ドライバ １５ は ソース 線 ＳＬ に 電圧 を 印加 する よう に 構成 さ れ て いる 。
+
+--[1057 0.515283]--
+VP . -> [X0] は [X1] で ある 。
+|--FIGDOT 1 -> 図 １
+|--a plan view VP -> [X0] 平面 図
+   |--schematically showing NP -> [X0] 概略 的 に 示す
+      |--NP and NP -> [X0] 、 [X1]
+         |--a memory cell array -> メモリセルアレイ
+         |--a peripheral circuit thereof in NP -> <<32>> の 周辺 回路 を
+            |--the nand flash memory -> ＮＡＮＤ 型 フラッシュ メモリ
+---
+[E] FIGDOT 1 is a plan view schematically showing a memory cell array and a peripheral circuit thereof in the nand flash memory .
+[J] 図 １ は 、 ＮＡＮＤ 型 フラッシュ メモリ の メモリ セル アレイ と その 周辺 回路 を 模 式 的 に 示す 平面 図 で ある 。
+[T] 図 １ は メモリセルアレイ 、 ＮＡＮＤ 型 フラッシュ メモリ の 周辺 回路 を 概略 的 に 示す 平面 図 で ある 。
+
+--[1068 0.531728]--
+VP . -> [X0] で ある 。
+|--NP designates NP -> ３ は [X0]
+   |--a bolt for VP -> <<14>> する ため の ボルト
+      |--fixing NP onto NP -> <<16>> の <<21>> へ 固定
+         |--the generator -> 発電 機
+         |--the stay 2 -> ステー ２
+---
+[E] numeral 3 designates a bolt for fixing the generator onto the stay 2 .
+[J] また 、 ３ は 発電 機 １ を ステー ２ に 固定 する ため の ボルト で ある 。
+[T] ３ は 発電 機 の ステー ２ へ 固定 する ため の ボルト で ある 。
+
+--[1083 0.519909]--
+VP . -> [X0] は [X1] 。
+|--one end of NP -> [X0] の 一端
+   |--the core NP -> コア [X0]
+      |--wire 31 -> ワイヤ ３１
+|--connected to NP while VP -> [X0] に 接続 さ れ [X1]
+   |--the detecting electrode 12 -> 検出 電極 １２
+   |--NP is VP -> [X0] は [X1] に 接続 さ れ て いる
+      |--the other end -> 他端
+      |--an input terminal of NP -> [X0] の 入力 端子
+         |--the detecting circuit 21 -> 検出 回路 ２１
+---
+[E] one end of the core wire 31 is connected to the detecting electrode 12 while the other end is connected to an input terminal of the detecting circuit 21 .
+[J] 芯線 ３１ の 一端 は 検知 電極 １２ に 接続 さ れ 、 他端 は 検知 電極 ２１ の 入力 端 に 接続 さ れ て いる 。
+[T] コア ワイヤ ３１ の 一端 は 検出 電極 １２ に 接続 さ れ 他端 は 検出 回路 ２１ の 入力 端子 に 接続 さ れ て いる 。
+
+--[1097 0.514118]--
+S . -> [X0] 。
+|--subsequently , IN , VP , NP -> 次に 、 <<48>> 、 <<22>> 、 <<49>>
+   |--as VP -> [X0] に 示す よう に
+      |--FIGDOT 9e -> 図 ９ （ ｅ ）
+   |--and NP -> [X0]
+      |--rth VP -> rth <<31>>
+         |--is VP -> が [X0]
+            |--performed only on NP within NP -> <<46>> 内 の <<39>> に のみ 行わ れる
+               |--the low voltage region -> 低 電圧 領域
+               |--the active region 3 -> 活性 領域 ３
+   |--NP is removed -> レジスト パターン ５ を 除去 する
+---
+[E] subsequently , as shown in FIGDOT 9e , the resist pattern 5 is removed , and rth is performed only on the active region 3 within the low voltage region .
+[J] 続い て 、 図 ９ Ｅ に 示す よう に 、 レジスト パターン ５ を 除去 し 、 低 電圧 領域 内 の 活性 領域 ３ に対して のみ ＲＴＨ を 行う 。
+[T] 次に 、 図 ９ （ ｅ ） に 示す よう に 、 レジスト パターン ５ を 除去 する 、 rth が 低 電圧 領域 内 の 活性 領域 ３ に のみ 行わ れる 。
+
+--[1098 0.655272]--
+S . -> 従って 、 [X0] 。
+|--NP becomes NP -> [X0] が [X1]
+   |--the difference between NP -> [X0] と [X1] と の 差
+      |--the surface of NP -> [X0] の 表面
+         |--the active region 3 -> 活性 領域 ３
+      |--the surface of NP -> [X0] の 表面
+         |--the element isolation VP -> 素子 分離 絶縁 [X0]
+            |--film 2 -> 膜 ２
+   |--CD nm -> [X0] で ある
+      |--about 2.65 -> 約 2.65
+---
+[E] accordingly , the difference between the surface of the active region 3 and the surface of the element isolation insulating film 2 becomes about 2.65 nm .
+[J] 従って 、 活性 領域 ３ の 表面 と 素子 分離 絶縁 膜 ２ の 表面 と の 差 は ２ ． ６５ ｎｍ 程度 と なる 。
+[T] 従って 、 活性 領域 ３ の 表面 と 素子 分離 絶縁 膜 ２ の 表面 と の 差 が 約 2.65 で ある 。
+
+--[1102 0.502575]--
+S . -> そして 、 [X0] 。
+|--NP was measured -> [X0] を 測定 し た
+   |--the effective gate width NP of DT -> <<17>> の 実効 的 な ゲート 幅 <<11>>
+      |--each of NP -> 各 [X0]
+         |--the transistors VP -> [X0] た トランジスタ
+            |--produced by NP -> [X0] によって 製造 さ れ
+               |--the VP methods -> は [X0] 方法
+                  |--above described -> 上述 し た
+      |---LRB- weff -RRB- -> （ Ｗｅｆｆ ）
+---
+[E] then , the effective gate width -LRB- weff -RRB- of each of the transistors produced by the above described methods was measured .
+[J] そして 、 この よう な 方法 で 作製 し た トランジスタ について 、 実効 的 な ゲート 幅 （ Ｗｅｆｆ ） を 測定 し た 。
+[T] そして 、 各 は 上述 し た 方法 によって 製造 さ れ た トランジスタ の 実効 的 な ゲート 幅 （ Ｗｅｆｆ ） を 測定 し た 。
+
+--[1104 0.613978]--
+VP . -> なお 、 [X0] て いる 。
+|--NP was VP -> [X0] を [X1]
+   |--an hdp NP oxide film -> ＨＤＰ <<10>> 酸化 膜
+      |---LRB- NP -RRB- -> （ Ｈｉｇｈ Ｄｅｎｓｉｔｙ Ｐｌａｓｍａ ）
+   |--formed as NP -> [X0] として 形成 さ れ
+      |--the element isolation insulating film -> 素子 分離 絶縁 膜
+---
+[E] note that an hdp -LRB- high density plasma -RRB- oxide film was formed as the element isolation insulating film .
+[J] なお 、 素子 分離 絶縁 膜 として は 、 ＨＤＰ （ Ｈｉｇｈ Ｄｅｎｓｉｔｙ Ｐｌａｓｍａ ） 酸化 膜 を 形成 し た 。
+[T] なお 、 ＨＤＰ （ Ｈｉｇｈ Ｄｅｎｓｉｔｙ Ｐｌａｓｍａ ） 酸化 膜 を 素子 分離 絶縁 膜 として 形成 さ れ て いる 。
+
+--[1105 0.712217]--
+S . -> 従って 、 [X0] で ある 。
+|--NP becomes NP -> [X0] が [X1]
+   |--the difference between NP -> [X0] と [X1] と の 差
+      |--the surface of NP -> [X0] の 表面
+         |--the active region 3 -> 活性 領域 ３
+      |--the surface of NP -> [X0] の 表面
+         |--the element isolation VP -> 素子 分離 絶縁 [X0]
+            |--film 2 -> 膜 ２
+   |--CD nm -> 約 ６ｎｍ
+---
+[E] accordingly , the difference between the surface of the active region 3 and the surface of the element isolation insulating film 2 becomes about 6 nm .
+[J] 従って 、 活性 領域 ３ の 表面 と 素子 分離 絶縁 膜 ２ の 表面 と の 差 は ６ ｎｍ 程度 と なる 。
+[T] 従って 、 活性 領域 ３ の 表面 と 素子 分離 絶縁 膜 ２ の 表面 と の 差 が 約 ６ｎｍ で ある 。
+
+--[1112 0.551145]--
+S . -> その後 、 [X0] 、 [X1] 。
+|--as VP -> [X0] に 示す よう に
+   |--FIGDOT 5d -> 図 ５ （ ｄ ）
+|--NP is VP -> [X1] [X0] が 行わ れる
+   |--wet etching VP -> [X0] た ウェット エッチング
+      |--using IN -> 、 例えば 、 [X0] を 用い
+         |--hydrofluoric acid -> フッ 酸
+   |--the resist pattern 5 VP -> レジスト パターン ５ を <<44>>
+      |--used as NP to VP -> マスク に し て [X0]
+         |--thereby remove NP -> [X0] を 除去 する
+            |--the gate VP -> ゲート 絶縁 [X0]
+               |--film 4 VP -> 膜 ４ [X0]
+                  |--existing within NP -> [X0] 内 に 存在 する
+                     |--the low voltage region -> は 低 電圧 領域
+---
+[E] thereafter , as shown in FIGDOT 5d , wet etching using , for example , hydrofluoric acid is performed with the resist pattern 5 used as a mask to thereby remove the gate insulating film 4 existing within the low voltage region .
+[J] その後 、 図 ５ Ｄ に 示す よう に 、 レジスト パターン ５ を マスク として 、 例えば フッ 酸 を 用い た ウェット エッチング を 行う こと に より 、 低 電圧 領域 内 に 存在 する ゲート 絶縁 膜 ４ を 除去 する 。
+[T] その後 、 図 ５ （ ｄ ） に 示す よう に 、 レジスト パターン ５ を マスク に し て ゲート 絶縁 膜 ４ は 低 電圧 領域 内 に 存在 する を 除去 する 、 例えば 、 フッ 酸 を 用い た ウェット エッチング が 行わ れる 。
+
+--[1116 0.513860]--
+S . -> また 、 [X0] さ れ て いる 。
+|--on NP -> [X0] に
+   [GentileRuleTable] Loading rule table handles ...
+[GentileRuleTable] Loading index tables ...
+[GentileRuleTable] Loading rule table handles ...
+[GentileRuleTable] Loading index tables ...
+[GentileRuleTable] Loading rule table handles ...
+[GentileRuleTable] Loading index tables ...
+|--the flange member 16 VP -> フランジ 部材 １６ <<14>>
+      |--is VP -> が [X0]
+         |--mounted NP CD -> 装着 さ れ た <<18>> <<22>>
+            |--a polygon mirror -> ポリゴンミラー
+            |--21 of NP -> ２１ の <<46>>
+               |--hexahedron shape NP -> <<30>> 六面体 形状
+                  |--which VP -> [X0] を 構成 する
+                     |--an essential portion of NP -> [X0] の 要 部
+                        |--the present invention -> 本 発明
+---
+[E] in addition , on the flange member 16 is mounted a polygon mirror 21 of hexahedron shape which constitutes an essential portion of the present invention .
+[J] 更に 、 フランジ 部材 １６ 上 に は 、 本 発明 の 要 部 を 構成 する 六面体 の ポリゴンミラー ２１ が 搭載 さ れ て いる 。
+[T] また 、 フランジ 部材 １６ が 装着 さ れ た ポリゴンミラー ２１ の 本 発明 の 要 部 を 構成 する 六面体 形状 に さ れ て いる 。
+
+---
+All Found: 129
+Glue Found: 0
+Doc Bleu: 30.9250502740241
