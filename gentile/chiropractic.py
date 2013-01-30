@@ -249,7 +249,7 @@ class ChiropracticDecoder:
     """
     phraseBorders = self.buildPhraseBorders(sense)
     phraseDependencies = self.buildPhraseDependencies(sense, phraseBorders)
-    phraseDerivations = self.buildPhraseDerivations(sense, phraseBorders, phraseDependencies)
+    phraseDerivations = self.buildPhraseDerivations(phraseBorders, phraseDependencies)
     # For each area from short to long do forest decoding
     areas = set()
     map(areas.update, phraseDependencies.values())
@@ -263,7 +263,7 @@ class ChiropracticDecoder:
     maxTokenId = len(sense.tokens)
     for area in areas:
       self.disableInpossibleCells(hypStacks, area, maxTokenId)
-      self.buildHypothesisesForArea(hypStacks, area, phraseDerivations)
+      self.buildHypothesisesForArea(hypStacks, area, phraseBorders, phraseDerivations)
 
   def disableInpossibleCells(self, hypStacks, area, maxTokenId):
     """
@@ -297,12 +297,22 @@ class ChiropracticDecoder:
 
   def enumerateBasePhrasesForArea(self, area, phraseBorders, phraseDerivations):
     """
+    Enumerate all base phrases for given area, any base phrase should not depend on another base phrase.
 
     @param area:
     @param phraseBorders:
     @param phraseDerivations:
     @return:
     """
+    leftAreaBorder, rightAreaBorder = area
+    candidates = [phrase for phrase in phraseBorders
+                  if phraseBorders[phrase][0] >= leftAreaBorder and phraseBorders[phrase][1] <= rightAreaBorder ]
+    for dependentPhrase, phrase in phraseDerivations:
+      if dependentPhrase in candidates and phrase in candidates:
+        candidates.remove(dependentPhrase)
+    # Sort in the order of word
+    candidates.sort(key=lambda p: phraseBorders[p][0] )
+    return candidates
 
   def buildHypothesisesForArea(self, hypStacks, area, phraseBorders, phraseDerivations):
     """
@@ -314,6 +324,8 @@ class ChiropracticDecoder:
     @param phraseDerivations: list (child node, yielded node)
     @return: None
     """
+    basePhrases = self.enumerateBasePhrasesForArea(area, phraseBorders, phraseDerivations)
+    
 
 
 
