@@ -65,6 +65,10 @@ size_beam : 100
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2
 
+################ Chiropractic ###########
+enable_chiropractic : yes
+
+
 # weight settings
 weights :
 #Statistical Features (in ruletable):

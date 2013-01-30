@@ -11,6 +11,7 @@ import sys,os
 sys.path += ["%s/abraham" % os.path.dirname(os.path.abspath(__file__))]
 from abraham.setting import setting
 from gentile.decoder import GentileDecoder
+from gentile.chiropractic import ChiropracticDecoder
 
 if __name__ == "__main__":
   #sys.argv.append ("config.yaml")
@@ -23,11 +24,11 @@ if __name__ == "__main__":
   elif arg_length == 2:
     # abraham.py config.yaml
     setting.runningMode = "normal"
-    setting.load(["file_translation_input_tree","file_translation_input_dep","file_translation_output","size_cube_pruning"])
+    setting.load(["enable_chiropractic","file_translation_input_tree","file_translation_input_dep","file_translation_output","size_cube_pruning"])
     linesDep = open(setting.file_translation_input_dep).read().split("\n\n")
     linesTree = open(setting.file_translation_input_tree).readlines()
 
-    decoder = GentileDecoder()
+    decoder = setting.enable_chiropractic and ChiropracticDecoder() or GentileDecoder()
     foutput = open(setting.file_translation_output, "w")
 
     print "[Abraham]","translate %d sentences..." % (len(linesTree))
@@ -36,15 +37,15 @@ if __name__ == "__main__":
       lineTree = linesTree[i].strip()
       lineDep = linesDep[i].strip()
       hyps = decoder.translateNBest(lineTree, lineDep)
-      hyps[0].trace()
-      if len(hyps)==0:
-        print "[%d]" % i , "Translation Failed!!!"
-        foutput.write("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
-        continue
-      result = hyps[0].getTranslation()
-      
-      print "[%d]" % i , result
-      foutput.write(result+"\n")
+#      hyps[0].trace()
+#      if len(hyps)==0:
+#        print "[%d]" % i , "Translation Failed!!!"
+#        foutput.write("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
+#        continue
+#      result = hyps[0].getTranslation()
+#
+#      print "[%d]" % i , result
+#      foutput.write(result+"\n")
     foutput.close()
 
   elif arg_length == 3:
