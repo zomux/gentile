@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4d238708-4e33-4270-956c-1425c2d555f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.yaml" afterPath="$PROJECT_DIR$/config.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gentile/chiropractic.py" afterPath="$PROJECT_DIR$/gentile/chiropractic.py" />
     </list>
     <ignored path="gentile.iws" />
@@ -34,7 +35,16 @@
       <file leaf-file-name="chiropractic.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gentile/chiropractic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="327" column="4" selection-start="11210" selection-end="11210" vertical-scroll-proportion="0.649635">
+            <state line="438" column="0" selection-start="15254" selection-end="15254" vertical-scroll-proportion="0.6996872">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sense.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gentile/sense.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="188" column="23" selection-start="5140" selection-end="5157" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,7 +89,7 @@
       <file leaf-file-name="config.yaml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0">
+            <state line="69" column="18" selection-start="1574" selection-end="1592" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,11 +109,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/gentile/sense.py" />
-        <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/utils/languagemodel/srilm_wrapper.py" />
         <option value="$PROJECT_DIR$/gentile.py" />
         <option value="$PROJECT_DIR$/gentile/reconstructor.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/gentile/chiropractic.py" />
       </list>
     </option>
@@ -227,8 +237,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.sourceCode.Python" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -399,21 +409,11 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gentile/sense.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="13" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gentile.m.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/languagemodel/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -427,13 +427,6 @@
     <entry file="file://$PROJECT_DIR$/utils/languagemodel/srilm_wrapper.h">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.4976" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/languagemodel/srilm.py">
@@ -456,9 +449,28 @@
         <state line="14" column="12" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="25" selection-end="25" vertical-scroll-proportion="0.035661217" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="18" selection-start="1574" selection-end="1592" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gentile/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gentile.m.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -484,14 +496,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/gentile/sense.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="5" selection-start="25" selection-end="25" vertical-scroll-proportion="0.035661217" />
+        <state line="188" column="23" selection-start="5140" selection-end="5157" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gentile/chiropractic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="327" column="4" selection-start="11210" selection-end="11210" vertical-scroll-proportion="0.649635">
+        <state line="438" column="0" selection-start="15254" selection-end="15254" vertical-scroll-proportion="0.6996872">
           <folding />
         </state>
       </provider>

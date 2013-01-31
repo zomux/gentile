@@ -95,7 +95,7 @@ class ChiropracticDecoder:
     """
     # first, we need get the tree of input
     self.model.cacheMode = False
-    setting.load(["nbest"])
+    setting.load(["nbest", "head_phrases_limit"])
     tree = SenseTree(data_tree,data_dep)
     tree.rebuildTopNode()
     tree.appendXToTree()
@@ -177,6 +177,7 @@ class ChiropracticDecoder:
     tree.rebuildCommaNodes()
     tree.convertTags()
     tree.separateContiniousNonTerminals()
+    tree.buildLevelMap()
     # Prepare for chiropractic process.
     treeForest = [tree]
     resultStack = []
@@ -195,6 +196,44 @@ class ChiropracticDecoder:
       terminals = [t for t in nodeTokens if t > 0]
       borders[node] = (min(terminals), max(terminals))
     return borders
+
+  def buildPhraseClosedTokens(self, sense, borders):
+    """
+    Generate closed tokens for each phrase.
+
+    @param sense:
+    @return:
+    """
+    closedTokens = {}
+    for node in borders:
+      firstTerminal, lastTerminal = borders[node]
+      nodeTokens = sense.tree.nodes[node]
+      firstTerminalPos, lastTerminalPos = nodeTokens.index(firstTerminal), nodeTokens.index(lastTerminal)
+      closedTokens[node] = nodeTokens[firstTerminalPos : lastTerminalPos+1]
+    return closedTokens
+
+
+  def buildPhraseCoverages(self, sense):
+    """
+    Generate a map saving word coverages for each phrase.
+
+    @type sense: SenseTree
+    @return:
+    """
+    phraseCoverages = {}
+    currentLevel = sense.getMaxLevel()
+    while currentLevel > 0:
+      nodes = sense.getNodesByLevel(currentLevel)
+      for node in nodes:
+        terminals = [t for t in sense.tree.nodes[node] if t > 0]
+        nonTerminals =  [t for t in sense.tree.nodes[node] if t < 0]
+        for nonTerminal in nonTerminals:
+          terminals.extend(phraseCoverages[-nonTerminal])
+        phraseCoverages[node] = terminals
+      currentLevel -= 1
+    for phrase in phraseCoverages:
+      phraseCoverages[phrase] = (min(phraseCoverages[phrase]), max(phraseCoverages[phrase]))
+    return phraseCoverages
 
   def buildPhraseDependencies(self, sense, borders):
     """
@@ -241,15 +280,28 @@ class ChiropracticDecoder:
             phraseDerivations.append((childNode, node))
     return phraseDerivations
 
+  def buildPhraseHeadWords(self, sense):
+    """
+    For each phrase, determine the head word for it.
+
+    @type sense: SenseTree
+    @return:
+    """
+
+
+
   def chiropracticTranslation(self, sense):
     """
     Do chiropractic translation for a given phrase combination
-    @param sense:
+    @type sense: SenseTree
     @return:
     """
     phraseBorders = self.buildPhraseBorders(sense)
     phraseDependencies = self.buildPhraseDependencies(sense, phraseBorders)
     phraseDerivations = self.buildPhraseDerivations(phraseBorders, phraseDependencies)
+    phraseCoverages = self.buildPhraseCoverages(sense)
+    phraseClosedTokens = self.buildPhraseClosedTokens(sense, phraseBorders)
+    # phraseHeadWords = sense.mapNodeToMainToken
     # For each area from short to long do forest decoding
     areas = set()
     map(areas.update, phraseDependencies.values())
@@ -263,7 +315,7 @@ class ChiropracticDecoder:
     maxTokenId = len(sense.tokens)
     for area in areas:
       self.disableInpossibleCells(hypStacks, area, maxTokenId)
-      self.buildHypothesisesForArea(hypStacks, area, phraseBorders, phraseDerivations)
+      self.buildHypothesisesForArea(sense, hypStacks, area, phraseBorders, phraseDerivations, phraseCoverages, phraseClosedTokens)
 
   def disableInpossibleCells(self, hypStacks, area, maxTokenId):
     """
@@ -314,7 +366,53 @@ class ChiropracticDecoder:
     candidates.sort(key=lambda p: phraseBorders[p][0] )
     return candidates
 
-  def buildHypothesisesForArea(self, hypStacks, area, phraseBorders, phraseDerivations):
+  def listHeadPhrases(self, phraseGroup, phraseBorders, phraseCoverages):
+    """
+    List possible head phrases from phrase group,
+
+    if phrases more than limit found, prune it with coverage similarity.
+
+    @param phraseGroup:
+    @param phraseBorders:
+    @param phraseCoverages:
+    @return:
+    """
+    candidates = list(phraseGroup)
+    if len(candidates) <= setting.head_phrases_limit:
+      return candidates
+    coverageLength = phraseBorders[phraseGroup[-1]][1] - phraseBorders[phraseGroup[0]][0]
+    candidates.sort(key=lambda p: abs(phraseCoverages[p][1] - phraseCoverages[p][0] - coverageLength))
+    return candidates[:setting.head_phrases_limit]
+
+  def buildSource(self, sense, phraseGroup, phraseBorders, phraseClosedTokens, headPhrase):
+    """
+    Generate source for given head phrase in the situation of given phrase group.
+
+    @param sense:
+    @param phraseGroup:
+    @param phraseClosedTokens:
+    @param headPhrase:
+    @return: source
+    """
+    source = []
+    headPhrasePosition = phraseGroup.index(headPhrase)
+    # Add left part
+    if headPhrasePosition > 0:
+      source.append((phraseBorders[phraseGroup[0]][0], phraseBorders[phraseGroup[headPhrasePosition - 1]][1],))
+    # Add part of head phrase
+    for token in phraseClosedTokens[headPhrase]:
+      if token > 0:
+        # Terminals
+        source.append(token)
+      else:
+        # Non-terminals
+        source.append(phraseBorders[-token])
+    # Add right part
+    if headPhrasePosition < len(phraseGroup) - 1:
+      source.append((phraseBorders[phraseGroup[headPhrasePosition + 1]][0], phraseBorders[phraseGroup[len(phraseGroup) - 1]][1],))
+    return source
+
+  def buildHypothesisesForArea(self, sense, hypStacks, area, phraseBorders, phraseDerivations, phraseCoverages, phraseClosedTokens):
     """
     Build Hypothesis stacks in given area.
 
@@ -322,10 +420,21 @@ class ChiropracticDecoder:
     @param area: (low token id, high token id)
     @param phraseBorders: map node -> (left border, right border)
     @param phraseDerivations: list (child node, yielded node)
+    @param phraseCoverages: map node -> (left coverage end, right coverage end)
     @return: None
     """
     basePhrases = self.enumerateBasePhrasesForArea(area, phraseBorders, phraseDerivations)
-    
+    # Assume all base phrases fullfill the area
+    # print [phraseBorders[p] for p in basePhrases]
+
+    # Decode in phrase CYK
+    for phraseCount in range(1, len(basePhrases) + 1):
+      for beginPosition in range(0, len(basePhrases) - phraseCount + 1):
+        phraseGroup = basePhrases[beginPosition : beginPosition + phraseCount]
+        headPhraseCandidates = self.listHeadPhrases(phraseGroup, phraseBorders, phraseCoverages)
+        for headPhrase in headPhraseCandidates:
+          source = self.buildSource(sense, phraseGroup, phraseBorders, headPhrase)
+
 
 
 
