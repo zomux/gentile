@@ -11,7 +11,7 @@ import sys,os
 sys.path += ["%s/abraham" % os.path.dirname(os.path.abspath(__file__))]
 from abraham.setting import setting
 from gentile.decoder import GentileDecoder
-from gentile.chiropractic import ChiropracticDecoder
+from gentile.forestdecoder import ChiropracticDecoder
 
 if __name__ == "__main__":
   #sys.argv.append ("config.yaml")
