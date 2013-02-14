@@ -20,7 +20,7 @@ import os,sys
 from abraham.treestruct import DepTreeStruct
 from abraham.setting import setting
 from gentile.ruletable import GentileRuleTable
-from gentile.rulefetcher import GentileRuleFetcher
+from chiropractor.rulefetcher import RuleFetcher
 from gentile.hypothesis import GentileHypothesis
 from gentile.model import GentileModel
 from gentile.cubepruner import GentileCubePruner, separately_prune
@@ -37,6 +37,8 @@ class ChiropracticDecoder:
   Class that actually do the translation job.
   present the translation model described in Gentile Model.
   """
+  rulefetcher = None
+  """@type: RuleFetcher"""
   ruletable = None
   model = None
   """@type: GentileModel"""
@@ -46,8 +48,10 @@ class ChiropracticDecoder:
     """
     Load rule table and language model once !!!
     """
-    #self.ruletable = GentileRuleTable()
-    #self.model = GentileModel()
+
+    # self.ruletable = GentileRuleTable()
+    # self.model = GentileModel()
+    # self.rulefetcher = RuleFetcher(self.ruletable, self.model)
 
   def translate(self,data_tree,data_dep):
     """
@@ -57,18 +61,6 @@ class ChiropracticDecoder:
     @rtype: string
     """
     return self.translateNBest(data_tree,data_dep)[0].getTranslation()
-
-  def prepareRulesForTranslation(self,tree):
-    """
-    Decide joint node for pruning, and fetch rules
-    for each joint node.
-
-    @type tree: SenseTree
-    @rtype: GentileRuleFetcher
-    """
-    fetcher = GentileRuleFetcher(tree, self.ruletable, self.model)
-    fetcher.fetch()
-    return fetcher
 
   def buildLexicalStack(self,fetcher):
     """
@@ -289,7 +281,30 @@ class ChiropracticDecoder:
     @return:
     """
 
+  def buildIntrinsicRuleCoverageMap(self, sense, phraseCoverages):
+    """
+    Build a map saves coverage for each rule.
 
+    @param sense: parsed tree
+    @type sense: SenseTree
+    @return:
+    """
+    intrinsicRuleCoverages = {}
+    for node in sense.tree.nodes:
+      if node not in phraseCoverages:
+        continue
+      sourceStringList = []
+      for token in sense.tree.nodes[node]:
+        if token > 0:
+          # Terminal token
+          sourceStringList.append(sense.tokens[token - 1][1])
+        else:
+          # Non-terminal token
+          headToken = sense.mapNodeToMainToken[-token]
+          sourceStringList.append("[%s]" % sense.tokens[headToken - 1][0])
+      sourceString = " ".join(sourceStringList)
+      intrinsicRuleCoverages[sourceString] = phraseCoverages[node]
+    return intrinsicRuleCoverages
 
   def chiropracticTranslation(self, sense):
     """
@@ -302,6 +317,7 @@ class ChiropracticDecoder:
     phraseDerivations = self.buildPhraseDerivations(phraseBorders, phraseDependencies)
     phraseCoverages = self.buildPhraseCoverages(sense)
     phraseClosedTokens = self.buildPhraseClosedTokens(sense, phraseBorders)
+    intrinsicRuleCoverages = self.buildIntrinsicRuleCoverageMap(sense, phraseCoverages)
     # phraseHeadWords = sense.mapNodeToMainToken
     # For each area from short to long do forest decoding
     areas = set()
@@ -313,10 +329,12 @@ class ChiropracticDecoder:
     areas = list(areas)
     areas.sort(key = lambda x : x[1] - x[0])
     hypStacks = {}
+    areaTags = {}
     maxTokenId = len(sense.tokens)
     for area in areas:
       self.disableInpossibleCells(hypStacks, area, maxTokenId)
-      self.buildHypothesisesForArea(sense, hypStacks, area, phraseBorders, phraseDerivations, phraseCoverages, phraseClosedTokens)
+      self.buildHypothesisesForArea(sense, hypStacks, area, areaTags, phraseBorders, phraseDerivations,
+                                    phraseCoverages, phraseClosedTokens, intrinsicRuleCoverages)
 
   def disableInpossibleCells(self, hypStacks, area, maxTokenId):
     """
@@ -465,7 +483,84 @@ class ChiropracticDecoder:
 
     return combinations
 
-  def buildHypothesisesForArea(self, sense, hypStacks, area, phraseBorders, phraseDerivations, phraseCoverages, phraseClosedTokens):
+  def generateSourcesWithPhrase(self, phraseGroup, phraseClosedTokens, phraseBorders):
+    """
+
+    @param sense:
+    @param phraseGroup:
+    @return:
+    """
+    combinedPhraseLimit = 3
+    pruningSourceLimit = 1000
+    # Generate bit patterns
+    bitPatterns = []
+    for combinedPhraseLength in range(1, combinedPhraseLimit + 1):
+      if len(bitPatterns) >= pruningSourceLimit:
+        break
+      bitPattern = sum([2 ** n for n in range(combinedPhraseLength)])
+      for leftmoveLength in range(len(phraseGroup) - combinedPhraseLength + 1):
+        if len(bitPatterns) >= pruningSourceLimit:
+          break
+        bitPatterns.append(bitPattern << leftmoveLength)
+    # Generate sources
+    sourcesWithPhrase = []
+    rangePhrasePositions = range(len(phraseGroup))
+    for bitPattern in bitPatterns:
+      rawSource = []
+      phrases = []
+      for iPhrase in rangePhrasePositions:
+        if (bitPattern >> iPhrase) % 2:
+          # In this bit, the pattern holds 1, means terminal phrase
+          rawSource.extend(phraseClosedTokens[phraseGroup[iPhrase]])
+          phrases.append(phraseGroup[iPhrase])
+        else:
+          # In this bit, the pattern holds 0, means one of non-terminal
+          rawSource.append(-phraseGroup[iPhrase])
+      # Convert phrase id to area
+      currentNT = None
+      source = []
+      for pos in range(len(rawSource)):
+        if rawSource[pos] < 0:
+          # This position holds non-terminal
+          if not currentNT:
+            currentNT = phraseBorders[-rawSource[pos]]
+          else:
+            currentNT = (currentNT[0], phraseBorders[-rawSource[pos]][1])
+        else:
+          # This position holds terminal
+          if currentNT:
+            source.append(currentNT)
+            currentNT = None
+          source.append(rawSource[pos])
+      if currentNT:
+        source.append(currentNT)
+      sourcesWithPhrase.append((source, phrases))
+
+    return sourcesWithPhrase
+
+  def buildSourceString(self, sense, areaTags, source):
+    """
+    Convert source to string.
+
+    @param sense: hierarchical phrase tree
+    @type sense: SenseTree
+    @param areaTags:
+    @param source:
+    @return:
+    """
+    stringParts = []
+    for part in source:
+      if isinstance(part, tuple):
+        # A area for non-terminals
+        if part not in areaTags:
+          return None
+        stringParts.append("[%s]" % areaTags[part])
+      else:
+        # A token id for terminals
+        stringParts.append(sense.tokens[part - 1][1])
+    return " ".join(stringParts)
+
+  def buildHypothesisesForArea(self, sense, hypStacks, area, areaTags, phraseBorders, phraseDerivations, phraseCoverages, phraseClosedTokens, intrinsicRuleCoverages):
     """
     Build Hypothesis stacks in given area.
 
@@ -474,6 +569,7 @@ class ChiropracticDecoder:
     @param phraseBorders: map node -> (left border, right border)
     @param phraseDerivations: list (child node, yielded node)
     @param phraseCoverages: map node -> (left coverage end, right coverage end)
+    @param intrinsicRuleCoverages: map source string -> coverage
     @return: None
     """
     basePhrases = self.enumerateBasePhrasesForArea(area, phraseBorders, phraseDerivations)
@@ -484,34 +580,28 @@ class ChiropracticDecoder:
     for phraseCount in range(1, len(basePhrases) + 1):
       for beginPosition in range(0, len(basePhrases) - phraseCount + 1):
         phraseGroup = basePhrases[beginPosition : beginPosition + phraseCount]
-        headPhraseCandidates = self.listHeadPhrases(phraseGroup, phraseBorders, phraseCoverages)
-        for headPhrase in headPhraseCandidates:
-          source = self.buildSource(phraseGroup, phraseBorders, headPhrase)
-          # Check for support hypothesis stacks
-          # And also build dependent cells
+        sourcesWithPhrase = self.generateSourcesWithPhrase(phraseGroup, phraseClosedTokens, phraseBorders)
+        # Fetch rules and decode
+        # For all sources try exactly matching
+        for source, phrases in sourcesWithPhrase:
+          dependentAreas = [p for p in source if isinstance(p, tuple)]
+          # Check dependent hypothesises
           missingSupport = False
-          dependentCells = []
-          for part in source:
-            if isinstance(part, tuple):
-              if part not in hypStacks or not hypStacks[part]:
-                missingSupport = True
-                break
-              dependentCells.append(part)
+          for dependentArea in dependentAreas:
+            if dependentArea not in hypStacks:
+              missingSupport = True
+              break
           if missingSupport:
             continue
-          coverageMatched = ((phraseBorders[phraseGroup[0]][0] == phraseCoverages[headPhrase][0]) and
-                             (phraseBorders[phraseGroup[-1]][1] == phraseCoverages[headPhrase][1]))
-          hypClusterCombinations = self.selectTopHypClusterCombinations(hypStacks, dependentCells, setting.hypothesis_cluster_limit)
-          for hypClusterCombination in hypClusterCombinations:
-            # fetch rules and decode here
-            pass
-
-
-
-
-
-
-
-
-
-
+          # Fetch rule
+          sourceString = self.buildSourceString(sense, areaTags, source)
+          if not sourceString:
+            continue
+          # Fetch exactly matched rule
+          exactlyMatchedRules = self.rulefetcher.findRulesBySourceString(sourceString, dependentAreas)
+          if not exactlyMatchedRules:
+            coverage = (phraseBorders[phraseGroup[0]][0], phraseBorders[phraseGroup[-1]][1])
+            if sourceString not in intrinsicRuleCoverages or intrinsicRuleCoverages[sourceString] != coverage:
+              continue
+            # In this case, here we got a intrinsic rule covers same area in the parse tree.
+            # We should not allow this rule to be kicked off, so use reconstruction or depraved glue rule.
