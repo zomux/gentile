@@ -58,35 +58,6 @@ class RuleFetcher:
     self.ruletable = ruletable
     self.model = model
 
-  # def initJoints(self):
-  #   """
-  #   In Gentile, all nodes are joint.
-  #   """
-  #   self.joints = list(self.tree.nodes)
-  #
-  # def convertTokensToSourceString(self, tokens):
-  #   """
-  #   Convert given token list to source side string of a rule.
-  #   @param tokens: a list of tokens that corresponding to token ids saved in sense tree,
-  #                  and -nodeId stands for a site linked to a child node
-  #   """
-  #   sense = self.sense
-  #   return " ".join([sense.tokens[t-1][1]
-  #                    if t > 0 else "[%s]" % sense.tokens[sense.mapNodeToMainToken[-t]-1][0]
-  #                    for t in tokens])
-  #
-  # def getTagOfNode(self, nodeId):
-  #   """
-  #   Get tag(context) of given node's main token.
-  #   """
-  #   return self.sense.tokens[self.sense.mapNodeToMainToken[nodeId]-1][0]
-  #
-  # def recordDependentSitesForNode(self, nodeId, sites):
-  #   """
-  #   Record Dependent sites.
-  #   """
-  #   self.mapNodeDependentSites.setdefault(nodeId, set([])).update(sites)
-
   def findRulesBySourceString(self, sourceString, dependentAreas):
     """
 
@@ -96,23 +67,7 @@ class RuleFetcher:
     rulesFound = self.ruletable.findBySource(sourceString, dependentAreas, None)
     return rulesFound
 
-  def findRecontructMatchingRules(self, nodeId):
-    """
-    Use modified CKY to just build rules for node.
-    """
-    tokens = self.tree.node(nodeId)
-    assert len(tokens) > 0
-    if len(tokens) == 1:
-      return []
-    nodeTag = self.getTagOfNode(nodeId)
-    rc = Reconstructor(self.ruletable, self.model,
-                       self.sense, tokens, nodeTag)
-    rules = rc.parse()
-    if rules:
-      self.recordDependentSitesForNode(nodeId,[-t for t in tokens if t < 0])
-    return rules
-
-  def findDepravedMatchingRules(self, nodeId):
+  def buildDepravedMatchingRules(self, sense, source):
     """
     As the last chance we have, just build a pseudo rule,
     in a dirty way then break all tokens of this node to child nodes.
@@ -153,94 +108,3 @@ class RuleFetcher:
     pseudoRule = self.ruletable.buildPsuedoRule(None, sites)
     self.recordDependentSitesForNode(nodeId, sites)
     return [pseudoRule]
-
-  # def buildSourceString(self, source, hypClusterCombination):
-  #   """
-  #   Build source string from given source.
-  #   The tag of each non-temrinal is determined by hypClusterMap.
-  #
-  #   @param hypClusterCombination: list of area tags
-  #   """
-
-
-  # def fetchRulesForSource(self, source, hypClusterCombination):
-  #   """
-  #   Fetch rules for given source.
-  #   """
-  #   rules = []
-  #   self.mapNodeDependentSites[nodeId] = set([])
-  #   exactlyMatched = self.findExactlyMatchingRules(source, hypClusterCombination)
-  #   rules.extend(exactlyMatched)
-  #   mergedMatched = self.findMergedMatchingRules(nodeId)
-  #   rules.extend(mergedMatched)
-  #   if len(self.tree.node(nodeId)) > 12:
-  #     rules.extend(self.findDepravedMatchingRules(nodeId))
-  #   # HACK: 2012/10/22
-  #   # elif not mergedMatched and exactlyMatched and len(exactlyMatched) <= 1:
-  #   #   if exactlyMatched[0][2][2] < -3: # log(0.05)
-  #   #     # Clear rules in this bad situtation.
-  #   #     rules = []
-  #
-  #   # Allow no rules to return, then the decoder will be forced to
-  #   # build translation using CYK.
-  #   if not rules:
-  #     return None, {}
-  #   # if not rules:
-  #   #   rules.extend(self.findRecontructMatchingRules(nodeId))
-  #   # if not rules:
-  #   #   rules.extend(self.findDepravedMatchingRules(nodeId))
-  #   # # Should rule got here!.
-  #   # assert rules
-  #
-  #   return rules, self.mapNodeDependentSites[nodeId]
-
-  # def fetch(self, source):
-  #   """
-  #   Fetch rules for given tree.
-  #   """
-  #   self.initJoints()
-  #   # TODO: change to stack-loop style
-  #   for joint in self.joints:
-  #     rules, sitesFound = self.fetchRulesForNode(joint)
-  #     for site in sitesFound:
-  #       if site not in self.joints:
-  #         self.joints.append(site)
-  #     # Save found sites to sorted list.
-  #     self.mapJointRules[joint] = (rules, sorted(sitesFound))
-
-
-# ############### FORBBBBBIDEN TEST AREA ################
-# def test():
-#   """
-#   Starry Night - Van Gogh.
-#   """
-#   def showRules(rules):
-#     for r in rules:
-#       t,s,c = r
-#       print t,"|",s,c
-#     return ""
-#   ruletable = GentileRuleTable()
-#   from testdata.testtree import testtree
-#   testtree.appendXToTree()
-#   fetcher = GentileRuleFetcher(testtree, ruletable)
-#   print "--- convertTokenToSourceString ---"
-#   source14 = fetcher.convertTokensToSourceString(testtree.tree.node(14))
-#   source7 = fetcher.convertTokensToSourceString(testtree.tree.node(7))
-#   print 14, source14
-#   print 7, source7
-#   fetcher.initJoints()
-#   print "--- findExactlyMatchingRules ---"
-#   print 14, showRules(fetcher.findExactlyMatchingRules(14))
-#   print 7, showRules(fetcher.findExactlyMatchingRules(7))
-#   print "--- findMergedMatchingRules ---"
-#   print 14, showRules(fetcher.findMergedMatchingRules(14))
-#   print 7, showRules(fetcher.findMergedMatchingRules(7))
-#   print 1, showRules(fetcher.findMergedMatchingRules(1))
-#   print "--- findRecontructMatchingRules ---"
-#   print 14, showRules(fetcher.findRecontructMatchingRules(23))
-#   print "--- findDepravedMatchingRules ---"
-#   print 23, showRules(fetcher.findDepravedMatchingRules(23))
-#   print 7, showRules(fetcher.findDepravedMatchingRules(7))
-#   print 27, showRules(fetcher.findDepravedMatchingRules(27))
-# if __name__ == '__main__':
-#   test()

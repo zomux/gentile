@@ -73,15 +73,14 @@ hypothesis_cluster_limit : 6
 
 # weight settings
 weights :
-#Statistical Features (in ruletable):
-#Pf2e Pe2f Frequency frag_penalty strength
-- 1.0
-- 1.0
-- 1.0
-- 1.0
-- 1.0
-#CONTEXTMATCHED
-- 1.0
-# languagemodel
-- 1.0
-###########
+- 0.0102299512702323
+- -0.00707613706808242
+- 0.232412170448443
+- 0.010181269022082
+- 0.0206012315648682
+- 0.0284817391662245
+- 0.00373875079373352
+# WP
+- 0.390961289470316
+# LM
+- 0.296317461196018

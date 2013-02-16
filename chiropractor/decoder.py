@@ -23,8 +23,8 @@ from gentile.ruletable import GentileRuleTable
 from chiropractor.rulefetcher import RuleFetcher
 from gentile.hypothesis import GentileHypothesis
 from gentile.model import GentileModel
-from gentile.cubepruner import GentileCubePruner, separately_prune
-from gentile.reconstructor import Reconstructor
+from chiropractor.cubepruner import GentileCubePruner, separately_prune
+from chiropractor.reconstructor import Reconstructor
 from gentile.sense import SenseTree
 import itertools
 
@@ -49,9 +49,9 @@ class ChiropracticDecoder:
     Load rule table and language model once !!!
     """
 
-    # self.ruletable = GentileRuleTable()
-    # self.model = GentileModel()
-    # self.rulefetcher = RuleFetcher(self.ruletable, self.model)
+    self.ruletable = GentileRuleTable()
+    self.model = GentileModel()
+    self.rulefetcher = RuleFetcher(self.ruletable, self.model)
 
   def translate(self,data_tree,data_dep):
     """
@@ -580,6 +580,7 @@ class ChiropracticDecoder:
     for phraseCount in range(1, len(basePhrases) + 1):
       for beginPosition in range(0, len(basePhrases) - phraseCount + 1):
         phraseGroup = basePhrases[beginPosition : beginPosition + phraseCount]
+        area = (phraseBorders[phraseGroup[0]][0], phraseBorders[phraseGroup[-1]][1])
         sourcesWithPhrase = self.generateSourcesWithPhrase(phraseGroup, phraseClosedTokens, phraseBorders)
         # Fetch rules and decode
         # For all sources try exactly matching
@@ -599,9 +600,24 @@ class ChiropracticDecoder:
             continue
           # Fetch exactly matched rule
           exactlyMatchedRules = self.rulefetcher.findRulesBySourceString(sourceString, dependentAreas)
+          hyps = None
           if not exactlyMatchedRules:
-            coverage = (phraseBorders[phraseGroup[0]][0], phraseBorders[phraseGroup[-1]][1])
-            if sourceString not in intrinsicRuleCoverages or intrinsicRuleCoverages[sourceString] != coverage:
+            # If this source is an intrinsic source
+            # then try to reconstruct or build depraved rules
+            if sourceString not in intrinsicRuleCoverages or intrinsicRuleCoverages[sourceString] != area:
               continue
             # In this case, here we got a intrinsic rule covers same area in the parse tree.
             # We should not allow this rule to be kicked off, so use reconstruction or depraved glue rule.
+            if len(source) > 12:
+              exactlyMatchedRules = self.rulefetcher.buildDepravedMatchingRules(sense, source)
+          if not exactlyMatchedRules:
+            # Need reconstruction
+            reconstructor = Reconstructor(self.ruletable, self.model, sense, hypStacks,
+                                          source, areaTags, dependentAreas)
+            hyps = reconstructor.parse()
+          else:
+            # Got some rules, then using normal cube pruning to get hypothesis
+            hyps = separately_prune(self.model, exactlyMatchedRules, hypStacks)
+          if hyps:
+            hypStacks[area] = hyps
+            areaTags[area] = None
