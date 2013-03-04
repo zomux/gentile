@@ -11,24 +11,24 @@
 
 # source side with parsed dependency tree
 # support format : stanford parser ( tag,base dependency )
-file_source_tree : /poisson2/home2/raphael/ntcir10/data.full/data.en.tree
-file_source_dep : /poisson2/home2/raphael/ntcir10/data.full/data.en.dep
+file_source_tree : /poisson2/home2/raphael/ntcir10/data.shorten/data.en.tree
+file_source_dep : /poisson2/home2/raphael/ntcir10/data.shorten/data.en.dep
 # taget side with plain text
-file_target : /poisson2/home2/raphael/ntcir10/data.full/data.ja
+file_target : /poisson2/home2/raphael/ntcir10/data.shorten/data.ja
 # aligment file
-file_alignment : /poisson2/home2/raphael/ntcir10/data.full/aligned.grow-diag-final-and
+file_alignment : /poisson2/home2/raphael/ntcir10/data.shorten/aligned.grow-diag-final-and
 
 # lexical probability table
-file_lex_e2f : /poisson2/home2/raphael/ntcir10/data.full/lex.e2f
-file_lex_f2e : /poisson2/home2/raphael/ntcir10/data.full/lex.f2e
+file_lex_e2f : /poisson2/home2/raphael/ntcir10/data.shorten/lex.e2f
+file_lex_f2e : /poisson2/home2/raphael/ntcir10/data.shorten/lex.f2e
 
 # output file of rules extracted
-rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
+rule_table_path : /now03/raphael/ntcir10/gentile.shorten.model
 
 # language model setting
 
 #file_lm : /poisson2/home2/raphael/ntcir10/lm/ja.full.lm
-file_lm : /home/raphael/ntcir10/lm/ja.full.binary
+file_lm : /now03/raphael/ntcir10/lm/ja.full.binary
 max_gram : 5
 
 x_as_tag : no
@@ -55,7 +55,7 @@ debug : no
 file_translation_input_tree : /poisson2/home2/raphael/ntcir10/intrinsic/data.en.tree
 file_translation_input_dep : /poisson2/home2/raphael/ntcir10/intrinsic/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/intrinsic/gentile.full.ja
+file_translation_output : /poisson2/home2/raphael/ntcir10/intrinsic/gentile.shorten.ja
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
@@ -80,13 +80,34 @@ weights :
 # - 0
 # - 0.363714728555679
 #######################################
-- 0.0102299512702323
-- -0.00707613706808242
-- 0.232412170448443
-- 0.010181269022082
-- 0.0206012315648682
-- 0.0284817391662245
-- 0.00373875079373352
-- 0.390961289470316
-- 0.296317461196018
-
+# - 0.0102299512702323
+# - -0.00707613706808242
+# - 0.232412170448443
+# - 0.010181269022082
+# - 0.0206012315648682
+# - 0.0284817391662245
+# - 0.00373875079373352
+# - 0.390961289470316
+# - 0.296317461196018
+#############################
+# Weights from 500 dev
+# - 0.00352378951231225
+# - 0.00790031112193343
+# - 0.109603455945517
+# - 0.148222995117069
+# - 0.0193295738785444
+# - 0.0228107044626427
+# - -0.0764210241880778
+# - 0.261645908280102
+# - 0.350542237493803
+###############################
+# Weights from 2000 dev
+- 0.000729570533876295
+- 0.0390538241793853
+- 0.108838792961107
+- 0.133874507030201
+- 0.0323562477315917
+- 0.027237812480204
+- -0.0461279709005101
+- 0.281638616589941
+- 0.330142657593185

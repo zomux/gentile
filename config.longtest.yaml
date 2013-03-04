@@ -52,10 +52,10 @@ debug : no
 #input file of rule table is same as file_rules_final
 
 #input translation data
-file_translation_input_tree : /poisson2/home2/raphael/ntcir10/intrinsic/data.en.tree
-file_translation_input_dep : /poisson2/home2/raphael/ntcir10/intrinsic/data.en.dep
+file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.test.long/data.en.tree
+file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.test.long/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/intrinsic/gentile.full.ja
+file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.long/gentile.full.ja
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
