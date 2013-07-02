@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
       open(pathText, "w").write(sentence)
       print "[Gentile] Parsing CFG Tree ..."
-      os.system("/home/raphael/apps/berkley/parse.sh < %s > %s" % (pathText, pathCFG))
+      os.system("cat %s | python /home/raphael/research/preprocess-en/preprocess-line.py | /home/raphael/apps/berkley/parse.sh > %s" % (pathText, pathCFG))
       print "[Gentile] Parsing DEP Tree ..."
       os.system("/home/raphael/apps/stanford-parser/dep.berkeley.sh %s > %s" % (pathCFG, pathDep))
       cfg = open(pathCFG).read().strip()
