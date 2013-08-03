@@ -1,0 +1,170 @@
+
+mert --- 機械翻訳における Minimum Error Rate Training のためのパッケージ
+
+							内山 将夫
+							2006年 12月 25日
+
+* 概要
+
+[1] Franz Josef Och．(2003) 
+    Minimum Error Rate Training in Statistical Machine Translation.
+    ACL-2003.
+
+の枠組に従い，BLEU最大となる素性の重みの組を求めるためのパッケー
+ジである．このパッケージでは，[1]で示唆されたアルゴリズムの他に，
+UOBYQA (Powell の方法) および Simplex 法も実装している．
+
+
+* 必要なソフトウェア
+
+    glib-2.0
+    GSL (GNU Scientific Library)
+    gfortran
+    http://users.bigpond.net.au/amiller/uobyqa.f90
+
+
+* インストール
+
+    patch uobyqa.f90 < uobyqa.f90.patch 
+    gfortran -c uobyqa.f90
+    ruby extconf.rb
+    make
+
+を実行したあとで，環境変数 PATH と RUBYLIB がこのディレクトリを
+含むようにする．あるいは
+
+    make install
+    cp mert.rb mert1.rb mert-remove-dup.rb /usr/local/bin
+
+
+* 実行例
+
+set decoder = $HOME/Study/Decoder/bin/SMT/decoder
+set command = "ruby sample/applyDecoder.rb $decoder sample/decoder.ini '-v -stack 100 -stack_S 100 -nbest 100 -atleastone -diagbeam_width 100' sample/tmp.ini"
+mert.rb --source sample/en.dev.10 --reference sample/ja.dev.10 --workdir work --command "$command" --min "0.0001 -1 -1 0.0001 0.0001 0.0001 0.0001 -1" --max "1 1 1 1 1 1 1 1" --ini "0.1 -0.3 -0.2 0.1 0.1 0.1 0.1 0.1"
+
+cat work/lambda.txt 
+0.67270179191285 -0.856588945979106 0.00908125619411177 0.23251714856763 1.0 0.0001 0.0001 0.249727054023162
+
+
+* 使い方
+
+    mert.rb --source SOURCE_FILE --reference REFERENCE_FILE --workdir WORK_DIR --ini "lambda1 lambda2 ... lambdaN" --min "lambda1 lambda2 ... lambdaN" --max "lambda1 lambda2 ... lambdaN" --command COMMAND
+
+
+** 必須オプションの説明
+
+--source SOURCE_FILE
+
+  原言語の入力テキスト．一行一文．
+
+--reference REFERENCE_FILE
+
+  対象言語の参照翻訳のテキスト．一行一文で，各行が SOURCE_FILE と対応する．
+
+
+--workdir WORK_DIR
+
+  mert.rb が使う作業用のディレクトリ．このディレクトリは mert.rb が作るので
+  あらかじめ存在してはならない．
+  WORK_DIR/run.i には i回目の繰り返しにおける n-best がある．
+  WORK_DIR/nbest.all には WORK_DIR/run.* を sort -n したものがある．
+  WORK_DIR/lambda.txt には素性の重みがある．
+
+
+--ini "lambda1 lambda2 ... lambdaN" 
+
+  N個の素性があるとき，各素性の重みの初期値をリストする．
+
+
+--min "lambda1 lambda2 ... lambdaN" 
+
+  N個の素性があるとき，各素性の重みの最小値をリストする．
+
+
+--max "lambda1 lambda2 ... lambdaN" 
+
+  N個の素性があるとき，各素性の重みの最大値をリストする．
+
+  なお，min と max は，単に，重み推定の最初の初期値として，min と max の
+  間の重みを選ぶというだけであり，最終的な重みの値はこの範囲外となることも
+  ある．
+
+--command COMMAND
+
+  mert.rb は，i回目の繰り返しにおいて，
+
+    COMMAND SOURCE_FILE WORK_DIR/run.i 'lambda1 lambda2 ... lambdaN'
+
+  というコマンドを実行する．このときに，COMMAND はSOURCE_FILE から
+  原言語の入力テキストを読み込み，WORK_DIR/run.i に n-best を出力
+  する．また，そのときに利用する素性の重みは lambda1 lambda2 ... lambdaN
+  である．ただし，N は素性の個数である．
+  nbest の形式は
+
+    文番号 ||| 翻訳候補 ||| 素性値1 素性値2 ... 素性値N
+
+  という形式である．文番号 は 0 から始まる．文 0 は SOURCE_FILEの最初の文の
+  翻訳候補である．
+
+
+** 任意オプションの説明
+
+
+--optimization OPT (default=linear)
+
+  OPT は linear, uobyqa, simplex のいずれかである．linear は文献
+[1]で示唆された方法を利用する．この方法の実装にあたっては，
+http://www.statmt.org/wmt06/shared-task/baseline.html からアクセ
+スできる Phrase model training code を参考にした．
+
+  パラメタの値は --min と --max に大きく影響される．'linear' と 
+'uobyqa' とでは 'uobyqa'の方が解が安定しているようだ．'linear' 
+と 'uobyqa' の両方を試してみると良いかもしれない．
+
+
+--numItr NUMBER (default=100)
+
+  重み探索に用いる初期値の最大数を指定する
+
+
+--maxKeepBest NUMBER (default=50)
+
+  連続して NUMBER 回だけ最大の BLEU値であったら，その時点で探索を打ち切る．
+
+-n NUMBER (default=4)
+
+  BLEU計算に用いるn-gramの最大長
+
+
+* 実装時の工夫
+
+BLEUの計算時に，翻訳候補と参照訳のそれぞれについて suffix array を作る
+ことにより，n-gram の重複を簡単で高速に計算できる．
+
+文献[1]で述べられている区分線形関数は，upper envelope に対応する
+が，それは dual space における lower hull に対応する．したがって，
+まず，lower hull を O(n logn) で求めることにより，高速に計算でき
+る．
+
+
+* Copying
+
+Copyright (C) 2006,2007 Masao Utiyama <mutiyama@nict.go.jp>
+
+This program is free software; you can redistribute it
+and/or modify it under the terms of the GNU General
+Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General
+Public License along with this program; if not, write
+to the Free Software Foundation, Inc., 59 Temple Place,
+Suite 330, Boston, MA 02111-1307 USA
