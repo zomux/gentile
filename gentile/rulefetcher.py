@@ -52,7 +52,7 @@ class GentileRuleFetcher:
   mapJointRules = None
 
   mapNodeDependentSites = {}
-  
+
   def __init__(self, sense, ruletable, model):
     """
     Save the environment.
@@ -279,8 +279,8 @@ class GentileRuleFetcher:
     """
     rules = []
     self.mapNodeDependentSites[nodeId] = set([])
-    exactlyMatched = self.findExactlyMatchingRules(nodeId)
-    rules.extend(exactlyMatched)
+    # exactlyMatched = self.findExactlyMatchingRules(nodeId)
+    # rules.extend(exactlyMatched)
     mergedMatched = self.findMergedMatchingRules(nodeId)
     rules.extend(mergedMatched)
     if len(self.tree.node(nodeId)) > 12:

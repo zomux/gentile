@@ -47,7 +47,7 @@ class GentileDecoder:
   model = None
   """@type: GentileModel"""
   lexicalTable = None
-  
+
   def __init__(self):
     """
     Load rule table and language model once !!!
@@ -92,7 +92,7 @@ class GentileDecoder:
         hyps = self.model.sortHypothesises(hyps)
         stack_lex[node] = hyps
     return stack_lex
-  
+
   def translateNBest(self,data_tree,data_dep):
     """
     Translate and return a N-best list
@@ -123,6 +123,7 @@ class GentileDecoder:
     cur_level = tree.getMaxLevel()
     # A dirty trick: save current sense tree to cross-module global variable.
     __builtin__.currentSenseTree = tree
+    beamSize = setting.size_beam
     # start pruning
     self.model.cacheMode = True
     while cur_level > 0:
@@ -140,17 +141,23 @@ class GentileDecoder:
         rules, sitesInvolved = fetcher.mapJointRules[node]
         # okay available could in random order
         # we dont need sort it
-        if not rules:
+        hyps = []
+        if True:
+          # Force reconstruction in any case.
           # No rules found, force to use CYK.
           rc = Reconstructor(self.ruletable, self.model,
                              tree, hypStacks, node)
-          hyps = rc.parse()
-        else:
+          hyps.extend(rc.parse())
+        if rules:
           # Rules found then cube prunning.
           # sort rules
           rules = self.model.sortRules(rules)
           # now run the cube pruning and get normal hypothesises for current node
-          hyps = separately_prune(self.model, node, rules, sitesInvolved, hypStacks)
+          hyps.extend(separately_prune(self.model, node, rules, sitesInvolved, hypStacks))
+
+        hyps.sort(key=lambda x:x.score, reverse=True)
+        hyps = hyps[:beamSize]
+
         hypStacks[node] = hyps
         self.model.clearCache()
       # end of current node
