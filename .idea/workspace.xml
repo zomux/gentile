@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d238708-4e33-4270-956c-1425c2d555f9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gentile/chiropractic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gentile/forestdecoder.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.yaml" afterPath="$PROJECT_DIR$/config.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chiropractor/decoder.py" afterPath="$PROJECT_DIR$/chiropractor/decoder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chiropractor/rulefetcher.py" afterPath="$PROJECT_DIR$/chiropractor/rulefetcher.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gentile.iml" afterPath="$PROJECT_DIR$/.idea/gentile.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gentile.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1360990138095" ignored="false" />
+    <file path="/Dummy.txt" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377389970407" ignored="false" />
     <file path="/decoder.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1360991191406" ignored="false" />
     <file path="/rulefetcher.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1360985691576" ignored="false" />
     <file path="/a.dummy" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1360802189465" ignored="false" />
@@ -36,21 +33,15 @@
     <sortChildren value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="gentile" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.yaml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.yaml">
+      <file leaf-file-name="decoder.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gentile/decoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="25" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoder.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chiropractor/decoder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="622" column="33" selection-start="22608" selection-end="22608" vertical-scroll-proportion="0.92156863">
+            <state line="146" column="22" selection-start="4770" selection-end="4770" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -74,10 +65,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reconstructor.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="reconstructor.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="400" column="32" selection-start="12310" selection-end="12310" vertical-scroll-proportion="0.0">
+            <state line="66" column="0" selection-start="1613" selection-end="1613" vertical-scroll-proportion="-3.515823">
               <folding />
             </state>
           </provider>
@@ -144,9 +135,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
     <option name="width" value="1366" />
-    <option name="height" value="742" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -174,6 +164,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,22 +193,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="gentile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gentile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gentile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="chiropractor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Python" />
-    <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="FullScreen" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -240,6 +244,8 @@
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gentile" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
@@ -262,6 +268,8 @@
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gentile" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
@@ -275,6 +283,8 @@
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gentile" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
@@ -316,14 +326,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1366" height="742" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15757576" sideWeight="0.52522254" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1590909" sideWeight="0.46439168" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16363636" sideWeight="0.46439168" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15833333" sideWeight="0.5133531" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -364,7 +374,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
@@ -374,6 +384,10 @@
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="LIMIT_HISTORY" value="true" />
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
@@ -387,6 +401,7 @@
     <option name="ACTIVE_VCS_NAME" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
@@ -404,11 +419,6 @@
     <entry file="file://$PROJECT_DIR$/gentile/sense.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="188" column="23" selection-start="5140" selection-end="5157" vertical-scroll-proportion="0.02536998" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gentile/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="21" selection-start="4769" selection-end="4769" vertical-scroll-proportion="0.29927006" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gentile.m.py">
@@ -438,21 +448,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="25" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="64" column="25" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chiropractor/reconstructor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="6" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="400" column="32" selection-start="12310" selection-end="12310" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -471,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gentile/cubepruner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="4" selection-start="6207" selection-end="6207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chiropractor/cubepruner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="200" column="32" selection-start="6235" selection-end="6235" vertical-scroll-proportion="0.0">
@@ -487,7 +481,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chiropractor/decoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="622" column="33" selection-start="22608" selection-end="22608" vertical-scroll-proportion="0.92156863">
+        <state line="412" column="13" selection-start="14249" selection-end="14249" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gentile/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="22" selection-start="4770" selection-end="4770" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gentile/cubepruner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="4" selection-start="6207" selection-end="6207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="1613" selection-end="1613" vertical-scroll-proportion="-3.515823">
           <folding />
         </state>
       </provider>
