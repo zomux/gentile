@@ -48,10 +48,17 @@ class Reconstructor:
   def __init__(self, ruletable, model, sense, hypStacks, node):
     """
     Init.
+    @type ruletable: GentileRuleTable
     """
     self.node = node
     self.hypStacks = hypStacks
     self.ruletable = ruletable
+    if ruletable.glueRuleTable and setting.use_glue_ruletable:
+      self.glueRuleTable = ruletable.glueRuleTable
+      """:type: GentileRuleTable"""
+    else:
+      self.glueRuleTable = None
+      """:type: GentileRuleTable"""
     self.model = model
     # Reset smode.
     self.smode = model.smode
@@ -334,7 +341,20 @@ class Reconstructor:
     Need to improve, definitely.
     """
     for begin in range(0, len(self.tokens) - width + 1):
-      for lenLeftPart in range(1, width):        
+      if self.glueRuleTable:
+        tokens = self.tokens[begin: begin + width]
+        sourceString = " ".join(["[%s]" % t[0] for t in tokens])
+        ntSpan = [(pos, 1) for pos in range(begin, begin + width)]
+        rules = self.glueRuleTable.findBySource(sourceString, ntSpan, "")
+        if rules:
+          simplePruner = SimpleCubePruner(self.model, rules, ntSpan, self.mapLattice)
+          stack = simplePruner.prune()
+          # Prune with beam size.
+          stack = stack[:self.beamSize]
+          if stack:
+            self.mapLattice[(begin, width)] = stack
+            continue
+      for lenLeftPart in range(1, width):
         stack = self.buildStackByGlueRule((begin, lenLeftPart), (begin + lenLeftPart, width - lenLeftPart))
         if stack:
           # print >> sys.stderr, (begin, lenLeftPart), (begin + lenLeftPart, width - lenLeftPart), len(stack)

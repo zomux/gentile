@@ -67,6 +67,8 @@ size_beam : 2000
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2
 
+use_glue_ruletable : yes
+
 # weight settings
 weights :
 ########################################

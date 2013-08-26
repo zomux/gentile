@@ -17,15 +17,21 @@ class GentileRuleTable:
   ruletables = None
   indextables = None
   ntables = None
+  glueRuleTable = None
 
   def __init__(self, glue = False):
     """
     Load rule table files.
     """
     # Set for glue mode
+    setting.load(["rule_table_path","dispersion_tables"])
     self.glue = glue
     self.glueToken = "glue-" if glue else ""
-    setting.load(["rule_table_path","dispersion_tables"])
+    self.glueRuleTable = None
+    if self.glueRuleTableExists() and not self.glue:
+      self.glueRuleTable = GentileRuleTable(glue=True)
+    else:
+      self.glueRuleTable = None
     print "[GentileRuleTable] Loading %srule table handles ..." % self.glueToken
     self.ntables = setting.dispersion_tables
     self.ruletables = {}
@@ -52,6 +58,9 @@ class GentileRuleTable:
       self.indextables[itable] = map_index
       file_index_table.close()
       ftable.close()
+
+  def glueRuleTableExists(self):
+    return os.path.exists("%s/glue-index.final.0" % setting.rule_table_path)
     
   def findBySource(self, source, sites, context):
     """
