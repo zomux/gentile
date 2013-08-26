@@ -330,6 +330,8 @@ class Reconstructor:
     """
     Because no rules found in given width layer, put glue rules into it,
     and make CYK continue to run.
+    Basically, the principe is to combine 2 parts by Glue Rule [X0][X1].
+    Need to improve, definitely.
     """
     for begin in range(0, len(self.tokens) - width + 1):
       for lenLeftPart in range(1, width):        

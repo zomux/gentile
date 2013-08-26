@@ -18,21 +18,24 @@ class GentileRuleTable:
   indextables = None
   ntables = None
 
-  def __init__(self):
+  def __init__(self, glue = False):
     """
     Load rule table files.
     """
+    # Set for glue mode
+    self.glue = glue
+    self.glueToken = "glue-" if glue else ""
     setting.load(["rule_table_path","dispersion_tables"])
-    print "[GentileRuleTable] Loading rule table handles ..."
+    print "[GentileRuleTable] Loading %srule table handles ..." % self.glueToken
     self.ntables = setting.dispersion_tables
     self.ruletables = {}
     for itable in range(setting.dispersion_tables):
-      self.ruletables[itable] = open("%s/rules.final.%d" % (setting.rule_table_path, itable))
-    print "[GentileRuleTable] Loading index tables ..."
+      self.ruletables[itable] = open("%s/%srules.final.%d" % (setting.rule_table_path, self.glueToken, itable))
+    print "[GentileRuleTable] Loading %sindex tables ..." % self.glueToken
     self.indextables = {}
     for itable in range(setting.dispersion_tables):
       map_index = {}
-      path_table = "%s/index.final.%d" % (setting.rule_table_path, itable)
+      path_table = "%s/%sindex.final.%d" % (setting.rule_table_path, self.glueToken, itable)
       file_index_table = open(path_table,"r")
       ftable = file_index_table
       line = ftable.readline()

@@ -8,6 +8,14 @@ Rule table indexer.
 import sys,os,re,math
 
 from abraham.setting import setting
+import argparse
+# Parse arguments
+argParser = argparse.ArgumentParser()
+argParser.add_argument("--glue", action="store_true")
+argParser.add_argument("config")
+args = argParser.parse_args()
+
+glueToken = "glue-" if args.glue else ""
 
 setting.load(["rule_table_path","dispersion_tables"])
 
@@ -24,6 +32,6 @@ def build_index_table(file,file_output):
 
 for isplit in range(setting.dispersion_tables):
   print "[Indexer] Creating index for table",isplit
-  path_input = "%s/rules.final.%d" % (setting.rule_table_path, isplit)
-  path_output = "%s/index.final.%d" % (setting.rule_table_path, isplit)
+  path_input = "%s/%srules.final.%d" % (setting.rule_table_path, glueToken, isplit)
+  path_output = "%s/%sindex.final.%d" % (setting.rule_table_path, glueToken, isplit)
   build_index_table(path_input,path_output)

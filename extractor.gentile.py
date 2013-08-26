@@ -9,6 +9,12 @@ from abraham.setting import setting
 from gentile.extractor import Extractor
 from gentile.sense import SenseTree
 
+# Parse arguments, this only works in python 2.7
+import argparse
+parser = argparse.ArgumentParser(description='Gentile Extractor.')
+parser.add_argument("--glue", action='store_true', help="Extract glue rules")
+parser.add_argument("config", help="path to the config file")
+args = parser.parse_args()
 
 
 
@@ -48,7 +54,10 @@ def buildAlignmentMap(textAlignment):
 
 if not os.path.exists(PATH_RULETABLES):
   os.mkdir(PATH_RULETABLES)
-fileOutput = open("%s/rules.extracted" % PATH_RULETABLES, "w")
+if args.glue:
+  fileOutput = open("%s/glue-rules.extracted" % PATH_RULETABLES, "w")
+else:
+  fileOutput = open("%s/rules.extracted" % PATH_RULETABLES, "w")
 
 nLine = 0
 while nLine < len(linesTree):
@@ -66,7 +75,10 @@ while nLine < len(linesTree):
   targets = textTarget.split(" ")
   senseTree = SenseTree(textTree, textDep)
   extractor = Extractor(senseTree, targets, mapAlignment)
-  fileOutput.write(extractor.exportRuleStrings())
+  if args.glue:
+    fileOutput.write(extractor.exportGlueRules())
+  else:
+    fileOutput.write(extractor.exportRuleStrings())
   fileOutput.write("\n")
   nLine += 1
   if nLine % 1000 == 0:

@@ -22,7 +22,9 @@ class Estimator:
   mapTargetCount = None
   stackContextRules = None
 
-  def __init__(self):
+  def __init__(self, estimateGlueRules = False):
+    self.estimateGlueRules = estimateGlueRules
+    self.glueToken = "glue-" if estimateGlueRules else ""
     self.mapTargetCount = {}
     self.nSplittingRuleTable = setting.dispersion_tables
     self.pathTables = setting.rule_table_path
@@ -46,7 +48,7 @@ class Estimator:
     for itable in range(self.nSplittingRuleTable):
       self.mapTargetCount[itable] = {}
       sys.stderr.write("#")
-      tablefile = "%s/targetcount.tmp.%d" % (self.pathTables, itable)
+      tablefile = "%s/%stargetcount.tmp.%d" % (self.pathTables, self.glueToken, itable)
       self.processTargetCountTable(tablefile)
 
     sys.stderr.write("\n")
@@ -158,8 +160,8 @@ class Estimator:
     sys.stderr.write("[Estimator] Processing rule tables ... \n")
     for itable in range(self.nSplittingRuleTable):
       #tablefile = open("%s/ruletable.tmp.sorted.%d" % (self.pathTables,itable))
-      tablefile = os.popen("sort -k 1,17 %s/rules.tmp.%d" % (self.pathTables,itable))
-      file_output = open("%s/rules.final.%d" % (self.pathTables,itable),"w")
+      tablefile = os.popen("sort -k 1,17 %s/%srules.tmp.%d" % (self.pathTables, self.glueToken, itable))
+      file_output = open("%s/%srules.final.%d" % (self.pathTables, self.glueToken, itable),"w")
       self.processRuleTable(tablefile,file_output)
       sys.stderr.write("#")
       file_output.close()

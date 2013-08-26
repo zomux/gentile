@@ -91,6 +91,7 @@ class Extractor:
     @type targets: list of string
     @type mapAlignment: dict
     """
+    self.getNodeTag = lambda n: "[%s]" % self.sense.tokens[self.sense.mapNodeToMainToken[n]-1][0]
     self.maxNTCount = setting.reconstruction_max_nt
     self.maxTransactionRate = setting.max_transaction_rate
     sense.rebuildTopNode()
@@ -102,6 +103,7 @@ class Extractor:
     # sense.mergeContinuousNTs()
     self.sense = sense
     self.tree = sense.tree
+    """:type: GeneralTree """
     self.targets = targets
     self.mapAlignment = mapAlignment
 
@@ -307,6 +309,7 @@ class Extractor:
   def buildSpanForLattice(self, tokens, begin, width):
     """
     Build span for given item in lattice.
+    @return: list, str
     """
     if width == 1 and tokens[begin] < 0:
       return None
@@ -452,7 +455,7 @@ class Extractor:
         rules.append(rule)
     return rules
 
-  def deepExtractNode(self, nodeId):
+  def  deepExtractNode(self, nodeId):
     """
     Use phrase based style to deep extract rules for given node.
     """
@@ -477,6 +480,8 @@ class Extractor:
     """
     self.innerPhraseRules = []
     minExtractTerminals = setting.min_deep_extract_terminals
+    # Exact glue rule patterns
+    minExtractTerminals = 0
     tree = self.tree
     for nodeId in tree.nodes:
       tokens = tree.node(nodeId)
@@ -491,6 +496,54 @@ class Extractor:
         self.innerPhraseRules.pop(idx)
       else:
         idx += 1
+
+  def exportGlueRules(self):
+    """
+    For all nodes, extract patterns for forming glue rules.
+    """
+    glueRules = []
+    tree = self.tree
+    for nodeId in tree.nodes:
+      tokens = tree.node(nodeId)
+      if len(tokens) > 8:
+        continue
+      # Build glue rule
+      sourceString = " ".join(["[%s]" % self.sense.tokens[x - 1][0] if x > 0 else self.getNodeTag(-x) for x in tokens])
+      spanAndTag = self.buildSpanForLattice(tokens, 0, len(tokens))
+      if not spanAndTag:
+        continue
+      span, nodeTag = spanAndTag
+      replaceCount = 0
+      # Replace all targets for subtokens
+      tokenIndex = 0
+      for token in tokens:
+        if token > 0:
+          spanForToken = self.getSpanOfTokens([token])
+        else:
+          if -token not in self.mapNodeSpan:
+            continue
+          spanForToken = self.mapNodeSpan[-token]
+        if not spanForToken or spanForToken[0] not in span:
+          continue
+        span[span.index(spanForToken[0])] = - tokenIndex - 1
+        for targetToRemove in spanForToken:
+          if targetToRemove in span:
+            span.remove(targetToRemove)
+        replaceCount += 1
+        tokenIndex += 1
+      if replaceCount != len(tokens):
+        continue
+      targetString = " ".join([self.targets[x] if x >= 0 else "[X%d]" % (-x-1) for x in span])
+      glueRules.append((sourceString, targetString, nodeTag))
+    # Export rules
+    ruleStrings = []
+    if not glueRules:
+      return ""
+    frequency = 1.0 / len(glueRules)
+    for sourceString, targetString, tag in glueRules:
+      ruleStrings.append("%s ||| %s ||| %s |||  ||| %f" % (sourceString, targetString, tag, frequency))
+    return "\n".join(ruleStrings)
+
 
   def extractLexicalRules(self):
     """
@@ -532,7 +585,6 @@ class Extractor:
              self.mergedRules + self.lexicalRules)
     ruleStrings = []
     ruleFrequency = (1.0 / len(rules)) if rules else 0
-    getNodeTag = lambda n: "[%s]" % self.sense.tokens[self.sense.mapNodeToMainToken[n]-1][0]
     for rule in rules:
       tokens, targets, tag = rule
       if len(tokens) > maxTokensAllowed:
@@ -540,7 +592,7 @@ class Extractor:
       # Check max transaction rate.
       if len(targets) > len(tokens)*self.maxTransactionRate:
         continue
-      strTokens = " ".join([self.sense.tokens[x-1][1] if x > 0 else getNodeTag(-x) for x in tokens])
+      strTokens = " ".join([self.sense.tokens[x-1][1] if x > 0 else self.getNodeTag(-x) for x in tokens])
       strTargets = " ".join([self.targets[x] if x >= 0 else "[X%d]" % (-x-1) for x in targets])
       strAlignment = self.buildAlignmentString(rule)
       strRule = "%s ||| %s ||| %s ||| %s ||| %f" % (strTokens, strTargets, tag, strAlignment, ruleFrequency)
@@ -617,6 +669,8 @@ num(stud-23, 21-24)"""
   print ex.deepExtractNode(2)
   print "--- extractInitialPhrases ---"
   print ex.innerPhraseRules
+  print "--- extractGlueRules ---"
+  print ex.exportGlueRules()
   print "--- exportRuleStrings ---"
   print ex.exportRuleStrings()
 

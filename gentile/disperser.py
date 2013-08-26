@@ -43,8 +43,10 @@ class Disperser:
   mapTargetCount = None
   countTargetsSaved = 0
 
-  def __init__(self):
+  def __init__(self, extractGlueRules = False):
     sys.stderr.write("[Disperser] Building tables ... \n")
+    self.extractGlueRules = extractGlueRules
+    self.glueToken = "glue-" if self.extractGlueRules else ""
     self.heapSavedSources = set([])
     self.heapSavedTargets = set([])
     self.mapTargetCount = {}
@@ -59,11 +61,11 @@ class Disperser:
     # create target-count tables
     self.listTargetCountTables = []
     for itable in range(self.nSplittingRuleTable):
-      self.listTargetCountTables.append(open("%s/targetcount.tmp.%d" % (self.pathTables,itable),"w"))
+      self.listTargetCountTables.append(open("%s/%stargetcount.tmp.%d" % (self.pathTables, self.glueToken, itable),"w"))
     # create tmp splited rule tables
     self.listFileRuleTables = []
     for itable in range(self.nSplittingRuleTable):
-      self.listFileRuleTables.append(open("%s/rules.tmp.%d" % (self.pathTables,itable),"w"))
+      self.listFileRuleTables.append(open("%s/%srules.tmp.%d" % (self.pathTables, self.glueToken, itable),"w"))
     self.loadLexTables()
 
   def saveSource(self,hash_source,str_source):
@@ -112,6 +114,8 @@ class Disperser:
     """
     Calculate lexical probabilities.
     """
+    if self.extractGlueRules:
+      return (BACKOFF_LEXICAL_PROB, BACKOFF_LEXICAL_PROB)
     wordsF = source.split(" ")
     wordsE = target.split(" ")
     # Build alignment map.
@@ -193,7 +197,7 @@ class Disperser:
     Extract.
     """
     print "[Disperser] running ..."
-    lines_rules_extracted = open("%s/rules.extracted" % self.pathTables).xreadlines()
+    lines_rules_extracted = open("%s/%srules.extracted" % (self.pathTables, self.glueToken)).xreadlines()
     crules = 0
     setting_debug = setting.debug
     for line_rule_extracted in lines_rules_extracted:
