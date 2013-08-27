@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d238708-4e33-4270-956c-1425c2d555f9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/languagemodel/_srilm_wrapper.so" afterPath="$PROJECT_DIR$/utils/languagemodel/_srilm_wrapper.so" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/languagemodel/srilm_python_wrap.o" afterPath="$PROJECT_DIR$/utils/languagemodel/srilm_python_wrap.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/languagemodel/srilm_wrapper.o" afterPath="$PROJECT_DIR$/utils/languagemodel/srilm_wrapper.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/languagemodel/Makefile.osx" afterPath="$PROJECT_DIR$/utils/languagemodel/Makefile.osx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.localtest.yaml" afterPath="$PROJECT_DIR$/config.localtest.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gentile/reconstructor.py" afterPath="$PROJECT_DIR$/gentile/reconstructor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gentile/ruletable.py" afterPath="$PROJECT_DIR$/gentile/ruletable.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/languagemodel/srilm_python_wrap.c" afterPath="$PROJECT_DIR$/utils/languagemodel/srilm_python_wrap.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/languagemodel/srilm_wrapper.py" afterPath="$PROJECT_DIR$/utils/languagemodel/srilm_wrapper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gentile.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +22,7 @@
     <file path="/extractor.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377477714212" ignored="false" />
     <file path="/a.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377401166291" ignored="false" />
     <file path="/extractor.gentile.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377474630606" ignored="false" />
-    <file path="/config.localtest.yaml" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377560022456" ignored="false" />
+    <file path="/config.localtest.yaml" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377599272973" ignored="false" />
     <file path="/disperser.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377478300456" ignored="false" />
     <file path="/estimator.gentile.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377478649425" ignored="false" />
     <file path="/estimator.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377478610389" ignored="false" />
@@ -57,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reconstructor.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reconstructor.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="342" column="56" selection-start="10399" selection-end="10399" vertical-scroll-proportion="0.46175638">
+            <state line="342" column="56" selection-start="10399" selection-end="10399" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#370#381#0" expanded="true" />
               </folding>
@@ -68,10 +73,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.localtest.yaml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.localtest.yaml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.localtest.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="24" selection-start="1979" selection-end="1979" vertical-scroll-proportion="0.0">
+            <state line="30" column="51" selection-start="1072" selection-end="1078" vertical-scroll-proportion="0.581363">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gentile/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="165" column="16" selection-start="4114" selection-end="4115" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,8 +134,8 @@
         <option value="$PROJECT_DIR$/index.gentile.py" />
         <option value="$PROJECT_DIR$/scripts/explore-glue-rules.py" />
         <option value="$PROJECT_DIR$/gentile/ruletable.py" />
-        <option value="$PROJECT_DIR$/config.localtest.yaml" />
         <option value="$PROJECT_DIR$/gentile/reconstructor.py" />
+        <option value="$PROJECT_DIR$/config.localtest.yaml" />
       </list>
     </option>
   </component>
@@ -444,22 +458,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gentile/cubepruner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="4" selection-start="6207" selection-end="6207" vertical-scroll-proportion="0.9266467">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extractor.gentile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="305" selection-end="337" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#79#93#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gentile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -529,13 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.localtest.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="24" selection-start="1979" selection-end="1979" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/abraham/setting.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="17" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.5963173">
@@ -561,10 +552,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="342" column="56" selection-start="10399" selection-end="10399" vertical-scroll-proportion="0.46175638">
+        <state line="342" column="56" selection-start="10399" selection-end="10399" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#370#381#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gentile/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="16" selection-start="4114" selection-end="4115" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.full.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.localtest.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="51" selection-start="1072" selection-end="1078" vertical-scroll-proportion="0.581363">
+          <folding />
         </state>
       </provider>
     </entry>

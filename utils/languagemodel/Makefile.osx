@@ -1,7 +1,7 @@
-SRILM_LIBS=/Volumes/DATA/Library/srilm/lib/macosx
-SRILM_INC=/Volumes/DATA/Library/srilm/include
-PYTHON_BIN=/Library/Frameworks/Python.framework/Versions/2.7/bin/python
-PYTHON_INC=/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7
+SRILM_LIBS=/Users/raphael/research/apps/srilm/lib/macosx
+SRILM_INC=/Users/raphael/research/apps/srilm/include
+PYTHON_BIN=/usr/bin/python
+PYTHON_INC=/usr/include/python2.7
 FRAMEWORKS=/Library/Frameworks
 
 python: clean _srilm_wrapper.so
