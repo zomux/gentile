@@ -1,0 +1,96 @@
+############ options ####################
+
+#generate_null_rule : yes
+#comma_as_dead_span : yes
+#use_mmap : yes
+#remove_alignments: yes
+# separate lm for lexical/normal fragment
+#double_lm : yes
+
+############ Rule Extraction ############
+
+# source side with parsed dependency tree
+# support format : stanford parser ( tag,base dependency )
+file_source_tree : /home/raphael/ntcir10/data.10k/data.en.tree
+file_source_dep : /home/raphael/ntcir10/data.10k/data.en.dep
+# taget side with plain text
+file_target : /home/raphael/ntcir10/data.10k/data.ja
+# aligment file
+file_alignment :  /home/raphael/ntcir10/data.10k/aligned.grow-diag-final-and
+
+# lexical probability table
+file_lex_e2f : /home/raphael/ntcir10/data.10k/lex.e2f
+file_lex_f2e : /home/raphael/ntcir10/data.10k/lex.f2e
+
+# output file of rules extracted
+rule_table_path : /home/raphael/ntcir10/gentile.10k.model
+
+# language model setting
+
+#file_lm : /poisson2/home2/raphael/ntcir10/lm/ja.full.lm
+file_lm : /home/raphael/ntcir10/data.10k/ja.10k.arpa
+max_gram : 5
+
+x_as_tag : no
+
+max_merge_nodes : 3
+max_tokens : 6
+min_deep_extract_terminals : 3
+max_transaction_rate : 3
+
+############ Probability Estimate ############
+
+# input file of rules_extracted
+
+dispersion_tables : 10
+max_rules_for_each_source: 2000
+
+############ Decoder ############
+
+debug : no
+
+#input file of rule table is same as file_rules_final
+
+#input translation data
+file_translation_input_tree : /home/raphael/ntcir10/data.test.full/data.en.tree
+file_translation_input_dep : /home/raphael/ntcir10/data.test.full/data.en.dep
+# output translation data
+file_translation_output : /home/raphael/ntcir10/data.test.full/gentile.10k.ja
+
+# the number of nbest in the mode of nbest output , make sure it bigger than 0;
+nbest : 50
+
+size_cube_pruning : 5000
+
+size_beam : 2000
+
+# max non-terminals in tree reconstruction
+reconstruction_max_nt : 2
+
+use_glue_ruletable : yes
+
+enable_chiropractic : no
+
+# weight settings
+weights :
+########################################
+# - 0.00596950305498102
+# - 0.0702448396785429
+# - 0.0544369594255997
+# - 0.135654037244263
+# - 0.157281527993101
+# - -0.0436228192716449
+# - -0.144734369757711
+# - 0
+# - 0.363714728555679
+#######################################
+- 0.0102299512702323
+- -0.00707613706808242
+- 0.232412170448443
+- 0.010181269022082
+- 0.0206012315648682
+- 0.0284817391662245
+- 0.00373875079373352
+- 0.390961289470316
+- 0.296317461196018
+
