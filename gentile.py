@@ -37,15 +37,16 @@ if __name__ == "__main__":
       lineTree = linesTree[i].strip()
       lineDep = linesDep[i].strip()
       hyps = decoder.translateNBest(lineTree, lineDep)
-#      hyps[0].trace()
-#      if len(hyps)==0:
-#        print "[%d]" % i , "Translation Failed!!!"
-#        foutput.write("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
-#        continue
-#      result = hyps[0].getTranslation()
-#
-#      print "[%d]" % i , result
-#      foutput.write(result+"\n")
+      hyps[0].trace()
+      if len(hyps)==0:
+        print "[%d]" % i , "Translation Failed!!!"
+        foutput.write("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
+        continue
+      result = hyps[0].getTranslation()
+
+      print "[%d]" % i , result
+      foutput.write(result+"\n")
+      foutput.flush()
     foutput.close()
 
   elif arg_length == 3:

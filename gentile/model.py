@@ -18,7 +18,7 @@ import math
 from abraham.setting import setting
 from abraham.logger import log_error,log
 import platform
-if platform.system() == "Darwin":
+if platform.system() == "Darwin" and False:
   from languagemodel.srilm import LanguageModel
 else:
   from languagemodel.kenlmwrapper import LanguageModel

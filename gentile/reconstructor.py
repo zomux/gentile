@@ -343,7 +343,7 @@ class Reconstructor:
     for begin in range(0, len(self.tokens) - width + 1):
       if self.glueRuleTable:
         tokens = self.tokens[begin: begin + width]
-        sourceString = " ".join(["[%s]" % t[0] for t in tokens])
+        sourceString = " ".join(["[%s]" % self.sense.tokens[t - 1][0] for t in tokens])
         ntSpan = [(pos, 1) for pos in range(begin, begin + width)]
         rules = self.glueRuleTable.findBySource(sourceString, ntSpan, "")
         if rules:

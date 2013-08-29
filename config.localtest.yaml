@@ -28,7 +28,7 @@ rule_table_path : /Users/raphael/research/ntcir10/gentile.10k.model
 # language model setting
 
 #file_lm : /poisson2/home2/raphael/ntcir10/lm/ja.full.lm
-file_lm : /Users/raphael/research/ntcir10/data.10k/ja.10k.arpa
+file_lm : /Users/raphael/research/ntcir10/data.10k/ja.10k.binary
 max_gram : 5
 
 x_as_tag : no
@@ -60,9 +60,9 @@ file_translation_output : /Users/raphael/research/ntcir10/data.test.full/gentile
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
 
-size_cube_pruning : 5000
+size_cube_pruning : 1000
 
-size_beam : 2000
+size_beam : 1000
 
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2
