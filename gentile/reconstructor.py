@@ -347,7 +347,6 @@ class Reconstructor:
         ntSpan = [(pos, 1) for pos in range(begin, begin + width)]
         rules = self.glueRuleTable.findBySource(sourceString, ntSpan, "")
         if rules:
-          print self.tokens, width, begin
           simplePruner = SimpleCubePruner(self.model, rules, ntSpan, self.mapLattice)
           stack = simplePruner.prune()
           # Prune with beam size.
