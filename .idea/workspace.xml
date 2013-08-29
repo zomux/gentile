@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d238708-4e33-4270-956c-1425c2d555f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gentile/model.py" afterPath="$PROJECT_DIR$/gentile/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gentile/reconstructor.py" afterPath="$PROJECT_DIR$/gentile/reconstructor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.localtest.yaml" afterPath="$PROJECT_DIR$/config.localtest.yaml" />
     </list>
     <ignored path="gentile.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +15,7 @@
     <file path="/extractor.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377477714212" ignored="false" />
     <file path="/a.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377401166291" ignored="false" />
     <file path="/extractor.gentile.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377474630606" ignored="false" />
-    <file path="/config.localtest.yaml" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377599272973" ignored="false" />
+    <file path="/config.localtest.yaml" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377736192010" ignored="false" />
     <file path="/disperser.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377478300456" ignored="false" />
     <file path="/estimator.gentile.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377478649425" ignored="false" />
     <file path="/estimator.py" changelist="4d238708-4e33-4270-956c-1425c2d555f9" time="1377478610389" ignored="false" />
@@ -52,25 +50,25 @@
       <file leaf-file-name="decoder.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gentile/decoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="23" selection-start="4771" selection-end="4771" vertical-scroll-proportion="0.0">
+            <state line="146" column="27" selection-start="4775" selection-end="4775" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reconstructor.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reconstructor.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="349" column="41" selection-start="10768" selection-end="10768" vertical-scroll-proportion="0.46175638">
+            <state line="350" column="20" selection-start="10406" selection-end="10789" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.localtest.yaml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.localtest.yaml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.localtest.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="51" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0">
+            <state line="30" column="64" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.7357441">
               <folding />
             </state>
           </provider>
@@ -134,9 +132,9 @@
         <option value="$PROJECT_DIR$/index.gentile.py" />
         <option value="$PROJECT_DIR$/scripts/explore-glue-rules.py" />
         <option value="$PROJECT_DIR$/gentile/ruletable.py" />
-        <option value="$PROJECT_DIR$/config.localtest.yaml" />
         <option value="$PROJECT_DIR$/gentile/model.py" />
         <option value="$PROJECT_DIR$/gentile/reconstructor.py" />
+        <option value="$PROJECT_DIR$/config.localtest.yaml" />
       </list>
     </option>
   </component>
@@ -536,13 +534,6 @@
         <state line="56" column="17" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.5963173" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gentile/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="23" selection-start="4771" selection-end="4771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gentile/ruletable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="11" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
@@ -562,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.localtest.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="51" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gentile/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="25" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
@@ -576,9 +560,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gentile/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="27" selection-start="4775" selection-end="4775" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gentile/reconstructor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="349" column="41" selection-start="10768" selection-end="10768" vertical-scroll-proportion="0.46175638">
+        <state line="350" column="20" selection-start="10406" selection-end="10789" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.localtest.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="64" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.7357441">
           <folding />
         </state>
       </provider>
