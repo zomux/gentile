@@ -73,7 +73,12 @@ while nLine < len(linesTree):
   textAlignment =linesAlignment[nLine].strip()
   mapAlignment = buildAlignmentMap(textAlignment)
   targets = textTarget.split(" ")
-  senseTree = SenseTree(textTree, textDep)
+  try:
+    senseTree = SenseTree(textTree, textDep)
+  except:
+    print >> sys.stderr, "\nError : Could not build sense tree"
+    nLine += 1
+    continue
   extractor = Extractor(senseTree, targets, mapAlignment)
   if args.glue:
     fileOutput.write(extractor.exportGlueRules())

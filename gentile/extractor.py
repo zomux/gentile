@@ -84,7 +84,7 @@ class Extractor:
   innerPhraseRules = None
 
 
-  
+
   def __init__(self,sense,targets,mapAlignment):
     """
     @type sense: SenseTree
@@ -508,7 +508,12 @@ class Extractor:
       if len(tokens) > 8:
         continue
       # Build glue rule
-      sourceString = " ".join(["[%s]" % self.sense.tokens[x - 1][0] if x > 0 else self.getNodeTag(-x) for x in tokens])
+      # Some err in the extraction code
+      try:
+        sourceString = " ".join(["[%s]" % self.sense.tokens[x - 1][0] if x > 0 else self.getNodeTag(-x) for x in tokens])
+      except:
+        print >> sys.stderr, "Error occured in exportGlueRules - getNodeTag"
+        continue
       spanAndTag = self.buildSpanForLattice(tokens, 0, len(tokens))
       if not spanAndTag:
         continue
@@ -676,4 +681,4 @@ num(stud-23, 21-24)"""
 
 if __name__ == "__main__":
   test()
-    
+
