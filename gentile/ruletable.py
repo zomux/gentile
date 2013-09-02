@@ -60,8 +60,8 @@ class GentileRuleTable:
       ftable.close()
 
   def glueRuleTableExists(self):
-    return os.path.exists("%s/glue-index.final.0" % setting.rule_table_path)
-    
+    return os.path.exists("%s/glue-index.final.0" % setting.rule_table_path) and setting.use_glue_ruletable
+
   def findBySource(self, source, sites, context):
     """
     Find rules by a given fragment.
@@ -145,7 +145,7 @@ class GentileRuleTable:
       rule = (rule[0], sites, rule[2])
       newRules.append(rule)
     return newRules
-  
+
   def buildPsuedoRule(self,target,sites):
     """
     Build a psuedo rule for given fragment

@@ -53,7 +53,7 @@ class Reconstructor:
     self.node = node
     self.hypStacks = hypStacks
     self.ruletable = ruletable
-    if ruletable.glueRuleTable and setting.use_glue_ruletable:
+    if ruletable.glueRuleTable:
       self.glueRuleTable = ruletable.glueRuleTable
       """:type: GentileRuleTable"""
     else:
@@ -116,7 +116,7 @@ class Reconstructor:
       nullHyp = tuple([""]+list(nullHyp[1:]))
       stack.insert(0, nullHyp)
       stack = stack[:self.beamSize]
-      
+
     return stack
 
   def findAllInferredCombinations(self, begin, width):
@@ -128,13 +128,13 @@ class Reconstructor:
 
     The last 0 stands for treating as non-terminal,
     1 stands for treating as terminal.
-    
+
     Mechanism:
     A example for 4 width, generate bits 0000 to 1110,
-    
+
     in this list, 0 stands for terminals, a continious block of 1 stands for
     non-terminals.
-    
+
     Just generate result for each items in this list.
     """
     combs = []

@@ -34,7 +34,7 @@ debug : no
 file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.dev.full/data.en.tree
 file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.dev.full/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/gentile.full.model/tuning/run.007
+file_translation_output : /poisson2/home2/raphael/ntcir10/gentile.full.model/tuning.glue/run.007
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
@@ -46,14 +46,18 @@ size_beam : 1000
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2
 
+enable_chiropractic : no
+
+use_glue_ruletable : yes
+
 # weight settings
 weights :
-- 0.0102299512702323
-- -0.00707613706808242
-- 0.232412170448443
-- 0.010181269022082
-- 0.0206012315648682
-- 0.0284817391662245
-- 0.00373875079373352
-- 0.390961289470316
-- 0.296317461196018
+- 0.00841060834942518
+- -0.0184563079131765
+- 0.224245325242622
+- 0.0180903061242853
+- 0.0445795701146025
+- 0.021116948256982
+- -0.0108937404294877
+- 0.360779329946953
+- 0.293427863622466

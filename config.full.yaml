@@ -55,17 +55,21 @@ debug : no
 file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.test.full/data.en.tree
 file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.test.full/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.full/gentile.full.ja
+file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.full/gentile.full.compair.ja
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
 
-size_cube_pruning : 5000
+size_cube_pruning : 2000
 
 size_beam : 2000
 
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2
+
+enable_chiropractic : no
+
+use_glue_ruletable : no
 
 # weight settings
 weights :
