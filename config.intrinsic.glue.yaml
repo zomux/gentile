@@ -53,7 +53,7 @@ nbest : 50
 
 size_cube_pruning : 2000
 
-size_beam : 2000
+size_beam : 1000
 
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2
