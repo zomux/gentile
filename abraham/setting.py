@@ -26,7 +26,8 @@ class Setting:
         if k not in self.config:
           print "[Error] not find %s in config" % k
           sys.exit()
-          
+      return
+
     if len(sys.argv) < 2:
       print "[Error] run with argument of config file"
       print "[Example] python xxx.py config.yaml"
@@ -37,7 +38,7 @@ class Setting:
     if not os.path.exists(file_config):
       print "[Error] config file not exists"
       sys.exit()
-
+    print >> sys.stderr, "[LOAD SETTING FILE]"
     self.config = yaml.load(open(file_config))
     for k in list_config_needed:
       if k not in self.config:
@@ -55,7 +56,7 @@ class Setting:
       return self.config[item]
     else:
       return None
-    
+
 setting = Setting()
 
 ############ unit test ##################

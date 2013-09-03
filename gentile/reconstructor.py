@@ -266,6 +266,11 @@ class Reconstructor:
     # Find all combinations of all support or inferred items.
     combs = self.findAllInferredCombinations(begin, width)
     for comb in combs:
+      # Appended at 2013/9/3
+      # Do not allow top reconstruction has a multi-length hole
+      if width == len(self.tokens):
+        if sum([(e[1] > 1 and e[2] == 0) for e in comb]) > 0:
+          continue
       rulesFound, ntSpanList = self.fetchRulesForComb(comb)
       if not rulesFound:
         continue
