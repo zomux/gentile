@@ -60,9 +60,9 @@ file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.full/gentile
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
 
-size_cube_pruning : 5000
+size_cube_pruning : 2000
 
-size_beam : 2000
+size_beam : 1000
 
 # max non-terminals in tree reconstruction
 reconstruction_max_nt : 2

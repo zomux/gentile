@@ -27,5 +27,5 @@ run("python research/remove-dt-to-comma-rules.py %s.withdtcomma > %s" % (ruletab
 run("python estimator.gentile.py --disperse %s" % cfg)
 run("python estimator.gentile.py --estimate %s" % cfg)
 run("python index.gentile.py %s" % cfg)
-#run("python gentile.m.py %s > research/%s.log" % (cfg, desc))
+run("python gentile.m.py %s > research/%s.log" % (cfg, desc))
 run("date")

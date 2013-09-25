@@ -4,7 +4,7 @@
 
 
 # output file of rules extracted
-rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
+rule_table_path : /now03/raphael/ntcir10/gentile.shorten.model
 
 # language model setting
 
@@ -34,7 +34,7 @@ debug : no
 file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.dev.full/data.en.tree
 file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.dev.full/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/gentile.full.model/tuning/run.007
+file_translation_output : /now03/raphael/ntcir10/gentile.shorten.model/tuning/run.007
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
@@ -48,12 +48,12 @@ reconstruction_max_nt : 2
 
 # weight settings
 weights :
-- 0.0102299512702323
-- -0.00707613706808242
-- 0.232412170448443
-- 0.010181269022082
-- 0.0206012315648682
-- 0.0284817391662245
-- 0.00373875079373352
-- 0.390961289470316
-- 0.296317461196018
+- 0.000729570533876295
+- 0.0390538241793853
+- 0.108838792961107
+- 0.133874507030201
+- 0.0323562477315917
+- 0.027237812480204
+- -0.0461279709005101
+- 0.281638616589941
+- 0.330142657593185

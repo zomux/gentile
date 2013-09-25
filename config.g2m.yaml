@@ -23,7 +23,7 @@ file_lex_e2f : /poisson2/home2/raphael/ntcir10/data.full/lex.e2f
 file_lex_f2e : /poisson2/home2/raphael/ntcir10/data.full/lex.f2e
 
 # output file of rules extracted
-rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
+rule_table_path : /now03/raphael/ntcir10/g2mg.full.model
 
 # language model setting
 
@@ -31,7 +31,7 @@ rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
 file_lm : /home/raphael/ntcir10/lm/ja.full.binary
 max_gram : 5
 
-x_as_tag : no
+x_as_tag : yes
 
 max_merge_nodes : 3
 max_tokens : 6
@@ -52,10 +52,10 @@ debug : no
 #input file of rule table is same as file_rules_final
 
 #input translation data
-file_translation_input_tree : /poisson2/home2/raphael/ntcir10/intrinsic/data.en.tree
-file_translation_input_dep : /poisson2/home2/raphael/ntcir10/intrinsic/data.en.dep
+file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.test.full/data.en.tree
+file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.test.full/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/intrinsic/gentile.full.ja
+file_translation_output : /poisson2/home2/raphael/ntcir10/data.test.full/gentile.full.ja
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
