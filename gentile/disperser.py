@@ -124,6 +124,8 @@ class Disperser:
       if not pair:
         continue
       iSrc, iTgt = map(int, pair.split("-"))
+      if iSrc not in wordsF or iTgt not in wordsE:
+        continue
       mapAlignF2E.setdefault(iSrc, []).append(iTgt)
       mapAlignE2F.setdefault(iTgt, []).append(iSrc)
     # Fill map in case of null alignment.
@@ -140,9 +142,9 @@ class Disperser:
         mapAlignE2F[iTgt] = [-1]
     # Situation of NULL -> ALL.
     if not mapAlignF2E:
-      mapAlignF2E[-1] = [tgt for tgt in range(len(wordsE)) if not wordsE[tgt].startswith("[")]
+      mapAlignF2E[-1] = [tgt for tgt in range(len(wordsE)) if tgt in wordsE and not wordsE[tgt].startswith("[")]
     if not mapAlignE2F:
-      mapAlignE2F[-1] = [src for src in range(len(wordsF)) if not wordsF[src].startswith("[")]
+      mapAlignE2F[-1] = [src for src in range(len(wordsF)) if src in wordsF and not wordsF[src].startswith("[")]
     # Calculate f to e.
     lexProbF2E = 1.0
     for src in mapAlignF2E:
@@ -157,6 +159,8 @@ class Disperser:
           prob = BACKOFF_LEXICAL_PROB
           self.failedLexicalRequestLog.write("%s %s\n" % (sourceWord, targetWord))
         probOfThisWord += prob
+      if len(targetWords) == 0:
+        return (BACKOFF_LEXICAL_PROB, BACKOFF_LEXICAL_PROB)
       lexProbF2E *= probOfThisWord / len(targetWords)
     # Calculate e to f.
     lexProbE2F = 1.0
@@ -172,6 +176,8 @@ class Disperser:
           prob = BACKOFF_LEXICAL_PROB
           self.failedLexicalRequestLog.write("%s %s\n" % (targetWord, sourceWord))
         probOfThisWord += prob
+      if len(sourceWords) == 0:
+        return (BACKOFF_LEXICAL_PROB, BACKOFF_LEXICAL_PROB)
       lexProbE2F *= probOfThisWord / len(sourceWords)
 
     return (math.log(lexProbF2E), math.log(lexProbE2F))

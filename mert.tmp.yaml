@@ -34,7 +34,7 @@ debug : no
 file_translation_input_tree : /poisson2/home2/raphael/ntcir10/data.dev.full/data.en.tree
 file_translation_input_dep : /poisson2/home2/raphael/ntcir10/data.dev.full/data.en.dep
 # output translation data
-file_translation_output : /poisson2/home2/raphael/ntcir10/gentile.full.model/tuning.glue/run.007
+file_translation_output : /poisson2/home2/raphael/ntcir10/gentile.full.model/tuning.glue-merged/run.003
 
 # the number of nbest in the mode of nbest output , make sure it bigger than 0;
 nbest : 50
@@ -52,12 +52,12 @@ use_glue_ruletable : yes
 
 # weight settings
 weights :
-- 0.00841060834942518
-- -0.0184563079131765
-- 0.224245325242622
-- 0.0180903061242853
-- 0.0445795701146025
-- 0.021116948256982
-- -0.0108937404294877
-- 0.360779329946953
-- 0.293427863622466
+- 0.000625332286917012
+- 0.0986233142576623
+- 0.0533121501203591
+- 0.0787516350367358
+- -0.0624473461653355
+- 0.0612040356470845
+- -0.0343905764611557
+- 0.382745495052542
+- 0.227900114972208
