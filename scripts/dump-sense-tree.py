@@ -1,5 +1,6 @@
 import os,sys
 sys.path.append(os.getcwd()+"/gentile")
+sys.path.append(os.getcwd())
 
 if __name__ == '__main__':
   if len(sys.argv) < 3:
@@ -14,8 +15,8 @@ if __name__ == '__main__':
   linesTree = treeFile.readlines()
   linesDep = depFile.read().split("\n\n")
 
+
   for n in range(len(linesTree)):
-    if n != 105: continue
     lineTree = linesTree[n].strip()
     lineDep = linesDep[n].strip()
     tree = SenseTree(lineTree, lineDep)
@@ -26,4 +27,5 @@ if __name__ == '__main__':
     tree.convertTags()
     tree.separateContiniousNonTerminals()
     print dump_sense_tree(tree)
+    print tree.tree.nodes
     print ""
