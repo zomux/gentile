@@ -108,6 +108,7 @@ class GentileDecoder:
     tree.appendXToTree()
     tree.upMergeAllConjNodes()
     tree.rebuildCommaNodes()
+    tree.forceUsingDepCrystals()
     tree.convertTags()
     tree.separateContiniousNonTerminals()
     # tree.mergeContinuousNTs()
