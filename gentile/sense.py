@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 
 from abraham.treestruct import DepTreeStruct
 from abraham.setting import setting
@@ -8,6 +9,7 @@ from gentile.tagconvertor import convert_tags_for_tokens
 setting.load(["x_as_tag"])
 
 PATTERN_SEPARATE_NTS = "NP NP,NP NP NP,NP VP,NP VBZ,NP NP VBZ,S VBZ,DT X".split(",")
+MOD_CRYSTAL_NOUN = "det,amod,nn,num,dep,partmod,conj,cc".split(",") # Removed: prep
 
 class GeneralTree:
   """
@@ -140,6 +142,13 @@ class SenseTree:
     """
     self.xAsTag = setting.x_as_tag
     self.parseSentence(textPCFG, textDep)
+    self.fixNumberMarkTag()
+
+  def fixNumberMarkTag(self):
+    for i, token in enumerate(self.tokens):
+      tag, word = token
+      if re.match(r"^\d+?[a-z]{1,2}$", word):
+        self.tokens[i] = ("NN", word)
 
   def parseSentence(self, textPCFG, textDep):
     """
@@ -536,6 +545,9 @@ class SenseTree:
         self.tree.mapParent[newNodeId] = nodeId
         self.tree.mapChildren[newNodeId] = nts
         partations[idxPart] = [-newNodeId]
+        # Fix parent information of nts
+        for linkedNodeId in nts:
+          self.tree.mapParent[linkedNodeId] = newNodeId
         if len(nts) == len(part):
           # The node is a pure non-terminal node.
           self.killNonTerminalsForXNode(newNodeId)
@@ -608,6 +620,57 @@ class SenseTree:
       del tree.mapParent[mainNodeId]
     if mainNodeId in self.mapNodeToMainToken:
       del self.mapNodeToMainToken[mainNodeId]
+
+  def moveTokenToSameLayer(self, tokenId, targetTokenId):
+    containerNodes = [n for n in self.tree.nodes if tokenId in self.tree.nodes[n]]
+    targetNodes = [n for n in self.tree.nodes if targetTokenId in self.tree.nodes[n]]
+    if not containerNodes or not targetNodes:
+      return
+    containerNodeId = containerNodes[0]
+    targetNodeId = targetNodes[0]
+    if containerNodeId == targetNodeId: return
+    # Maintain node
+    self.tree.nodes[containerNodeId].remove(tokenId)
+    targetNode = self.tree.nodes[targetNodeId]
+
+    if tokenId > targetTokenId:
+      previousTokenId = max([t for t in targetNode if t > 0 and t < tokenId])
+      insertPosition = targetNode.index(previousTokenId) + 1
+    else:
+      nextTokenId = min([t for t in targetNode if t > 0 and t > tokenId])
+      insertPosition = targetNode.index(nextTokenId)
+    targetNode.insert(insertPosition, tokenId)
+    # Remove container node if no tokens in it
+    if not self.tree.nodes[containerNodeId]:
+      parentNodeId = self.tree.mapParent[containerNodeId]
+      if -containerNodeId in self.tree.nodes[parentNodeId]:
+        self.tree.nodes[parentNodeId].remove(-containerNodeId)
+      if containerNodeId in self.tree.mapChildren[parentNodeId]:
+        self.tree.mapChildren[parentNodeId].remove(containerNodeId)
+      del self.tree.nodes[containerNodeId]
+
+  def forceUsingDepCrystals(self):
+    """
+    Force using crystals in dependency tree.
+    For head in [N, V]?
+    """
+    for tokenId in self.depTree.mapModifier:
+      modifier = self.depTree.mapModifier[tokenId]
+      if tokenId not in self.depTree.mapParent:
+        continue
+      parentId = self.depTree.mapParent[tokenId]
+      parentTag = self.tokens[parentId - 1][0]
+      tokenTag = self.tokens[tokenId - 1][0]
+
+      if parentTag.startswith("N") and modifier in MOD_CRYSTAL_NOUN:
+        self.moveTokenToSameLayer(tokenId, parentId)
+        if tokenTag.startswith("N"): # Allowing __init__() be N
+          dependencers = [t for t in self.depTree.mapParent if self.depTree.mapParent[t] == tokenId]
+          for childTokenId in dependencers:
+            if childTokenId in self.depTree.mapModifier and self.depTree.mapModifier[childTokenId] in MOD_CRYSTAL_NOUN:
+              self.moveTokenToSameLayer(childTokenId, parentId)
+
+      
 
   def separateContiniousNonTerminals(self, nodeId=None):
     """

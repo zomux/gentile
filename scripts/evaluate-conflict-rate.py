@@ -28,8 +28,10 @@ class ConflictEvaluator(object):
     sense.appendXToTree()
     sense.upMergeAllConjNodes()
     sense.rebuildCommaNodes()
+    sense.forceUsingDepCrystals()
     sense.convertTags()
     sense.separateContiniousNonTerminals()
+
 
     alignmentMap = self.buildAlignmentMap(alignmentText)
     targetSpanUsed = self.buildTargetSpan(alignmentMap)

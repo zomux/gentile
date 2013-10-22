@@ -36,24 +36,26 @@ class DepTreeStruct(TreeStruct):
   """
   present dependency tree struct
   """
-  # id -> (word,tag)
-  nodes = {}
-  # id -> id
-  mapParent = {}
-  # id -> [ id, ]
-  mapChilds = {}
-  # level -> [node,]
-  mapLevels = {}
-  # number of max level
-  maxLevel = -1
-  headNodeId = 0
-  
+ 
   def __init__(self,data_tag,data_dep):
     """
     Build tree structure from data
     @type data_tag: string
     @type data_dep: string
     """
+    # id -> (word,tag)
+    self.nodes = {}
+    # id -> id
+    self.mapParent = {}
+    self.mapModifier = {}
+    # id -> [ id, ]
+    self.mapChilds = {}
+    # level -> [node,]
+    self.mapLevels = {}
+    # number of max level
+    self.maxLevel = -1
+    self.headNodeId = 0
+
     self.nodes[0] = ('ROOT','ROOT')
     # build nodes
     xastag = setting.x_as_tag
@@ -68,11 +70,12 @@ class DepTreeStruct(TreeStruct):
       self.mapParent[id] = -1
       self.mapChilds[id] = []
     # build parent and childs map
-    list_deps = re.findall(r"\(.+\-(\d+?), .+\-(\d+?)\)",data_dep)
+    list_deps = re.findall(r"(.+?)\(.+\-(\d+?), .+\-(\d+?)\)",data_dep)
     for pair in list_deps:
-      iParent,iChild = pair
+      modifier, iParent,iChild = pair
       iParent = int(iParent)
       iChild = int(iChild)
+      self.mapModifier[iChild] = modifier
       self.mapParent[iChild] = iParent
       self.mapChilds[iParent].append(iChild)
       if iParent == 0 : self.headNodeId = iChild
