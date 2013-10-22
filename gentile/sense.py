@@ -648,6 +648,7 @@ class SenseTree:
       if containerNodeId in self.tree.mapChildren[parentNodeId]:
         self.tree.mapChildren[parentNodeId].remove(containerNodeId)
       del self.tree.nodes[containerNodeId]
+    self.removeNonTerminalNodes()
 
   def forceUsingDepCrystals(self):
     """
@@ -669,7 +670,7 @@ class SenseTree:
           for childTokenId in dependencers:
             if childTokenId in self.depTree.mapModifier and self.depTree.mapModifier[childTokenId] in MOD_CRYSTAL_NOUN:
               self.moveTokenToSameLayer(childTokenId, parentId)
-    self.removeNonTerminalNodes()
+    
 
   def removeNonTerminalNodes(self):
     """
@@ -678,9 +679,9 @@ class SenseTree:
     nodesToRemove = []
     for nodeId in self.tree.nodes:
       tokens = self.tree.nodes[nodeId]
-      if len(tokens) == 1 and tokens[0] < 0:
+      if (len(tokens) == 1 and tokens[0] < 0):
         nodesToRemove.append(nodeId)
-        
+
     for nodeId in nodesToRemove:
       tokens = self.tree.nodes[nodeId]
       linkedNodeId = -tokens[0]
