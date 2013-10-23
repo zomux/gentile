@@ -785,6 +785,10 @@ class SenseTree:
         self.tree.mapParent[linkedNodeId] = parentNodeId
       else:
         del self.tree.mapParent[linkedNodeId]
+      if nodeId in self.tree.mapChildren:
+        del self.tree.mapChildren[nodeId]
+      if nodeId in self.tree.mapParent:
+        del self.tree.mapParent[nodeId]
       if self.tree.root == nodeId:
         self.tree.root = linkedNodeId
       del self.tree.nodes[nodeId]
