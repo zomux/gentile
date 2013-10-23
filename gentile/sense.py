@@ -647,6 +647,10 @@ class SenseTree:
         self.tree.nodes[parentNodeId].remove(-containerNodeId)
       if containerNodeId in self.tree.mapChildren[parentNodeId]:
         self.tree.mapChildren[parentNodeId].remove(containerNodeId)
+      if containerNodeId in self.tree.mapChildren:
+        del self.tree.mapChildren[containerNodeId]
+      if containerNodeId in self.tree.mapParent:
+        del self.tree.mapParent[containerNodeId]
       del self.tree.nodes[containerNodeId]
     self.removeNonTerminalNodes()
     self.killMultiNonTerminalNode(containerNodeId)
