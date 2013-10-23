@@ -649,6 +649,7 @@ class SenseTree:
         self.tree.mapChildren[parentNodeId].remove(containerNodeId)
       del self.tree.nodes[containerNodeId]
     self.removeNonTerminalNodes()
+    self.killMultiNonTerminalNode(containerNodeId)
 
   def forceUsingDepCrystals(self):
     """
@@ -670,6 +671,91 @@ class SenseTree:
           for childTokenId in dependencers:
             if childTokenId in self.depTree.mapModifier and self.depTree.mapModifier[childTokenId] in MOD_CRYSTAL_NOUN:
               self.moveTokenToSameLayer(childTokenId, parentId)
+
+  def killMultiNonTerminalNode(self,nodeId):
+    """
+    Remove all non-terminals in the tree by dependency relations.
+    """
+    if nodeId not in self.tree.nodes or len(self.tree.nodes[nodeId]) <= 1:
+      return
+    for token in self.tree.nodes[nodeId]:
+      if token > 0: return
+
+    childNodes = self.tree.children(nodeId)
+    if not childNodes:
+      return
+    tree = self.tree
+    node = self.tree.node(nodeId)
+    # node here is a list
+
+    # The node with most depent count wins.
+    mapNodeDepentCount = {}
+    for childNodeId in childNodes:
+      mapNodeDepentCount.setdefault(childNodeId, 0)
+      mainTokenId = self.mapNodeToMainToken[childNodeId]
+      depentTokenId = self.depTree.getParentNode(mainTokenId)
+      if depentTokenId not in self.mapMainTokenToNode:
+        continue
+      depentNodeId = self.mapMainTokenToNode[depentTokenId]
+      # Looply find the dependent node.
+      while depentNodeId:
+        if depentNodeId in childNodes:
+          if depentNodeId != childNodeId:
+            mapNodeDepentCount.setdefault(depentNodeId, 0)
+            mapNodeDepentCount[depentNodeId] += 1
+          break
+        else:
+          depentNodeId = tree.parent(depentNodeId)
+    # Best node to replace non-terminal would be that with greatest depent count,
+    # then the left.
+
+    mainNodeId = None
+    maxCount = -1
+    for childNodeId in childNodes:
+      countOfNode = mapNodeDepentCount[childNodeId]
+      if countOfNode > maxCount:
+        mainNodeId = childNodeId
+        maxCount = countOfNode
+
+    # Replace non-terminal node with that main node.
+    # Set parent node of main node.
+
+    if nodeId in tree.mapParent:
+      parentId = tree.mapParent[nodeId]
+      tree.mapParent[mainNodeId] = parentId
+      childrenOfParent = tree.children(parentId)
+      childrenOfParent[childrenOfParent.index(nodeId)] = mainNodeId
+      if -nodeId in tree.nodes[parentId]:
+        tree.nodes[parentId][tree.nodes[parentId].index(-nodeId)] = -mainNodeId
+    else:
+      # Current node is root.
+      del tree.mapParent[mainNodeId]
+    # Set parent node of child nodes.
+    insertAtLeft = True
+    for childNodeId in childNodes:
+      if childNodeId == mainNodeId:
+        insertAtLeft = False
+        continue
+      tree.mapParent[childNodeId] = mainNodeId
+      if insertAtLeft:
+        tree.nodes[mainNodeId].insert(0, -childNodeId)
+      else:
+        tree.nodes[mainNodeId].append(-childNodeId)
+    # Set child nodes of main node.
+    if len(childNodes) > 1:
+      childNodes.remove(mainNodeId)
+      childNodes.extend(tree.children(mainNodeId))
+      childNodes.sort()
+      tree.mapChildren[mainNodeId] = childNodes
+    # Remove current non-terminal node.
+    del tree.nodes[nodeId]
+    if nodeId in tree.mapParent:
+      del tree.mapParent[nodeId]
+    if nodeId in tree.mapChildren:
+      del tree.mapChildren[nodeId]
+    # Modify tree root node.
+    if nodeId == tree.root:
+      tree.root = mainNodeId
     
 
   def removeNonTerminalNodes(self):
