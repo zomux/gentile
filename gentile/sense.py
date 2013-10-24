@@ -629,7 +629,6 @@ class SenseTree:
     containerNodeId = containerNodes[0]
     targetNodeId = targetNodes[0]
     if containerNodeId == targetNodeId: return
-    print tokenId, targetTokenId
     # Maintain node
     self.tree.nodes[containerNodeId].remove(tokenId)
     targetNode = self.tree.nodes[targetNodeId]
