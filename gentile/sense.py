@@ -629,6 +629,7 @@ class SenseTree:
     containerNodeId = containerNodes[0]
     targetNodeId = targetNodes[0]
     if containerNodeId == targetNodeId: return
+    print tokenId, targetTokenId
     # Maintain node
     self.tree.nodes[containerNodeId].remove(tokenId)
     targetNode = self.tree.nodes[targetNodeId]
@@ -669,6 +670,15 @@ class SenseTree:
       tokenTag = self.tokens[tokenId - 1][0]
 
       if parentTag.startswith("N") and modifier in MOD_CRYSTAL_NOUN:
+        # Validation
+        valid = True
+        for interTokenId in range(min(tokenId, parentId), max(tokenId, parentId) + 1):
+          if interTokenId not in self.depTree.mapModifier:
+            valid = False
+            break
+        if not valid:
+          continue
+
         self.moveTokenToSameLayer(tokenId, parentId)
         if tokenTag.startswith("N"): # Allowing __init__() be N
           dependencers = [t for t in self.depTree.mapParent if self.depTree.mapParent[t] == tokenId]
