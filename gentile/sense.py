@@ -9,7 +9,7 @@ from gentile.tagconvertor import convert_tags_for_tokens
 setting.load(["x_as_tag"])
 
 PATTERN_SEPARATE_NTS = "NP NP,NP NP NP,NP VP,NP VBZ,NP NP VBZ,S VBZ,DT X".split(",")
-MOD_CRYSTAL_NOUN = "det,amod,nn,num,dep,partmod,conj,cc".split(",") # Removed: prep
+MOD_CRYSTAL_NOUN = "det,amod,nn,num,dep,conj,cc".split(",") # Removed: prep,partmod
 
 class GeneralTree:
   """
