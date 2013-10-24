@@ -98,6 +98,7 @@ class Extractor:
     sense.appendXToTree()
     sense.upMergeAllConjNodes()
     sense.rebuildCommaNodes()
+    sense.forceUsingDepCrystals()
     sense.convertTags()
     sense.separateContiniousNonTerminals()
     # sense.mergeContinuousNTs()
