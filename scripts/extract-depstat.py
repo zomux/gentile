@@ -16,13 +16,13 @@ class DepStat(object):
     for modifier, depWordId, wordId in deps:
       depWordId, wordId = map(int, [depWordId, wordId])
       depWordTag = sense.tokens[depWordId - 1][0]
-      if depWordTag.startswith("N"):
+      if depWordTag.startswith("V"):
         self.nounModStat.setdefault(modifier, 0)
         self.nounModStat[modifier] += 1
 
   def show(self):
     # noun
-    print "--- noun ---"
+    print "--- verb ---"
     allCount = sum(self.nounModStat.values())
     modifiers = self.nounModStat.keys()
     modifiers.sort(key=lambda x: self.nounModStat[x], reverse=True)
@@ -48,10 +48,12 @@ if __name__ == '__main__':
   stat = DepStat()
 
   for n in range(len(linesTree)):
+    if n % 10000 == 0:
+      print "#",
     lineTree = linesTree[n].strip()
     lineDep = linesDep[n].strip()
-    
+
     stat.record(lineTree, lineDep)
-  
+
   stat.show()
-    
+

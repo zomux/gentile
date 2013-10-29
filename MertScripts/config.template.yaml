@@ -4,7 +4,7 @@
 
 
 # output file of rules extracted
-rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
+rule_table_path : /now16/raphael/ntcir10/gentile.full.model
 
 # language model setting
 

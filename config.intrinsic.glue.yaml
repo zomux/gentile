@@ -15,7 +15,7 @@ file_lex_e2f : /poisson2/home2/raphael/ntcir10/data.full/lex.e2f
 file_lex_f2e : /poisson2/home2/raphael/ntcir10/data.full/lex.f2e
 
 # output file of rules extracted
-rule_table_path : /poisson2/home2/raphael/ntcir10/gentile.full.model
+rule_table_path : /now16/raphael/ntcir10/gentile.full.model
 
 # language model setting
 
@@ -74,6 +74,7 @@ weights :
 #- -0.024341215018477
 #- 0.363714728555679
 #----------------------
+# Weights tuned with glue only
 - 0.00841060834942518
 - -0.0184563079131765
 - 0.224245325242622
@@ -84,6 +85,7 @@ weights :
 - 0.360779329946953
 - 0.293427863622466
 #------------------
+# Weights of moses, may be
 #- 0.0102299512702323
 #- -0.00707613706808242
 #- 0.232412170448443
@@ -93,3 +95,24 @@ weights :
 #- 0.00373875079373352
 #- 0.390961289470316
 #- 0.296317461196018
+###### Weights for glue model wixed with moses elemental phrase #######
+#- 0.00867349360429463
+#- 0.0314301817258134
+#- 0.189420840092459
+#- 0.0777017558671985
+#- -0.0798448724312941
+#- -0.0403205171070186
+#- 0.0077282538137008
+#- 0.214852308072839
+#- 0.350027777285381
+#-----------------------
+# Weights tuned for using noun crystals
+#- -0.00332769373723759
+#- 0.129588594182419
+#- 0.102654026986407
+#- 0.0648099916141521
+#- -0.115226399537449
+#- -0.0110886258379245
+#- -0.113449469725926
+#- 0.238887856324642
+#- 0.220967342053843
