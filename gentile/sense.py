@@ -629,6 +629,20 @@ class SenseTree:
     containerNodeId = containerNodes[0]
     targetNodeId = targetNodes[0]
     if containerNodeId == targetNodeId: return
+    # Validation for ensuring moving from totally different branch
+    if self.depTree.mapModifier[tokenId] == "cc" and targetNodeId in self.tree.mapParent and containerNodeId == self.tree.mapParent[targetNodeId]:
+      return
+    iterNode = containerNodeId
+    valid = True
+    while iterNode in self.tree.mapParent:
+      parentIterNode = self.tree.mapParent[iterNode]
+      if parentIterNode == targetNodeId:
+        valid = False
+        break
+      iterNode = parentIterNode
+    if not valid:
+      return
+
     # Maintain node
     self.tree.nodes[containerNodeId].remove(tokenId)
     targetNode = self.tree.nodes[targetNodeId]
@@ -677,16 +691,18 @@ class SenseTree:
       parentTag = self.tokens[parentId - 1][0]
       tokenTag = self.tokens[tokenId - 1][0]
 
+
       if parentTag.startswith("N") and modifier in MOD_CRYSTAL_NOUN:
         # Validation
         valid = True
         for interTokenId in range(min(tokenId, parentId), max(tokenId, parentId) + 1):
-          if interTokenId not in self.depTree.mapModifier:
+          if interTokenId == parentId:
+            continue
+          if interTokenId not in self.depTree.mapParent or self.depTree.mapParent[interTokenId] != parentId:
             valid = False
             break
         if not valid:
           continue
-
         self.moveTokenToSameLayer(tokenId, parentId)
         if tokenTag.startswith("N"): # Allowing __init__() be N
           dependencers = [t for t in self.depTree.mapParent if self.depTree.mapParent[t] == tokenId]
@@ -694,8 +710,8 @@ class SenseTree:
             if childTokenId in self.depTree.mapModifier and self.depTree.mapModifier[childTokenId] in MOD_CRYSTAL_NOUN:
               self.moveTokenToSameLayer(childTokenId, parentId)
     # Reduce noun crystal nodes
-    for nodeId in self.nounCrystalNodes:
-      self.reduceNounNode(nodeId)
+    # for nodeId in self.nounCrystalNodes:
+    #   self.reduceNounNode(nodeId)
 
   def killMultiNonTerminalNode(self,nodeId):
     """
