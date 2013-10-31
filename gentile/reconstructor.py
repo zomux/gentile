@@ -416,10 +416,14 @@ class Reconstructor:
     """
     for width in range(1, len(self.tokens) + 1):
       anyRulesFound = False
-      if self.smode:
-        # Maintain the smode.
-        self.model.smode = (width == len(self.tokens))
       for idxBegin in range(0, len(self.tokens) - width + 1):
+        # Maintain the smode.
+        self.model.smode = 0
+        if (self.smode == 1 or self.smode == 3) and idxBegin == 0 :
+          self.model.smode += 1
+        if (self.smode == 2 or self.smode == 3) and idxBegin + width == len(self.tokens)
+          self.model.smode += 2
+
         if width == 1:
           if idxBegin in self.originalSites:
             # Put MainToken -> hyps into this lattice.

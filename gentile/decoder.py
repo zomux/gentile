@@ -155,7 +155,7 @@ class GentileDecoder:
       for node in nodes_cur_level:
         # Set smode for model
         self.model.smode = 0
-        if self.traceFirstTokenId(tree, node) == 0:
+        if self.traceFirstTokenId(tree, node) == 1:
           self.model.smode += 1
         if self.traceLastTokenId(tree, node) == len(tree.tokens):
           self.model.smode += 2
