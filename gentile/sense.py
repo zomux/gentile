@@ -632,7 +632,8 @@ class SenseTree:
     # Maintain node
     self.tree.nodes[containerNodeId].remove(tokenId)
     targetNode = self.tree.nodes[targetNodeId]
-
+    if targetNodeId not in self.nounCrystalNodes:
+      self.nounCrystalNodes.add(targetNodeId)
     if tokenId > targetTokenId:
       previousTokenId = max([t for t in targetNode if t > 0 and t < tokenId])
       insertPosition = targetNode.index(previousTokenId) + 1
@@ -655,11 +656,19 @@ class SenseTree:
     self.removeNonTerminalNodes()
     self.killMultiNonTerminalNode(containerNodeId)
 
+  def reduceNounNode(self, nodeId):
+    """
+    Reduce a large noun crystal node into small pieces.
+    """
+    
+
+
   def forceUsingDepCrystals(self):
     """
     Force using crystals in dependency tree.
     For head in [N, V]?
     """
+    self.nounCrystalNodes = set()
     for tokenId in self.depTree.mapModifier:
       modifier = self.depTree.mapModifier[tokenId]
       if tokenId not in self.depTree.mapParent:
@@ -684,6 +693,9 @@ class SenseTree:
           for childTokenId in dependencers:
             if childTokenId in self.depTree.mapModifier and self.depTree.mapModifier[childTokenId] in MOD_CRYSTAL_NOUN:
               self.moveTokenToSameLayer(childTokenId, parentId)
+    # Reduce noun crystal nodes
+    for nodeId in self.nounCrystalNodes:
+      self.reduceNounNode(nodeId)
 
   def killMultiNonTerminalNode(self,nodeId):
     """

@@ -119,7 +119,11 @@ class GentileModel:
     if not tokens:
       return -0.15
     
-    if self.smode:
+    if self.smode == 1:
+      tokens.insert(0, "<s>")
+    elif self.smode == 2:
+      tokens.append("</s>")
+    elif self.smode == 3:
       tokens.insert(0, "<s>")
       tokens.append("</s>")
 

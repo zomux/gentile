@@ -92,6 +92,29 @@ class GentileDecoder:
         hyps = self.model.sortHypothesises(hyps)
         stack_lex[node] = hyps
     return stack_lex
+
+  def traceFirstTokenId(self, sense, nodeId):
+    """
+    Trace first node id in the source span.
+    """
+    while True:
+      node = sense.tree.nodes[nodeId]
+      if node[0] > 0:
+        return node[0]
+      else:
+        nodeId = -node[0]
+
+  def traceLastTokenId(self, sense, nodeId):
+    """
+    Trace last node id in the source span.
+    """
+    while True:
+      node = sense.tree.nodes[nodeId]
+      if node[-1] > 0:
+        return node[-1]
+      else:
+        nodeId = -node[-1]
+
   
   def translateNBest(self,data_tree,data_dep):
     """
@@ -129,11 +152,15 @@ class GentileDecoder:
     while cur_level > 0:
       # [head id,]
       nodes_cur_level = tree.getNodesByLevel(cur_level)
-      if cur_level == 1:
-        self.model.smode = True
-      else:
-        self.model.smode = False
       for node in nodes_cur_level:
+        # Set smode for model
+        self.model.smode = 0
+        if self.traceFirstTokenId(tree, node) == 0:
+          self.model.smode += 1
+        if self.traceLastTokenId(tree, node) == len(tree.tokens):
+          self.model.smode += 2
+        print node, "-smode-", self.model.smode
+
         if node not in fetcher.joints:
           # only prune for joint nodes
           continue
