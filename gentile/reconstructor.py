@@ -421,7 +421,7 @@ class Reconstructor:
         self.model.smode = 0
         if (self.smode == 1 or self.smode == 3) and idxBegin == 0 :
           self.model.smode += 1
-        if (self.smode == 2 or self.smode == 3) and idxBegin + width == len(self.tokens)
+        if (self.smode == 2 or self.smode == 3) and idxBegin + width == len(self.tokens):
           self.model.smode += 2
 
         if width == 1:
