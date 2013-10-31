@@ -62,7 +62,9 @@ class Reconstructor:
     self.model = model
     # Reset smode.
     self.smode = model.smode
-    model.smode = False
+    self.periodMode = model.periodMode
+    model.periodMode = False
+    model.smode = 0
     self.beamSize = setting.size_beam
     self.maxNTCount = setting.reconstruction_max_nt
     self.mapSpanTag = {}
@@ -419,10 +421,14 @@ class Reconstructor:
       for idxBegin in range(0, len(self.tokens) - width + 1):
         # Maintain the smode.
         self.model.smode = 0
+        self.model.periodMode = False
         if (self.smode == 1 or self.smode == 3) and idxBegin == 0 :
           self.model.smode += 1
         if (self.smode == 2 or self.smode == 3) and idxBegin + width == len(self.tokens):
           self.model.smode += 2
+        if self.periodMode and idxBegin + width == len(self.tokens):
+          self.model.periodMode = True
+
 
         if width == 1:
           if idxBegin in self.originalSites:
@@ -445,6 +451,7 @@ class Reconstructor:
     if (0, len(self.tokens)) not in self.mapLattice:
       return []
     self.model.smode = self.smode
+    self.model.periodMode = self.periodMode
     hyps = self.convertLatticeStackToHyps(self.node, self.mapLattice[(0, len(self.tokens))])
     return hyps
 

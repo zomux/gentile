@@ -157,9 +157,13 @@ class GentileDecoder:
         self.model.smode = 0
         if self.traceFirstTokenId(tree, node) == 1:
           self.model.smode += 1
-        if self.traceLastTokenId(tree, node) == len(tree.tokens):
+        lastTokenId = self.traceLastTokenId(tree, node)
+        if lastTokenId == len(tree.tokens):
           self.model.smode += 2
-        print node, "-smode-", self.model.smode
+        self.model.periodMode = False
+        if lastTokenId == len(tree.tokens) - 1 and tree.tokens[-1][1] == ".":
+          self.model.periodMode = True
+        print node, "-periodMode-", self.model.periodMode
 
         if node not in fetcher.joints:
           # only prune for joint nodes

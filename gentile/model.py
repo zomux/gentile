@@ -40,6 +40,7 @@ class GentileModel:
 
   cacheLMProbs = None
   smode = False
+  periodMode = False
   
   def __init__(self):
     """
@@ -119,6 +120,8 @@ class GentileModel:
     if not tokens:
       return -0.15
     
+    if self.periodMode:
+      tokens.append("。")
     if self.smode == 1:
       tokens.insert(0, "<s>")
     elif self.smode == 2:
