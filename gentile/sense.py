@@ -194,6 +194,16 @@ class SenseTree:
     #   print nodeId,tok(leftUpTree.node(nodeId)), ":", \
     #     map(tok, map(leftUpTree.node, leftUpTree.mapChildren[nodeId])),leftUpTree.mapChildren[nodeId]
 
+  def listSubTokens(self, tokens):
+    """
+    List all sub tokens of given tokens.
+    """
+    nodeLinks = [t for t in tokens if t < 0]
+    for nodeLink in nodeLinks:
+      tokensOfNode = self.listSubTokens(self.tree.nodes[-nodeLink])
+      linkPosition = tokens.index(nodeLink)
+      tokens = tokens[:linkPosition] + tokensOfNode + tokens[linkPosition + 1:]
+    return tokens
 
   def buildMainTokenMap(self, tree, depTree, nodeId=None):
     """
@@ -206,11 +216,13 @@ class SenseTree:
     for childNodeId in tree.children(nodeId):
       self.buildMainTokenMap(tree, depTree, childNodeId)
 
-    node = [t for t in tree.node(nodeId) if t > 0]
+    #node = [t for t in tree.node(nodeId) if t > 0]
+    node = tree.nodes[nodeId]
     if type(node) != list:
       # Just map it to none value.
       self.mapNodeToMainToken[nodeId] = None
     elif nodeId not in self.mapNodeToMainToken:
+      node = self.listSubTokens(node)
       # Count which token have most nodes depent on it.
       mapTokenDepentCount = {}
       for tokenId in node:
