@@ -2,7 +2,7 @@
 TAGMAP={
   "NN" : "NP",
   "JJ" : "JJ",
-  "CD" : "CD",
+  "CD" : "NP",
   "," : "NP",
   "DT" : "DT",
   "NNS" : "NP",
